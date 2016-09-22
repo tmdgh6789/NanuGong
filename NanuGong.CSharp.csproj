@@ -194,6 +194,7 @@
     <Compile Include="Assets\script\leftButtonTouch.cs" />
     <Compile Include="Assets\script\login.cs" />
     <Compile Include="Assets\script\rightButtonTouch.cs" />
+    <Compile Include="Assets\script\score.cs" />
     <Compile Include="Assets\script\timerMove.cs" />
     <Compile Include="Assets\script\timerScript.cs" />
   </ItemGroup>
