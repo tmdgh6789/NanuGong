@@ -171,6 +171,7 @@
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
     <None Include="Assets\Resources\Komika.txt" />
+    <None Include="Assets\Resources\font\Komika.txt" />
     <None Include="Assets\fonts\Arphic\arlishugbmd_test\Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
