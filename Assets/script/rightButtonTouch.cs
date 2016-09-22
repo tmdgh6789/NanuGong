@@ -1,18 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-
 public class rightButtonTouch : MonoBehaviour {
+
+	Ball _ball;
 	score _score;
 	combo _combo;
-
-
 
 	void OnMouseDown(){  // 버튼을 MouseDown 할 때 이벤트
 
 		_score = GameObject.FindObjectOfType<score> ();
 		_combo = GameObject.FindObjectOfType<combo> ();
+		_ball = GameObject.FindObjectOfType<Ball> ();
 
 		//램덤으로 만들 GameObject 배열 선언
 		GameObject[] tempGO = new GameObject[2];
@@ -31,15 +30,10 @@ public class rightButtonTouch : MonoBehaviour {
 		GameObject ball7 = GameObject.Find ("ball7(Clone)");
 		GameObject ball8 = GameObject.Find ("ball8(Clone)");
 
-        GameObject soccerBall = GameObject.Find("soccerBall");
-        GameObject basketBall = GameObject.Find("basketBall");
-
-        Sprite soccerSpr = soccerBall.GetComponent<SpriteRenderer>().sprite;
-        Sprite basketSpr = basketBall.GetComponent<SpriteRenderer>().sprite;
-
+		Sprite rightBall = _ball.original2.GetComponent<SpriteRenderer> ().sprite;
         Sprite spr1 = ball1.GetComponent<SpriteRenderer>().sprite;
 
-        if (spr1 == basketSpr) {
+		if (spr1 == rightBall) {
             // 나머지 공 애니메이션
 			ball2.transform.Translate(0.0f, -0.8f, -2.2f);
 			ball2.transform.localScale = new Vector3 (2.0f, 2.0f, 0.0f);

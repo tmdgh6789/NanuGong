@@ -3,6 +3,11 @@ using System.Collections;
 
 public class Ball : MonoBehaviour {
     // Use this for initialization
+
+	public GameObject original1;
+	public GameObject original2;
+
+
     void Start () {
 
         GameObject[] start1 = new GameObject[2];
@@ -13,6 +18,8 @@ public class Ball : MonoBehaviour {
 		GameObject[] start6 = new GameObject[2];
 		GameObject[] start7 = new GameObject[2];
 		GameObject[] start8 = new GameObject[2];
+		GameObject[] origin1 = new GameObject[2];
+		GameObject[] origin2 = new GameObject[2];
         
         start1[0] = Resources.Load("random1") as GameObject;
         start1[1] = Resources.Load("random2") as GameObject;
@@ -37,6 +44,38 @@ public class Ball : MonoBehaviour {
 
 		start8[0] = Resources.Load("random1") as GameObject;
 		start8[1] = Resources.Load("random2") as GameObject;
+
+		origin1[0] = Resources.Load("soccerBall1") as GameObject;
+		origin1[1] = Resources.Load("basketBall1") as GameObject;
+
+		origin2[0] = Resources.Load("soccerBall2") as GameObject;
+		origin2[1] = Resources.Load("basketBall2") as GameObject;
+
+		original1 = Instantiate (origin1 [Random.Range (0, 2)]);
+		original1.transform.Translate(-1.0f, -1.0f, 0.0f);
+		original1.transform.localScale = new Vector3 (2.0f, 2.0f, 0.0f);
+
+		GameObject soccerball1 = GameObject.Find ("soccerBall1(Clone)");
+		GameObject basketBall1 = GameObject.Find ("basketBall1(Clone)");
+	
+		if (original1 == GameObject.Find("soccerBall1(Clone)")) {
+			
+			original2 = Instantiate (origin2[1]);
+			original2.transform.Translate(1.0f, -1.0f, 0.0f);
+			original2.transform.localScale = new Vector3 (2.0f, 2.0f, 0.0f);
+
+		} else {
+			
+			original2 = Instantiate (origin2[0]);
+			original2.transform.Translate(1.0f, -1.0f, 0.0f);
+			original2.transform.localScale = new Vector3 (2.0f, 2.0f, 0.0f);
+
+		}
+
+
+
+	
+
 
 
 		GameObject ball1 = Instantiate(start1[Random.Range(0, 2)]);
@@ -77,6 +116,7 @@ public class Ball : MonoBehaviour {
 		ball6.transform.Translate(0.1f, -0.9f, -3.0f);
 		ball7.transform.Translate(0.1f, -0.5f, -2.0f);
 		ball8.transform.Translate(0.1f, -0.1f, -1.0f);
+
 
 
 		ball1.transform.localScale = new Vector3 (2.0f, 2.0f, 0.0f);
