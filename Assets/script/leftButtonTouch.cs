@@ -3,15 +3,15 @@ using System.Collections;
 
 public class leftButtonTouch : MonoBehaviour {
 
-
+	Ball _ball;
 	score _score;
 	combo _combo;
-
 	
 	void OnMouseDown(){  // 버튼을 MouseDown 할 때 이벤트
 
 		_score = GameObject.FindObjectOfType<score> ();
 		_combo = GameObject.FindObjectOfType<combo> ();
+		_ball = GameObject.FindObjectOfType<Ball> ();
 
 		//램덤으로 만들 GameObject 배열 선언
 		GameObject[] tempGO = new GameObject[2];
@@ -30,19 +30,11 @@ public class leftButtonTouch : MonoBehaviour {
 		GameObject ball7 = GameObject.Find ("ball7(Clone)");
 		GameObject ball8 = GameObject.Find ("ball8(Clone)");
 
+		Sprite leftBall = _ball.original1.GetComponent<SpriteRenderer> ().sprite;
+		Sprite spr1 = ball1.GetComponent<SpriteRenderer>().sprite;
 
-        GameObject soccerBall = GameObject.Find("soccerBall");
-        GameObject basketBall = GameObject.Find("basketBall");
-
-        Sprite soccerSpr = soccerBall.GetComponent<SpriteRenderer>().sprite;
-        Sprite basketSpr = basketBall.GetComponent<SpriteRenderer>().sprite;
-
-        Sprite spr1 = ball1.GetComponent<SpriteRenderer>().sprite;
-
-        if (spr1 == soccerSpr) {
-
-
-            // 나머지 공 애니메이션
+		if (spr1 == leftBall) {
+			// 나머지 공 애니메이션
 			ball2.transform.Translate(0.0f, -0.8f, -2.2f);
 			ball2.transform.localScale = new Vector3 (2.0f, 2.0f, 0.0f);
 
@@ -63,6 +55,7 @@ public class leftButtonTouch : MonoBehaviour {
 
 			ball8.transform.Translate(0.0f, -0.4f, -1.0f);
 			ball8.transform.localScale = new Vector3 (1.1f, 1.1f, 0.0f);
+
 
 
 			// 맨 처음 공 랜덤으로 생성
