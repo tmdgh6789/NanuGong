@@ -43,18 +43,32 @@ public class leftButtonTouch : MonoBehaviour {
 
 
             // 나머지 공 애니메이션
-			ball2.transform.Translate(0.0f, -0.8f, 0.0f);
-			ball3.transform.Translate(0.0f, -0.8f, 0.0f);
-			ball4.transform.Translate(0.0f, -0.5f, 0.0f);
-			ball5.transform.Translate(0.0f, -0.6f, 0.0f);
-			ball6.transform.Translate(0.0f, -0.6f, 0.0f);
-			ball7.transform.Translate(0.0f, -0.4f, 0.0f);
-			ball8.transform.Translate(0.0f, -0.4f, 0.0f);
+			ball2.transform.Translate(0.0f, -0.8f, -2.2f);
+			ball2.transform.localScale = new Vector3 (2.0f, 2.0f, 0.0f);
 
-            // 맨 처음 공 랜덤으로 생성
-            GameObject randomBall = Instantiate(tempGO[Random.Range(0, 2)]);
-			randomBall.transform.localScale = new Vector3 (1.0f, 1.0f, -1.0f);
-			randomBall.transform.Translate(0.1f, 0.0f, 0.0f);
+			ball3.transform.Translate(0.0f, -0.8f, -2.0f);
+			ball3.transform.localScale = new Vector3 (1.8f, 1.8f, 0.0f);
+
+			ball4.transform.Translate(0.0f, -0.5f, -1.8f);
+			ball4.transform.localScale = new Vector3 (1.6f, 1.6f, 0.0f);
+
+			ball5.transform.Translate(0.0f, -0.6f, -1.6f);
+			ball5.transform.localScale = new Vector3 (1.4f, 1.4f, 0.0f);
+
+			ball6.transform.Translate(0.0f, -0.6f, -1.4f);
+			ball6.transform.localScale = new Vector3 (1.3f, 1.3f, 0.0f);
+
+			ball7.transform.Translate(0.0f, -0.4f, -1.2f);
+			ball7.transform.localScale = new Vector3 (1.2f, 1.2f, 0.0f);
+
+			ball8.transform.Translate(0.0f, -0.4f, -1.0f);
+			ball8.transform.localScale = new Vector3 (1.1f, 1.1f, 0.0f);
+
+
+			// 맨 처음 공 랜덤으로 생성
+			GameObject randomBall = Instantiate(tempGO[Random.Range(0, 2)]);
+			randomBall.transform.localScale = new Vector3 (1.0f, 1.0f, 0.0f);
+			randomBall.transform.Translate(0.1f, 0.0f,0.0f);
 
 
             // 공들 이름 변경

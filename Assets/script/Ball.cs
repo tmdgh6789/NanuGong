@@ -73,7 +73,7 @@ public class Ball : MonoBehaviour {
 		ball2.transform.Translate(0.1f, -3.4f, -7.0f);
 		ball3.transform.Translate(0.1f, -2.7f, -6.5f);
 		ball4.transform.Translate(0.1f, -2.1f, -5.0f);
-		ball5.transform.Translate(0.1f, -1.5f, -4.5f);
+		ball5.transform.Translate(0.1f, -1.5f, -4.0f);
 		ball6.transform.Translate(0.1f, -0.9f, -3.0f);
 		ball7.transform.Translate(0.1f, -0.5f, -2.0f);
 		ball8.transform.Translate(0.1f, -0.1f, -1.0f);
