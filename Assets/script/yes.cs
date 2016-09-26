@@ -2,9 +2,8 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class gamePlay : MonoBehaviour {
+public class yes : MonoBehaviour {
     void OnMouseDown() {
         SceneManager.LoadScene(1);
     }
-
 }

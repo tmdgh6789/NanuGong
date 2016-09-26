@@ -185,7 +185,11 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
     <Compile Include="Assets\script\Ball.cs" />
+    <Compile Include="Assets\script\BringToFront.cs" />
+    <Compile Include="Assets\script\DisplayManager.cs" />
+    <Compile Include="Assets\script\ModalPanel.cs" />
     <Compile Include="Assets\script\Move.cs" />
+    <Compile Include="Assets\script\TestModalWindow.cs" />
     <Compile Include="Assets\script\bgTimer.cs" />
     <Compile Include="Assets\script\combo.cs" />
     <Compile Include="Assets\script\finish.cs" />
@@ -197,6 +201,7 @@
     <Compile Include="Assets\script\score.cs" />
     <Compile Include="Assets\script\timerMove.cs" />
     <Compile Include="Assets\script\timerScript.cs" />
+    <Compile Include="Assets\script\yes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
