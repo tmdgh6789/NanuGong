@@ -6,7 +6,13 @@ public class leftButtonTouch : MonoBehaviour {
 	Ball _ball;
 	score _score;
 	combo _combo;
-	
+
+	public GameObject original3;
+	public GameObject original4;
+	public GameObject original5;
+	public GameObject original6;
+	public GameObject randomBall;
+
 	void OnMouseDown(){  // 버튼을 MouseDown 할 때 이벤트
 
 		_score = GameObject.FindObjectOfType<score> ();
@@ -15,10 +21,24 @@ public class leftButtonTouch : MonoBehaviour {
 
 		//램덤으로 만들 GameObject 배열 선언
 		GameObject[] tempGO = new GameObject[2];
+		GameObject[] tempGO2 = new GameObject[4];
+		GameObject[] tempGO3 = new GameObject[6];
 
         // 랜덤으로 사용할 리소스 설정
 		tempGO[0] = Resources.Load ("random1") as GameObject;
 		tempGO[1] = Resources.Load ("random2") as GameObject;
+
+		tempGO2[0] = Resources.Load ("random1") as GameObject;
+		tempGO2[1] = Resources.Load ("random2") as GameObject;
+		tempGO2[2] = Resources.Load ("random3") as GameObject;
+		tempGO2[3] = Resources.Load ("random4") as GameObject;
+
+		tempGO3[0] = Resources.Load ("random1") as GameObject;
+		tempGO3[1] = Resources.Load ("random2") as GameObject;
+		tempGO3[2] = Resources.Load ("random3") as GameObject;
+		tempGO3[3] = Resources.Load ("random4") as GameObject;
+		tempGO3[4] = Resources.Load ("random5") as GameObject;
+		tempGO3[5] = Resources.Load ("random6") as GameObject;
 
 		// Hierarchy 에서 GameObject 선택
 		GameObject ball1 = GameObject.Find ("ball1(Clone)");
@@ -31,9 +51,12 @@ public class leftButtonTouch : MonoBehaviour {
 		GameObject ball8 = GameObject.Find ("ball8(Clone)");
 
 		Sprite leftBall = _ball.original1.GetComponent<SpriteRenderer> ().sprite;
+		Sprite leftBall2 = _ball.original3.GetComponent<SpriteRenderer> ().sprite;
+		Sprite leftBall3 = _ball.original5.GetComponent<SpriteRenderer> ().sprite;
+
 		Sprite spr1 = ball1.GetComponent<SpriteRenderer>().sprite;
 
-		if (spr1 == leftBall) {
+		if (spr1 == leftBall || spr1 == leftBall2 || spr1 == leftBall3) {
 			// 나머지 공 애니메이션
 			ball2.transform.Translate(0.0f, -0.8f, -2.2f);
 			ball2.transform.localScale = new Vector3 (2.0f, 2.0f, 0.0f);
@@ -57,11 +80,21 @@ public class leftButtonTouch : MonoBehaviour {
 			ball8.transform.localScale = new Vector3 (1.1f, 1.1f, 0.0f);
 
 
+			if (_score.value >= 0 && _score.value < 900) {
+				randomBall = Instantiate (tempGO [Random.Range (0, 2)]);
+				randomBall.transform.localScale = new Vector3 (1.0f, 1.0f, 0.0f);
+				randomBall.transform.Translate (0.1f, 0.0f, 0.0f);
 
-			// 맨 처음 공 랜덤으로 생성
-			GameObject randomBall = Instantiate(tempGO[Random.Range(0, 2)]);
-			randomBall.transform.localScale = new Vector3 (1.0f, 1.0f, 0.0f);
-			randomBall.transform.Translate(0.1f, 0.0f,0.0f);
+			} else if (_score.value >= 900 && _score.value < 1900) {
+
+				randomBall = Instantiate (tempGO2 [Random.Range (0, 4)]);
+				randomBall.transform.localScale = new Vector3 (1.0f, 1.0f, 0.0f);
+				randomBall.transform.Translate (0.1f, 0.0f, 0.0f);
+			} else {
+				randomBall = Instantiate (tempGO3 [Random.Range (0, 6)]);
+				randomBall.transform.localScale = new Vector3 (1.0f, 1.0f, 0.0f);
+				randomBall.transform.Translate (0.1f, 0.0f, 0.0f);
+			}
 
 
             // 공들 이름 변경
@@ -74,6 +107,26 @@ public class leftButtonTouch : MonoBehaviour {
 			ball3.name = "ball2(Clone)";
 			ball2.name = "ball1(Clone)";
 
+			GameObject[] origin3 = new GameObject[2];
+			GameObject[] origin4 = new GameObject[2];
+			GameObject[] origin5 = new GameObject[2];
+			GameObject[] origin6 = new GameObject[2];
+
+
+			if (_score.value >= 900 && _score.value <= 1000) {
+
+				_ball.original3.active = true;
+				_ball.original4.active = true;
+
+			}
+
+
+
+			if (_score.value >= 1900 && _score.value <= 2000) {
+
+				_ball.original5.active = true;
+				_ball.original6.active = true;
+			}
             // 마지막 공 삭제
 
             Destroy(ball1, 0.1f);
