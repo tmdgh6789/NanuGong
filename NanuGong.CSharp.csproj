@@ -195,10 +195,11 @@
     <Compile Include="Assets\script\finish.cs" />
     <Compile Include="Assets\script\gamePlay.cs" />
     <Compile Include="Assets\script\gameStart.cs" />
-    <Compile Include="Assets\script\leftButtonTouch.cs" />
+    <Compile Include="Assets\script\leftButtonScript.cs" />
     <Compile Include="Assets\script\login.cs" />
-    <Compile Include="Assets\script\rightButtonTouch.cs" />
+    <Compile Include="Assets\script\rightButtonScript.cs" />
     <Compile Include="Assets\script\score.cs" />
+    <Compile Include="Assets\script\startScript.cs" />
     <Compile Include="Assets\script\timerMove.cs" />
     <Compile Include="Assets\script\timerScript.cs" />
     <Compile Include="Assets\script\yes.cs" />

@@ -10,7 +10,7 @@ public class timerScript : MonoBehaviour {
 
     void Awake() {
         timerText = GetComponent<Text> ();
-        sec = 5.0f;
+        sec = 60.0f;
         timer = sec;
     }
 

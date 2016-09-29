@@ -27,6 +27,7 @@ public class ModalPanel : MonoBehaviour {
     public void Choice(string question, UnityAction yesEvent, UnityAction reEvent, UnityAction tenSecondsEvent) {
         modalPanelObject.SetActive(true);
 
+        /*
         yesButton.onClick.RemoveAllListeners();
         yesButton.onClick.AddListener(yesEvent);
         yesButton.onClick.AddListener(ClosePanel);
@@ -42,6 +43,7 @@ public class ModalPanel : MonoBehaviour {
         yesButton.gameObject.SetActive(true);
         reButton.gameObject.SetActive(true);
         tenSecondsButton.gameObject.SetActive(true);
+        */
     }
 
     void ClosePanel() {
