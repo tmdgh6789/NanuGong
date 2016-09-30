@@ -163,7 +163,6 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITiledSprite.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-     <Compile Include="Assets\script\Ball.cs" />
      <Compile Include="Assets\script\BringToFront.cs" />
      <Compile Include="Assets\script\DisplayManager.cs" />
      <Compile Include="Assets\script\ModalPanel.cs" />
