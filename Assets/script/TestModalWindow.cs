@@ -8,8 +8,7 @@ using System.Collections;
 public class TestModalWindow : MonoBehaviour {
     private ModalPanel modalPanel;
     private DisplayManager displayManager;
-    private yes yes;
-
+    
     private UnityAction myYesAction;
     private UnityAction myNoAction;
     private UnityAction myTenSecondsFunction;

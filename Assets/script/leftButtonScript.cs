@@ -7,22 +7,23 @@ public class leftButtonScript : MonoBehaviour {
     score _score;
     combo _combo;
     timerScript _timer;
+    Move _move;
 
     GameObject randomRes;
     GameObject randomBall;
 
     GameObject[] newBall = new GameObject[6];
+    GameObject[] ball = new GameObject[8];
 
     void OnMouseDown() {
         _start = GameObject.FindObjectOfType<startScript>();
         _score = GameObject.FindObjectOfType<score>();
         _combo = GameObject.FindObjectOfType<combo>();
         _timer = GameObject.FindObjectOfType<timerScript>();
+        _move = GameObject.FindObjectOfType<Move>();
 
-		if (_timer.timer > 0) {
-
-			GameObject[] ball = new GameObject[8];
-			for (int i = 0; i < 8; i++) {
+        if (_timer.timer > 0) {
+            for (int i = 0; i < 8; i++) {
 				ball[i] = GameObject.Find ("ball" + i + "(Clone)");
 			}
 			Sprite[] leftSpr = _start.leftSpr; 
@@ -57,29 +58,30 @@ public class leftButtonScript : MonoBehaviour {
 
 				}
 
-				for (int i = 0; i < 8; i++) {
-					if (i < 3) {
-						ball[i].transform.Translate(0, -0.55f, -i - 1);
-					} else if (i == 3) {
-						ball[3].transform.Translate(0, -0.57f, -i);
-					} else {
-						ball[i].transform.Translate(0, -0.78f, -i);
-					}
-					ball[i].transform.localScale = new Vector2(1 + (i * 0.15f), 1 + (i * 0.15f));
-					ball[i].name = "ball" + (i + 1) + "(Clone)";
-					randomBall.name = "ball0(Clone)";
-				}
+                for (int i = 0; i < 8; i++) {
+                    if (i < 3) {
+                        ball[i].transform.Translate(0.0f, -0.55f, (-i - 1));
+                    } else if (i == 3) {
+                        ball[i].transform.Translate(0.0f, -0.57f, -i);
+                    } else {
+                        ball[i].transform.Translate(0.0f, -0.78f, -i);
+                    }
+                    ball[i].transform.localScale = new Vector2(1 + (i * 0.15f), 1 + (i * 0.15f));
+                    ball[i].name = "ball" + (i + 1) + "(Clone)";
+                    randomBall.name = "ball0(Clone)";
+                }
 
-				Destroy(ball[7], 0.1f);
+                Destroy(ball[7], 0.1f);
 
-				_combo.value += 1f;
-				_score.value += 100f + (_combo.value * 0.5f);
+                _combo.comboPanel.SetActive(true);
+                _combo.value += 1f;
+                _score.value += 100f + (_combo.value * 0.5f);
 
-          
-			} else {
-				_combo.value = 0.0f;
-				GameObject bomb = Instantiate(Resources.Load("bomb") as GameObject);
-				Destroy(bomb, 0.5f);
+            } else {
+                _combo.comboPanel.SetActive(false);
+                _combo.value = 0.0f;
+				GameObject bomb = Instantiate(Resources.Load("bomb") as GameObject, ball[7].transform.position, Quaternion.identity) as GameObject;
+				Destroy(bomb, 0.3f);
 			}
 		} else {
 		}
