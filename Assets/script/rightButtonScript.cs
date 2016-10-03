@@ -15,6 +15,8 @@ public class rightButtonScript : MonoBehaviour {
     GameObject[] newBall = new GameObject[6];
     GameObject[] ball = new GameObject[8];
 
+    public Canvas comboCanvas;
+
     void OnMouseDown() {
 		_start = GameObject.FindObjectOfType<startScript>();
 		_score = GameObject.FindObjectOfType<score>();
@@ -24,7 +26,7 @@ public class rightButtonScript : MonoBehaviour {
 
 		if (_timer.timer > 0) {
             for (int i = 0; i < 8; i++) {
-				ball [i] = GameObject.Find("ball" + i + "(Clone)");
+				ball[i] = GameObject.Find("ball" + i + "(Clone)");
 			}
 			Sprite[] rightSpr = _start.rightSpr;
 			Sprite ball7Spr = ball[7].GetComponent<SpriteRenderer>().sprite;
@@ -73,13 +75,13 @@ public class rightButtonScript : MonoBehaviour {
 
                 Destroy(ball[7], 0.1f);
 
-                _combo.comboPanel.SetActive(true);
-                _combo.value += 1f;
+                comboCanvas.GetComponent<Canvas>().enabled = true;
+                _combo.value += 1;
                 _score.value += 100f + (_combo.value * 0.5f);
 
             } else {
-                _combo.comboPanel.SetActive(false);
-                _combo.value = 0.0f;
+                comboCanvas.GetComponent<Canvas>().enabled = false;
+                _combo.value = 0;
                 GameObject bomb = Instantiate(Resources.Load("bomb") as GameObject, ball[7].transform.position, Quaternion.identity) as GameObject;
 				Destroy(bomb, 0.3f);
 			}

@@ -7,10 +7,11 @@ public class timerScript : MonoBehaviour {
     public float sec;
     public TestModalWindow TestModalWindow;
     private Text timerText;
+    public Canvas comboCanvas;
 
     void Awake() {
         timerText = GetComponent<Text> ();
-        sec = 60.0f;
+        sec = 20.0f;
         timer = sec;
     }
 
@@ -23,6 +24,7 @@ public class timerScript : MonoBehaviour {
         } else if (timer < 0) {
             timer = 0;
         } else {
+            comboCanvas.GetComponent<Canvas>().enabled = false;
             TestModalWindow = GameObject.FindObjectOfType<TestModalWindow>();
             TestModalWindow.Test();
         }

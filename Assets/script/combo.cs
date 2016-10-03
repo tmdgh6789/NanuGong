@@ -3,9 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class combo : MonoBehaviour {
-	public float value = 0.0f;
+	public int value = 0;
+    public Canvas comboCanvas;
 	private Text comboValue;
-    public GameObject comboPanel;
 
     // Use this for initialization
 
@@ -13,11 +13,11 @@ public class combo : MonoBehaviour {
 		comboValue = GetComponent<Text>();
 	}
 	void Start () {
-        comboPanel = GameObject.FindGameObjectWithTag("comboPanel");
-	}
+        comboCanvas.GetComponent<Canvas>().enabled = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		comboValue.text = string.Format("{0:d1}", (int)value);
+		comboValue.text = "" + value;
 	}
 }

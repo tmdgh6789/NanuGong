@@ -23,6 +23,6 @@ public class score : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		scoreValue.text = string.Format ("{0:d1}", (int)value);
+		scoreValue.text = "" + (int)value;
 	}
 }

@@ -74,11 +74,11 @@ public class buttonScript : MonoBehaviour {
 
                     Destroy(ball[7], 0.1f);
 
-                    _combo.value += 1f;
+                    _combo.value += 1;
                     _score.value += 100f + (_combo.value * 0.5f);
 
                 } else {
-                    _combo.value = 0.0f;
+                    _combo.value = 0;
                     GameObject bomb = Instantiate(Resources.Load("bomb") as GameObject);
                     Destroy(bomb, 0.3f);
                 }
