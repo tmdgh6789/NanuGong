@@ -11,7 +11,7 @@ public class timerScript : MonoBehaviour {
 
     void Awake() {
         timerText = GetComponent<Text> ();
-        sec = 20.0f;
+        sec = 2.0f;
         timer = sec;
     }
 

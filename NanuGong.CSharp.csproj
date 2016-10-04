@@ -190,15 +190,19 @@
     <Compile Include="Assets\script\Move.cs" />
     <Compile Include="Assets\script\TestModalWindow.cs" />
     <Compile Include="Assets\script\bestRecordText.cs" />
+    <Compile Include="Assets\script\bestScoreTextPlay.cs" />
+    <Compile Include="Assets\script\bestScoreTextReady.cs" />
     <Compile Include="Assets\script\bgTimer.cs" />
     <Compile Include="Assets\script\buttonScript.cs" />
     <Compile Include="Assets\script\coinText.cs" />
     <Compile Include="Assets\script\combo.cs" />
+    <Compile Include="Assets\script\data.cs" />
     <Compile Include="Assets\script\finish.cs" />
     <Compile Include="Assets\script\gamePlay.cs" />
     <Compile Include="Assets\script\gameStart.cs" />
     <Compile Include="Assets\script\leftButtonScript.cs" />
     <Compile Include="Assets\script\login.cs" />
+    <Compile Include="Assets\script\myCoinText.cs" />
     <Compile Include="Assets\script\rightButtonScript.cs" />
     <Compile Include="Assets\script\score.cs" />
     <Compile Include="Assets\script\scoreText.cs" />
@@ -207,6 +211,7 @@
     <Compile Include="Assets\script\startScript.cs" />
     <Compile Include="Assets\script\timerMove.cs" />
     <Compile Include="Assets\script\timerScript.cs" />
+    <Compile Include="Assets\script\welcomeText.cs" />
     <Compile Include="Assets\script\yes.cs" />
   </ItemGroup>
   <ItemGroup>
