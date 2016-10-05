@@ -6,13 +6,13 @@ using System.Collections;
 //  This script will be updated in Part 2 of this 2 part series.
 public class ModalPanel : MonoBehaviour {
 
-    public Text record;
+    public Button tenSecondsButton;
     public Button yesButton;
     public Button reButton;
-    public Button tenSecondsButton;
     public GameObject modalPanelObject;
 
     private static ModalPanel modalPanel;
+
     public static ModalPanel Instance() {
         if (!modalPanel) {
             modalPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
@@ -23,27 +23,30 @@ public class ModalPanel : MonoBehaviour {
         return modalPanel;
     }
 
-    // Yes/No/Cancel: A string, a Yes event, a re event and tenSeconds event
-    public void Choice(string record, UnityAction yesEvent, UnityAction reEvent, UnityAction tenSecondsEvent) {
+    // Yes/No/Cancel: A string, a Yes event, a No event and Cancel event
+    public void Choice(UnityAction tenSecondsEvent, UnityAction yesEvent, UnityAction noEvent) {
         modalPanelObject.SetActive(true);
-        /*
-        yesButton.onClick.RemoveAllListeners();
-        yesButton.onClick.AddListener(yesEvent);
-        yesButton.onClick.AddListener(ClosePanel);
 
-        reButton.onClick.RemoveAllListeners();
-        reButton.onClick.AddListener(reEvent);
-        reButton.onClick.AddListener(ClosePanel);
+        tenSecondsButton = GameObject.Find("tenSecondsButton").GetComponent<Button>();
+        yesButton = GameObject.Find("yesButton").GetComponent<Button>();
+        reButton = GameObject.Find("reButton").GetComponent<Button>();
+
 
         tenSecondsButton.onClick.RemoveAllListeners();
         tenSecondsButton.onClick.AddListener(tenSecondsEvent);
         tenSecondsButton.onClick.AddListener(ClosePanel);
 
+        yesButton.onClick.RemoveAllListeners();
+        yesButton.onClick.AddListener(yesEvent);
+        yesButton.onClick.AddListener(ClosePanel);
+
+        reButton.onClick.RemoveAllListeners();
+        reButton.onClick.AddListener(noEvent);
+        reButton.onClick.AddListener(ClosePanel);
+
         yesButton.gameObject.SetActive(true);
         reButton.gameObject.SetActive(true);
         tenSecondsButton.gameObject.SetActive(true);
-        */
-
     }
 
     void ClosePanel() {

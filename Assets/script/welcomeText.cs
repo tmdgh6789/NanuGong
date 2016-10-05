@@ -4,12 +4,10 @@ using System.Collections;
 
 public class welcomeText : MonoBehaviour {
     public Text welcome;
-    public CanvasRenderer welcomeObj;
 	
     // Use this for initialization
 	void Start () {
         welcome = GetComponent<Text>();
-        welcomeObj = GetComponent<CanvasRenderer>();
 
         string userName = PlayerPrefs.GetString("Nick");
         if (userName == null) {

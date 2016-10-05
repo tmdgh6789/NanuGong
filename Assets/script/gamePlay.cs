@@ -25,13 +25,11 @@ public class gamePlay : MonoBehaviour {
         Name = inputName.text;
         
         if(login.activeSelf == false) {
-            Debug.Log("login.activeSelf == false");
             SceneManager.LoadScene(1);
         } else {
             if (Name == "") {
 
             } else {
-                Debug.Log("else");
                 PlayerPrefs.SetString("Nick", Name);
                 SceneManager.LoadScene(1);
             }

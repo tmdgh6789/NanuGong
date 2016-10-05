@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System;
 using System.Collections;
 
 public class timerMove : MonoBehaviour {
@@ -13,13 +12,11 @@ public class timerMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        _timer = GameObject.FindObjectOfType<timerScript>();
+        _timer = FindObjectOfType<timerScript>();
         float time = _timer.timer;
         
         if (time > 0) {
-            this.transform.Translate(-0.0015f, 0.0f, 0.0f);
-        } else {
-            // ignore
+            transform.Translate(-0.0015f, 0.0f, 0.0f);
         }
         
     }
