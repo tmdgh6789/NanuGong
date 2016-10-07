@@ -56,12 +56,12 @@ public class buttonScript : MonoBehaviour {
         Sprite rainbowSpr = rainbow.GetComponent<SpriteRenderer>().sprite;
         Sprite ball7Spr = ball[7].GetComponent<SpriteRenderer>().sprite;
 
-        if (_bonus.gageValue <= 100) {
+        if (_bonus.gageValue < 105) {
             _bonus.bonus(5);
         }
 
         if (_score.value < 1000 || _combo.value < 3) {
-            if (_bonus.gageValue == 100.0f) {
+            if (_bonus.gageValue == 105.0f) {
                 randomBall = Instantiate(rainbow, new Vector3(0, 0.8f, -1), Quaternion.identity) as GameObject;
                 _bonus.gageValue = 0;
                 _bonus.baguetteGage.size = 0;
@@ -77,7 +77,7 @@ public class buttonScript : MonoBehaviour {
             newBall[2] = _start.leftRes[1];
             newBall[3] = _start.rightRes[1];
 
-            if (_bonus.gageValue == 100.0f) {
+            if (_bonus.gageValue == 105.0f) {
                 randomBall = Instantiate(rainbow, new Vector3(0, 0.8f, -1), Quaternion.identity) as GameObject;
                 _bonus.gageValue = 0;
                 _bonus.baguetteGage.size = 0;
@@ -95,7 +95,7 @@ public class buttonScript : MonoBehaviour {
             newBall[4] = _start.leftRes[2];
             newBall[5] = _start.rightRes[2];
 
-            if (_bonus.gageValue == 100.0f) {
+            if (_bonus.gageValue == 105.0f) {
                 randomBall = Instantiate(rainbow, new Vector3(0, 0.8f, -1), Quaternion.identity) as GameObject;
                 _bonus.gageValue = 0;
                 _bonus.baguetteGage.size = 0;
@@ -104,19 +104,16 @@ public class buttonScript : MonoBehaviour {
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.8f, -1), Quaternion.identity) as GameObject;
             }
         }
-            
+
+
+        float runningTime = 0.0f;
+        for (int i = 0; i < 7; i++) {
+            runningTime += Time.deltaTime;
+            InvokeRepeating("moveDown", 0, runningTime);
+            Invoke("moveStop", runningTime * 5);
+        }
         
         for (int i = 0; i < 8; i++) {
-            /*
-            if (i < 3) {
-                ball[i].transform.Translate(0.0f, -0.55f, (-i - 1));
-            } else if (i == 3) {
-                ball[i].transform.Translate(0.0f, -0.57f, -i);
-            } else {
-                ball[i].transform.Translate(0.0f, -0.78f, -i);
-            }
-            */
-            InvokeRepeating("moveDown", 0, Time.deltaTime);
             ball[i].transform.localScale = new Vector2(1 + (i * 0.15f), 1 + (i * 0.15f));
             ball[i].name = "ball" + (i + 1) + "(Clone)";
             randomBall.name = "ball0(Clone)";
@@ -143,21 +140,29 @@ public class buttonScript : MonoBehaviour {
         GameObject bomb = Instantiate(Resources.Load("bomb") as GameObject, ball[7].transform.position, Quaternion.identity) as GameObject;
         Destroy(bomb, 0.3f);
     }
-
-    float y = 0.0f;
+    
     void moveDown() {
-        if (y > -0.55f) {
-            ball[0] = GameObject.Find("ball0(Clone)");
-            ball[0].transform.Translate(0, -0.01f, 0);
-            y -= 0.01f;
-        } else {
-            return;
+        for (int i = 0; i < 7; i++) {
+            if (i < 3) {
+                ball[i].transform.Translate(0.0f, -0.03f, 0);
+            } else if (i == 3) { 
+                ball[i].transform.Translate(0.0f, -0.035f, 0);
+            } else {
+                ball[i].transform.Translate(0.0f, -0.055f, 0);
+            }
+            ball[i].transform.SetAsLastSibling();
         }
     }
+
     void moveLeft() {
         // ball.transform.Translate(-0.1f, -0.01f, 0);
     }
-     void moveRight() {
+
+    void moveRight() {
         // ball.transform.Translate(+0.1f, -0.01f, 0);
+    }
+
+    void moveStop() {
+        CancelInvoke();
     }
 }
