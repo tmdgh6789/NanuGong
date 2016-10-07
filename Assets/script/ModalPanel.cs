@@ -24,7 +24,7 @@ public class ModalPanel : MonoBehaviour {
     }
 
     // Yes/No/Cancel: A string, a Yes event, a No event and Cancel event
-    public void Choice(UnityAction tenSecondsEvent, UnityAction yesEvent, UnityAction noEvent) {
+    public void Choice(UnityAction tenSecondsEvent, UnityAction yesEvent, UnityAction reEvent) {
         modalPanelObject.SetActive(true);
 
         tenSecondsButton = GameObject.Find("tenSecondsButton").GetComponent<Button>();
@@ -41,7 +41,7 @@ public class ModalPanel : MonoBehaviour {
         yesButton.onClick.AddListener(ClosePanel);
 
         reButton.onClick.RemoveAllListeners();
-        reButton.onClick.AddListener(noEvent);
+        reButton.onClick.AddListener(reEvent);
         reButton.onClick.AddListener(ClosePanel);
 
         yesButton.gameObject.SetActive(true);

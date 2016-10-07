@@ -11,14 +11,13 @@ public class timerScript : MonoBehaviour {
 
     void Awake() {
         timerText = GetComponent<Text>();
-        sec = 60.0f;
+        sec = 30.0f;
         timer = sec;
     }
 
     // Update is called once per frame
     void Update() {
         if (timer > 0) {
-            timerText.transform.Translate(-0.043f, 0.0f, 0.0f);
             timer -= Time.deltaTime;
             timerText.text = "" + (int)timer;
         } else if (timer < 0) {
