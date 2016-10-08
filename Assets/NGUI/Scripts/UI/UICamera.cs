@@ -1,6 +1,6 @@
 //----------------------------------------------
 //            NGUI: Next-Gen UI kit
-// Copyright 짤 2011-2013 Tasharen Entertainment
+// Copyright 吏?2011-2013 Tasharen Entertainment
 //----------------------------------------------
 
 using UnityEngine;
@@ -726,7 +726,7 @@ public class UICamera : MonoBehaviour
 			Application.platform == RuntimePlatform.IPhonePlayer
 #if !UNITY_3_5 && !UNITY_4_0 && !UNITY_4_1
 			|| Application.platform == RuntimePlatform.WP8Player
-			|| Application.platform == RuntimePlatform.BB10Player
+			|| Application.platform == RuntimePlatform.BlackBerryPlayer
 #endif
 			)
 		{

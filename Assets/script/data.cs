@@ -5,6 +5,10 @@ public class data : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        if(PlayerPrefs.GetString("Nick") == null) {
+            PlayerPrefs.SetString("Nick", null);
+        }
+
         if (PlayerPrefs.GetInt("Coin") == 0) {
             PlayerPrefs.SetInt("Coin", 0);
         }
