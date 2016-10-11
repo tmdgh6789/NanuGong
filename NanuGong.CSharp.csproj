@@ -202,6 +202,11 @@
     <Compile Include="Assets\script\bgTimer.cs" />
     <Compile Include="Assets\script\bonusGage.cs" />
     <Compile Include="Assets\script\buttonScript.cs" />
+    <Compile Include="Assets\script\buySkin1.cs" />
+    <Compile Include="Assets\script\buySkin2.cs" />
+    <Compile Include="Assets\script\buySkin3.cs" />
+    <Compile Include="Assets\script\buySkin4.cs" />
+    <Compile Include="Assets\script\buySkinScript.cs" />
     <Compile Include="Assets\script\coinText.cs" />
     <Compile Include="Assets\script\combo.cs" />
     <Compile Include="Assets\script\data.cs" />
@@ -216,11 +221,11 @@
     <Compile Include="Assets\script\rightButtonScript.cs" />
     <Compile Include="Assets\script\score.cs" />
     <Compile Include="Assets\script\scoreText.cs" />
-    <Compile Include="Assets\script\shop.cs" />
     <Compile Include="Assets\script\shopBefore.cs" />
     <Compile Include="Assets\script\startScript.cs" />
     <Compile Include="Assets\script\timerMove.cs" />
     <Compile Include="Assets\script\timerScript.cs" />
+    <Compile Include="Assets\script\toShop.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
@@ -255,9 +260,7 @@
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
     <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
-    <None Include="Assets\Resources\Komika.txt" />
-    <None Include="Assets\Resources\font\Komika.txt" />
-    <None Include="Assets\fonts\Arphic\arlishugbmd_test\Readme.txt" />
+    <None Include="Assets\fonts\Komika.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
