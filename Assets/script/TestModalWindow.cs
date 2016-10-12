@@ -29,10 +29,8 @@ public class TestModalWindow : MonoBehaviour {
     //  These are wrapped into UnityActions
     void TestTenSecondsFunction() {
         GameObject timeBar = GameObject.Find("timeBar");
-        GameObject time = GameObject.Find("time");
         timer.timer = 10.0f;
-        timeBar.transform.Translate(1.0f, 0.0f, 0.0f);
-        time.transform.Translate(25.0f, 0.0f, 0.0f);
+        timeBar.transform.Translate(125.0f, 0.0f, 0.0f);
     }
 
     void TestYesFunction() {

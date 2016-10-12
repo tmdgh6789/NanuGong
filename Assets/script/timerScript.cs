@@ -4,14 +4,18 @@ using System.Collections;
 
 public class timerScript : MonoBehaviour {
     public float timer;
-    public float sec;
+    public static float sec;
     public TestModalWindow TestModalWindow;
     private Text timerText;
     public Canvas comboCanvas;
 
     void Awake() {
         timerText = GetComponent<Text>();
-        sec = 30.0f;
+        if (itemToggle.sec > 0) {
+            sec = itemToggle.sec;
+        } else {
+            sec = 30.0f;
+        }
         timer = sec;
     }
 

@@ -5,7 +5,7 @@ public class rightButtonScript : MonoBehaviour {
 
     buttonScript _buttonScript;
 
-    void OnMouseDown() {
+    public void OnMouseDown() {
         _buttonScript = FindObjectOfType<buttonScript>();
         _buttonScript.button("right");
     }

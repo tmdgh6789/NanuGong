@@ -214,8 +214,8 @@
     <Compile Include="Assets\script\finish.cs" />
     <Compile Include="Assets\script\gamePlay.cs" />
     <Compile Include="Assets\script\gameStart.cs" />
+    <Compile Include="Assets\script\itemToggle.cs" />
     <Compile Include="Assets\script\leftButtonScript.cs" />
-    <Compile Include="Assets\script\login.cs" />
     <Compile Include="Assets\script\myCoinText.cs" />
     <Compile Include="Assets\script\nickModify.cs" />
     <Compile Include="Assets\script\rightButtonScript.cs" />

@@ -31,7 +31,6 @@ public class ModalPanel : MonoBehaviour {
         yesButton = GameObject.Find("yesButton").GetComponent<Button>();
         reButton = GameObject.Find("reButton").GetComponent<Button>();
 
-
         tenSecondsButton.onClick.RemoveAllListeners();
         tenSecondsButton.onClick.AddListener(tenSecondsEvent);
         tenSecondsButton.onClick.AddListener(ClosePanel);

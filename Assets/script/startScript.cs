@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class startScript : MonoBehaviour {
@@ -6,6 +7,7 @@ public class startScript : MonoBehaviour {
     score _score;
     combo _combo;
 
+    public Canvas canvas;
     public ArrayList buttonRes = new ArrayList();
     public GameObject[] leftRes = new GameObject[3];
     public GameObject[] leftBall = new GameObject[3];
@@ -17,33 +19,62 @@ public class startScript : MonoBehaviour {
     public Sprite[] rightSpr = new Sprite[3];
 
     // Use this for initialization
-    void Start () {
+    void Start() {
         GameObject[] res = new GameObject[6];
+
         int i = 0;
         for (i = 0; i < 6; i++) {
             res[i] = Resources.Load("random" + i) as GameObject;
             buttonRes.Add(res[i] as GameObject);
         }
 
-        ballCreat(0, 6, -2.5f);
+        ballCreat(0, 6, -2.5f);  //조건 공임
 
-        for (i = 0; i < 8; i++) {
-            startRes[0] = leftRes[0];
-            startRes[1] = rightRes[0];
+        if (itemToggle.super) {
+            for (i = 0; i < 8; i++) {
+                startRes[0] = leftRes[0];
+                startRes[1] = rightRes[0];
+                
+                startBall[i] = Instantiate(startRes[0]) as GameObject;
+                if (i < 4) {
+                    startBall[i].transform.position = new Vector3(0, 210.0f - (130.0f + (i * 5)), -i);
+                } else if (i == 4) {
+                    startBall[i].transform.Translate(0, 0.0f, 0.0f);
+                } else {
+                    startBall[i].transform.Translate(0, 0.0f, 0.0f);
+                }
+                startBall[i].transform.localScale = new Vector2(1.0f + ((float)i / 10), 1.0f + ((float)i / 10));
+                startBall[i].name = "ball" + i + "(Clone)";
+            }
+        } else {
+            
+            for (i = 0; i < 8; i++) {
+                startRes[0] = leftRes[0];
+                startRes[1] = rightRes[0];
+                
+                startBall[i] = Instantiate(startRes[Random.Range(0, 2)]) as GameObject;
 
-            if (i < 4) {
-                startBall[i] = Instantiate(startRes[Random.Range(0, 2)], new Vector3(0, 0.8f - (i * 0.55f), -i - 1), Quaternion.identity) as GameObject;
-            } else {
-                startBall[i] = Instantiate(startRes[Random.Range(0, 2)], new Vector3(0, 1.7f - (i * 0.78f), -i - 1), Quaternion.identity) as GameObject;
+                if (i < 2) {
+                    startBall[i].transform.Translate(0, 0.7f - (i * 0.5f), -i);
+                } else if (i == 2) {
+                    startBall[i].transform.Translate(0, -0.2f, -i);
+                } else if (i == 3) {
+                    startBall[i].transform.Translate(0, -0.7f, -i);
+                } else if (i < 6) {
+                    startBall[i].transform.Translate(0, -0.7f - (0.6f * (i - 3)), -i);
+                } else if (i == 6) {
+                    startBall[i].transform.Translate(0, -2.5f, -i);
+                } else {
+                    startBall[i].transform.Translate(0, -3.2f, -i);
+                }
+
+                startBall[i].transform.localScale = new Vector2(1.1f + ((float)i / 10), 1.1f + ((float)i / 10));
+                startBall[i].name = "ball" + i + "(Clone)";
             }
-            if (i < 7) {
-                startBall[i].transform.localScale = new Vector2(1 + (i * 0.15f), 1 + (i * 0.15f));
-            } else {
-                startBall[i].transform.localScale = new Vector2(1.9f, 1.9f);
-            }
-            startBall[i].name = "ball" + i + "(Clone)";
+            // 위에 부분 규칙 찾아서 반복문 안으로
         }
     }
+
 
     public void ballCreat(int n, int r, float pos) {
         if (!leftBall[n]) {

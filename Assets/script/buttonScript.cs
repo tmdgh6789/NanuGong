@@ -37,13 +37,13 @@ public class buttonScript : MonoBehaviour {
             Sprite ball7Spr = ball[7].GetComponent<SpriteRenderer>().sprite;
             if (value == "left") {
                 if (ball7Spr == leftSpr[0] || ball7Spr == leftSpr[1] || ball7Spr == leftSpr[2] || ball7Spr == rainbowSpr) {
-                    ButtonOk();
+                    ButtonOk("left");
                 } else {
                     ButtonNo();
                 }
             } else {
                 if (ball7Spr == rightSpr[0] || ball7Spr == rightSpr[1] || ball7Spr == rightSpr[2] || ball7Spr == rainbowSpr) {
-                    ButtonOk();
+                    ButtonOk("right");
                 } else {
                     ButtonNo();
                 }
@@ -51,7 +51,7 @@ public class buttonScript : MonoBehaviour {
         }
     }
 
-    void ButtonOk() {
+    void ButtonOk(string course) {
         GameObject rainbow = Resources.Load("picnic") as GameObject;
         Sprite rainbowSpr = rainbow.GetComponent<SpriteRenderer>().sprite;
         Sprite ball7Spr = ball[7].GetComponent<SpriteRenderer>().sprite;
@@ -107,12 +107,24 @@ public class buttonScript : MonoBehaviour {
 
 
         float runningTime = 0.0f;
+
+
         for (int i = 0; i < 7; i++) {
             runningTime += Time.deltaTime;
             InvokeRepeating("moveDown", 0, runningTime);
             Invoke("moveStop", runningTime * 5);
         }
-        
+
+        runningTime = 0;
+
+        if (course == "left") {
+            runningTime += Time.deltaTime;
+            InvokeRepeating("moveLeft", 0, runningTime);
+        } else if (course == "right") {
+            runningTime += Time.deltaTime;
+            InvokeRepeating("moveRight", 0, runningTime);
+        }
+
         for (int i = 0; i < 8; i++) {
             ball[i].transform.localScale = new Vector2(1 + (i * 0.15f), 1 + (i * 0.15f));
             ball[i].name = "ball" + (i + 1) + "(Clone)";
@@ -125,7 +137,7 @@ public class buttonScript : MonoBehaviour {
             timeBar.transform.Translate(0.6f, 0.0f, 0.0f);
         }
 
-        Destroy(ball[7], 0.1f);
+        Destroy(ball[7], runningTime * 5);
         comboCanvas.GetComponent<Canvas>().enabled = true;
         _combo.value += 1;
         _score.value += 100f + (_combo.value * 0.5f);
@@ -140,26 +152,25 @@ public class buttonScript : MonoBehaviour {
         GameObject bomb = Instantiate(Resources.Load("bomb") as GameObject, ball[7].transform.position, Quaternion.identity) as GameObject;
         Destroy(bomb, 0.3f);
     }
-    
+
     void moveDown() {
         for (int i = 0; i < 7; i++) {
             if (i < 3) {
-                ball[i].transform.Translate(0.0f, -0.03f, 0);
-            } else if (i == 3) { 
-                ball[i].transform.Translate(0.0f, -0.035f, 0);
+                ball[i].transform.Translate(0.0f, -0.03f, -i * 0.01f - 0.01f);
+            } else if (i == 3) {
+                ball[i].transform.Translate(0.0f, -0.035f, -i * 0.01f - 0.01f);
             } else {
-                ball[i].transform.Translate(0.0f, -0.055f, 0);
+                ball[i].transform.Translate(0.0f, -0.055f, -i * 0.01f - 0.01f);
             }
-            ball[i].transform.SetAsLastSibling();
         }
     }
 
     void moveLeft() {
-        // ball.transform.Translate(-0.1f, -0.01f, 0);
+        ball[7].transform.Translate(-0.3f, -0.2f, 0);
     }
 
     void moveRight() {
-        // ball.transform.Translate(+0.1f, -0.01f, 0);
+        ball[7].transform.Translate(0.3f, -0.2f, 0);
     }
 
     void moveStop() {
