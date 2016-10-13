@@ -20,15 +20,15 @@ public class startScript : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        GameObject[] res = new GameObject[6];
+        GameObject[] res = new GameObject[8];
 
         int i = 0;
-        for (i = 0; i < 6; i++) {
+        for (i = 0; i < 8; i++) {
             res[i] = Resources.Load("random" + i) as GameObject;
             buttonRes.Add(res[i] as GameObject);
         }
 
-        ballCreat(0, 6, -2.5f);  //조건 공임
+        ballCreate(0, 8, -2.5f);  //조건 공임
 
         if (itemToggle.super) {
             for (i = 0; i < 8; i++) {
@@ -36,13 +36,21 @@ public class startScript : MonoBehaviour {
                 startRes[1] = rightRes[0];
                 
                 startBall[i] = Instantiate(startRes[0]) as GameObject;
-                if (i < 4) {
-                    startBall[i].transform.position = new Vector3(0, 210.0f - (130.0f + (i * 5)), -i);
-                } else if (i == 4) {
-                    startBall[i].transform.Translate(0, 0.0f, 0.0f);
+
+                if (i < 2) {
+                    startBall[i].transform.Translate(0, 0.7f - (i * 0.5f), -i);
+                } else if (i == 2) {
+                    startBall[i].transform.Translate(0, -0.2f, -i);
+                } else if (i == 3) {
+                    startBall[i].transform.Translate(0, -0.7f, -i);
+                } else if (i < 6) {
+                    startBall[i].transform.Translate(0, -0.7f - (0.6f * (i - 3)), -i);
+                } else if (i == 6) {
+                    startBall[i].transform.Translate(0, -2.5f, -i);
                 } else {
-                    startBall[i].transform.Translate(0, 0.0f, 0.0f);
+                    startBall[i].transform.Translate(0, -3.2f, -i);
                 }
+
                 startBall[i].transform.localScale = new Vector2(1.0f + ((float)i / 10), 1.0f + ((float)i / 10));
                 startBall[i].name = "ball" + i + "(Clone)";
             }
@@ -76,7 +84,7 @@ public class startScript : MonoBehaviour {
     }
 
 
-    public void ballCreat(int n, int r, float pos) {
+    public void ballCreate(int n, int r, float pos) {
         if (!leftBall[n]) {
             leftRes[n] = buttonRes[Random.Range(0, r)] as GameObject;
             leftBall[n] = Instantiate(leftRes[n] as GameObject, new Vector2(-2, pos), Quaternion.identity) as GameObject;
