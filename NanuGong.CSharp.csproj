@@ -207,24 +207,36 @@
     <Compile Include="Assets\script\buySkin3.cs" />
     <Compile Include="Assets\script\buySkin4.cs" />
     <Compile Include="Assets\script\buySkinScript.cs" />
+    <Compile Include="Assets\script\changeSkin1.cs" />
+    <Compile Include="Assets\script\changeSkin2.cs" />
+    <Compile Include="Assets\script\changeSkin3.cs" />
+    <Compile Include="Assets\script\changeSkin4.cs" />
+    <Compile Include="Assets\script\changeSkinScript.cs" />
     <Compile Include="Assets\script\coinText.cs" />
     <Compile Include="Assets\script\combo.cs" />
     <Compile Include="Assets\script\data.cs" />
     <Compile Include="Assets\script\deleteData.cs" />
+    <Compile Include="Assets\script\emptyFunction.cs" />
     <Compile Include="Assets\script\finish.cs" />
     <Compile Include="Assets\script\gameReady.cs" />
     <Compile Include="Assets\script\gameStart.cs" />
     <Compile Include="Assets\script\itemToggle.cs" />
     <Compile Include="Assets\script\leftButtonScript.cs" />
     <Compile Include="Assets\script\myCoinText.cs" />
+    <Compile Include="Assets\script\mySkin.cs" />
+    <Compile Include="Assets\script\myroomNick.cs" />
     <Compile Include="Assets\script\nickModify.cs" />
     <Compile Include="Assets\script\rightButtonScript.cs" />
     <Compile Include="Assets\script\score.cs" />
     <Compile Include="Assets\script\scoreText.cs" />
-    <Compile Include="Assets\script\shopBefore.cs" />
+    <Compile Include="Assets\script\skinName1.cs" />
+    <Compile Include="Assets\script\skinName2.cs" />
+    <Compile Include="Assets\script\skinName3.cs" />
+    <Compile Include="Assets\script\skinName4.cs" />
     <Compile Include="Assets\script\startScript.cs" />
     <Compile Include="Assets\script\timerMove.cs" />
     <Compile Include="Assets\script\timerScript.cs" />
+    <Compile Include="Assets\script\toMyRoom.cs" />
     <Compile Include="Assets\script\toShop.cs" />
   </ItemGroup>
   <ItemGroup>

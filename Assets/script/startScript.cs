@@ -28,7 +28,7 @@ public class startScript : MonoBehaviour {
             buttonRes.Add(res[i] as GameObject);
         }
 
-        ballCreate(0, 8, -2.5f);  //조건 공임
+        startballCreate(0, 8, -1);  // 첫번째 left, right ball 생성
 
         if (itemToggle.super) {
             for (i = 0; i < 8; i++) {
@@ -51,7 +51,7 @@ public class startScript : MonoBehaviour {
                     startBall[i].transform.Translate(0, -3.2f, -i);
                 }
 
-                startBall[i].transform.localScale = new Vector2(1.0f + ((float)i / 10), 1.0f + ((float)i / 10));
+                startBall[i].transform.localScale = new Vector2(1.1f + ((float)i / 10), 1.1f + ((float)i / 10));
                 startBall[i].name = "ball" + i + "(Clone)";
             }
         } else {
@@ -84,28 +84,66 @@ public class startScript : MonoBehaviour {
     }
 
 
-    public void ballCreate(int n, int r, float pos) {
+    public void startballCreate(int n, int r, float pos) {
         if (!leftBall[n]) {
             leftRes[n] = buttonRes[Random.Range(0, r)] as GameObject;
-            leftBall[n] = Instantiate(leftRes[n] as GameObject, new Vector2(-2, pos), Quaternion.identity) as GameObject;
+            leftBall[n] = Instantiate(leftRes[n] as GameObject, new Vector2(-1.8f, pos), Quaternion.identity) as GameObject;
             leftSpr[n] = leftBall[n].GetComponent<SpriteRenderer>().sprite;
-            leftBall[n].transform.localScale = new Vector2(2f, 2f);
+            leftBall[n].transform.localScale = new Vector2(1.6f, 1.6f);
             leftBall[n].name = "left" + n + "(Clone)";
 
             for (int i = 0; i < r; i++) {
                 if (leftRes[n] == buttonRes[i] as GameObject) {
                     buttonRes.RemoveAt(i);
                     rightRes[n] = buttonRes[Random.Range(0, r - 1)] as GameObject;
-                    rightBall[n] = Instantiate(rightRes[n] as GameObject, new Vector2(2, pos), Quaternion.identity) as GameObject;
+                    rightBall[n] = Instantiate(rightRes[n] as GameObject, new Vector2(1.8f, pos), Quaternion.identity) as GameObject;
                     rightSpr[n] = rightBall[n].GetComponent<SpriteRenderer>().sprite;
                     rightBall[n].name = "right" + n + "(Clone)";
-                    rightBall[n].transform.localScale = new Vector2(2f, 2f);
+                    rightBall[n].transform.localScale = new Vector2(1.6f, 1.6f);
                     for (int j = 0; j < (r - 1); j++) {
                         if (rightRes[n] == buttonRes[j] as GameObject) {
                             buttonRes.RemoveAt(j);
                             break;
                         }
                     }
+                    break;
+                }
+            }
+        }
+    }
+
+    public void leftballCreate(int n, int r, float pos) {
+        if (!leftBall[n]) {
+            if (n == 1) {
+                leftBall[n - 1].transform.Translate(0, -1.1f, 0);
+            }
+            leftRes[n] = buttonRes[Random.Range(0, r)] as GameObject;
+            leftBall[n] = Instantiate(leftRes[n] as GameObject, new Vector2(-1.8f, pos), Quaternion.identity) as GameObject;
+            leftSpr[n] = leftBall[n].GetComponent<SpriteRenderer>().sprite;
+            leftBall[n].transform.localScale = new Vector2(1.6f, 1.6f);
+            leftBall[n].name = "left" + n + "(Clone)";
+            for (int i = 0; i < r; i++) {
+                if (leftRes[n] == buttonRes[i] as GameObject) {
+                    buttonRes.RemoveAt(i);
+                    break;
+                }
+            }
+        }
+    }
+
+    public void rightballCreate(int n, int r, float pos) {
+        if (!rightBall[n]) {
+            if (n == 1) {
+                rightBall[n - 1].transform.Translate(0, -1.1f, 0);
+            }
+            rightRes[n] = buttonRes[Random.Range(0, r)] as GameObject;
+            rightBall[n] = Instantiate(rightRes[n] as GameObject, new Vector2(1.8f, pos), Quaternion.identity) as GameObject;
+            rightSpr[n] = rightBall[n].GetComponent<SpriteRenderer>().sprite;
+            rightBall[n].transform.localScale = new Vector2(1.6f, 1.6f);
+            rightBall[n].name = "left" + n + "(Clone)";
+            for (int i = 0; i < r; i++) {
+                if (rightRes[n] == buttonRes[i] as GameObject) {
+                    buttonRes.RemoveAt(i);
                     break;
                 }
             }

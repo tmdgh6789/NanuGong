@@ -16,6 +16,8 @@ public class buttonScript : MonoBehaviour {
     GameObject[] ball = new GameObject[8];
 
     public Canvas comboCanvas;
+    public GameObject leftButton;
+    public GameObject rightButton;
 
     public void button(string value) {
         _start = FindObjectOfType<startScript>();
@@ -35,6 +37,7 @@ public class buttonScript : MonoBehaviour {
                 ball[i] = GameObject.Find("ball" + i + "(Clone)");
             }
             Sprite ball7Spr = ball[7].GetComponent<SpriteRenderer>().sprite;
+            
             if (value == "left") {
                 if (ball7Spr == leftSpr[0] || ball7Spr == leftSpr[1] || ball7Spr == leftSpr[2] || ball7Spr == bonusBallSpr) {
                     ButtonOk("left");
@@ -55,22 +58,29 @@ public class buttonScript : MonoBehaviour {
         GameObject bonusBall = Resources.Load("bonus") as GameObject;
         Sprite bonusBallSpr = bonusBall.GetComponent<SpriteRenderer>().sprite;
         Sprite ball7Spr = ball[7].GetComponent<SpriteRenderer>().sprite;
+        
+        bool level1 = (_score.value < 500) || (_combo.value < 3);
+        bool level2 = (_score.value > 499 && _score.value < 1000) || (_combo.value > 2 && _combo.value < 6);
+        bool level3 = (_score.value > 999 && _score.value < 1500) || (_combo.value > 5 && _combo.value < 9);
+        bool level4 = (_score.value > 1499 && _score.value < 2000) || (_combo.value > 8 && _combo.value < 15);
+        bool level5 = (_score.value > 1999) || (_combo.value > 14);
+
 
         if (_bonus.gageValue < 105) {
             _bonus.bonus(5);
         }
-
-        if (_score.value < 1000 || _combo.value < 3) {
+        
+        if (level1) {
             if (_bonus.gageValue == 105.0f) {
                 randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
                 _bonus.gageValue = 0;
                 _bonus.baguetteGage.size = 0;
             } else {
-                randomRes = _start.startRes[Random.Range(0, 4)] as GameObject;
+                randomRes = _start.startRes[Random.Range(0, 2)] as GameObject;
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
             }
-        } else if ((_score.value > 999 && _score.value < 1500) || (_combo.value > 2 && _combo.value < 10)) {
-            _start.ballCreate(1, 6, -1);
+        } else if (level2) {
+            _start.leftballCreate(1, 6, -0.7f);
 
             newBall[0] = _start.leftRes[0];
             newBall[1] = _start.rightRes[0];
@@ -82,11 +92,11 @@ public class buttonScript : MonoBehaviour {
                 _bonus.gageValue = 0;
                 _bonus.baguetteGage.size = 0;
             } else {
-                randomRes = newBall[Random.Range(0, 6)];
+                randomRes = newBall[Random.Range(0, 3)];
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
             }
-        } else if ((_score.value > 1499) || (_combo.value > 9)) {
-            _start.ballCreate(2, 4, 0.5f);
+        } else if (level3) {
+            _start.rightballCreate(1, 5, -0.7f);
 
             newBall[0] = _start.leftRes[0];
             newBall[1] = _start.rightRes[0];
@@ -100,21 +110,53 @@ public class buttonScript : MonoBehaviour {
                 _bonus.gageValue = 0;
                 _bonus.baguetteGage.size = 0;
             } else {
-                randomRes = newBall[Random.Range(0, 8)];
+                randomRes = newBall[Random.Range(0, 4)];
+                randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+            }
+        } else if (level4) {
+            _start.leftballCreate(2, 4, 0.7f);
+
+            newBall[0] = _start.leftRes[0];
+            newBall[1] = _start.rightRes[0];
+            newBall[2] = _start.leftRes[1];
+            newBall[3] = _start.rightRes[1];
+            newBall[4] = _start.leftRes[2];
+            newBall[5] = _start.rightRes[2];
+
+            if (_bonus.gageValue == 105.0f) {
+                randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                _bonus.gageValue = 0;
+                _bonus.baguetteGage.size = 0;
+            } else {
+                randomRes = newBall[Random.Range(0, 5)];
+                randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+            }
+        } else if (level5) {
+            _start.rightballCreate(2, 3, 0.7f);
+
+            newBall[0] = _start.leftRes[0];
+            newBall[1] = _start.rightRes[0];
+            newBall[2] = _start.leftRes[1];
+            newBall[3] = _start.rightRes[1];
+            newBall[4] = _start.leftRes[2];
+            newBall[5] = _start.rightRes[2];
+
+            if (_bonus.gageValue == 105.0f) {
+                randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                _bonus.gageValue = 0;
+                _bonus.baguetteGage.size = 0;
+            } else {
+                randomRes = newBall[Random.Range(0, 6)];
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
             }
         }
 
-
         float runningTime = 0.0f;
-
-
         for (int i = 0; i < 7; i++) {
             runningTime += Time.deltaTime;
             InvokeRepeating("moveDown", 0, runningTime);
             Invoke("moveStop", runningTime * 5);
         }
-
         runningTime = 0;
 
         if (course == "left") {
@@ -137,16 +179,28 @@ public class buttonScript : MonoBehaviour {
             timeBar.transform.Translate(0.6f, 0.0f, 0.0f);
         }
 
-        Destroy(ball[7], runningTime * 5);
+        Destroy(ball[7], runningTime * 6);
         comboCanvas.GetComponent<Canvas>().enabled = true;
+        /*
+        float comboTime = 0.0f;
+        for (int i = 0; i < 7; i++) {
+            comboTime += Time.deltaTime;
+            InvokeRepeating("comboEnable", 0, comboTime);
+            Invoke("comboCancel", comboTime * 5);
+        }
+        */
         _combo.value += 1;
         _score.value += 100f + (_combo.value * 0.5f);
+
     }
 
     void ButtonNo() {
         if (_bonus.gageValue > 0) {
             _bonus.bonus(-10);
         }
+        leftButton.GetComponent<Button>().enabled = false;
+        rightButton.GetComponent<Button>().enabled = false;
+        Invoke("buttonActivate", 0.5f);
         comboCanvas.GetComponent<Canvas>().enabled = false;
         _combo.value = 0;
         GameObject bomb = Instantiate(Resources.Load("bomb") as GameObject, ball[7].transform.position, Quaternion.identity) as GameObject;
@@ -156,12 +210,19 @@ public class buttonScript : MonoBehaviour {
 
     void moveDown() {
         for (int i = 0; i < 7; i++) {
-            if (i < 3) {
-                ball[i].transform.Translate(0.0f, -0.03f, -i * 0.01f - 0.01f);
+
+            if (i < 2) {
+                ball[i].transform.Translate(0, -0.025f, -i * 0.01f - 0.01f);
+            } else if (i == 2) {
+                ball[i].transform.Translate(0, -0.03f, -i * 0.01f - 0.01f);
             } else if (i == 3) {
-                ball[i].transform.Translate(0.0f, -0.035f, -i * 0.01f - 0.01f);
+                ball[i].transform.Translate(0, -0.035f, -i * 0.01f - 0.01f);
+            } else if (i < 6) {
+                ball[i].transform.Translate(0, -0.045f, -i * 0.01f - 0.01f);
+            } else if (i == 6) {
+                ball[i].transform.Translate(0, -0.05f, -i * 0.01f - 0.01f);
             } else {
-                ball[i].transform.Translate(0.0f, -0.055f, -i * 0.01f - 0.01f);
+                ball[i].transform.Translate(0, -0.06f, -i * 0.01f - 0.01f);
             }
         }
     }
@@ -176,5 +237,19 @@ public class buttonScript : MonoBehaviour {
 
     void moveStop() {
         CancelInvoke();
+    }
+
+    void comboEnable() {
+        comboCanvas.GetComponent<Canvas>().enabled = true;
+    }
+
+    void comboCancel() {
+        comboCanvas.GetComponent<Canvas>().enabled = false;
+        _combo.value = 0;
+    }
+
+    void buttonActivate() {
+        leftButton.GetComponent<Button>().enabled = true;
+        rightButton.GetComponent<Button>().enabled = true;
     }
 }

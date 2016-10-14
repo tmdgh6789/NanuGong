@@ -5,7 +5,7 @@ public class buySkin3 : MonoBehaviour {
 
     buySkinScript buySkin;
 
-    public int charPrice = 3600;
+    public int charPrice = 5;
 
     public void OnMouseDown() {
         buySkin = FindObjectOfType<buySkinScript>();
