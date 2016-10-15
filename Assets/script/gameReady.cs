@@ -60,11 +60,20 @@ public class gameReady : MonoBehaviour {
             SceneManager.LoadScene(1);
         } else {
             if (Name == "") {
-
+                joinPanelObject.SetActive(false);
+                textPanelObject.SetActive(true);
+                text = GameObject.Find("text").GetComponent<Text>();
+                text.text = userName + "닉네임을 입력해주세요!";
+                Invoke("HideText", 0.5f);
             } else {
                 PlayerPrefs.SetString("Nick", Name);
+                PlayerPrefs.SetString("CurrentSkin", "default");
                 SceneManager.LoadScene(1);
             }
         }
+    }
+
+    void HideText() {
+        textPanelObject.SetActive(false);
     }
 }

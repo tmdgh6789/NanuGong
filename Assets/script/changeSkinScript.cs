@@ -48,39 +48,51 @@ public class changeSkinScript : MonoBehaviour {
             case "skin1":
                 skinNameText.text = "엄마 주먹밥";
 
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin1").gameObject.SetActive(true);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin2").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin3").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin4").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char1").gameObject.SetActive(true);
+                GameObject.Find("charPanel").transform.FindChild("char2").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char3").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
+
+                PlayerPrefs.SetString("CurrentSkin", "skin1");
                 break;
+
             case "skin2":
                 skinNameText.text = "아빠 주먹밥";
 
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin1").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin2").gameObject.SetActive(true);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin3").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin4").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char1").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char2").gameObject.SetActive(true);
+                GameObject.Find("charPanel").transform.FindChild("char3").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
+
+                PlayerPrefs.SetString("CurrentSkin", "skin2");
                 break;
+
             case "skin3":
                 skinNameText.text = "오빠 주먹밥";
 
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin1").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin2").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin3").gameObject.SetActive(true);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin4").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char1").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char2").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char3").gameObject.SetActive(true);
+                GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
+
+                PlayerPrefs.SetString("CurrentSkin", "skin3");
                 break;
+
             case "skin4":
                 skinNameText.text = "동생 주먹밥";
 
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin1").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin2").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin3").gameObject.SetActive(false);
-                GameObject.Find("currentSkinPanel").transform.FindChild("Skin4").gameObject.SetActive(true);
-                GameObject.Find("currentSkinPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char1").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char2").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char3").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(true);
+                GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
+                
+                PlayerPrefs.SetString("CurrentSkin", "skin4");
                 break;
+
             default:
                 Debug.Log("default");
                 break;
