@@ -17,6 +17,8 @@ public class gameReady : MonoBehaviour {
     public GameObject nickModifyObject;
     public GameObject deleteAllDataObject;
 
+    public GameObject bgmObj;
+
     private static ModalPanel joinPanel;
     private static ModalPanel loginPanel;
     private static ModalPanel textPanel;
@@ -55,8 +57,10 @@ public class gameReady : MonoBehaviour {
 
     public void OnMouseDown() {
         Name = inputName.text;
+        bgmObj = GameObject.Find("BGM");
 
         if (joinPanelObject.activeSelf == false) {
+            DontDestroyOnLoad(bgmObj);
             SceneManager.LoadScene(1);
         } else {
             if (Name == "") {

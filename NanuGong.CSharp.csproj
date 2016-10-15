@@ -200,6 +200,7 @@
     <Compile Include="Assets\script\bestScoreTextPlay.cs" />
     <Compile Include="Assets\script\bestScoreTextReady.cs" />
     <Compile Include="Assets\script\bgTimer.cs" />
+    <Compile Include="Assets\script\bgm.cs" />
     <Compile Include="Assets\script\bonusGage.cs" />
     <Compile Include="Assets\script\buttonScript.cs" />
     <Compile Include="Assets\script\buySkin1.cs" />

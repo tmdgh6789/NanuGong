@@ -11,6 +11,9 @@ public class TestModalWindow : MonoBehaviour {
     private UnityAction myTenSecondsFunction;
     private UnityAction myYesAction;
     private UnityAction myReAction;
+    
+    public GameObject bgmObj;
+    public AudioSource bgmSource;
 
     void Awake() {
         modalPanel = ModalPanel.Instance();
@@ -34,6 +37,10 @@ public class TestModalWindow : MonoBehaviour {
     }
 
     void TestYesFunction() {
+        bgmObj = GameObject.Find("BGM");
+        bgmSource = bgmObj.GetComponent<AudioSource>();
+        bgmSource.Play();
+        DontDestroyOnLoad(bgmObj);
         SceneManager.LoadScene(1);
     }
 

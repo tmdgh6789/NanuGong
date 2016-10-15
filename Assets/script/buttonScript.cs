@@ -80,7 +80,7 @@ public class buttonScript : MonoBehaviour {
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
             }
         } else if (level2) {
-            _start.leftballCreate(1, 6, -0.7f);
+            _start.leftballCreate(1, 6, -0.1f);
 
             newBall[0] = _start.leftRes[0];
             newBall[1] = _start.rightRes[0];
@@ -96,7 +96,7 @@ public class buttonScript : MonoBehaviour {
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
             }
         } else if (level3) {
-            _start.rightballCreate(1, 5, -0.7f);
+            _start.rightballCreate(1, 5, -0.1f);
 
             newBall[0] = _start.leftRes[0];
             newBall[1] = _start.rightRes[0];

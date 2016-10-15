@@ -39,6 +39,15 @@ public class changeSkinScript : MonoBehaviour {
         if (count == 0) {
             GameObject.Find("mySkinPanel").transform.FindChild("Text").gameObject.SetActive(true);
             text.text = "보유 스킨이 없습니다.";
+        } else if (count == 1) {
+            GameObject.Find("mySkinPanel").transform.FindChild("emptySpace1").gameObject.SetActive(true);
+            GameObject.Find("mySkinPanel").transform.FindChild("emptySpace2").gameObject.SetActive(true);
+            GameObject.Find("mySkinPanel").transform.FindChild("emptySpace3").gameObject.SetActive(true);
+        } else if (count == 2) {
+            GameObject.Find("mySkinPanel").transform.FindChild("emptySpace1").gameObject.SetActive(true);
+            GameObject.Find("mySkinPanel").transform.FindChild("emptySpace2").gameObject.SetActive(true);
+        } else if (count == 3) {
+            GameObject.Find("mySkinPanel").transform.FindChild("emptySpace1").gameObject.SetActive(true);
         }
     }
     

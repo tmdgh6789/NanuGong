@@ -115,7 +115,10 @@ public class startScript : MonoBehaviour {
     public void leftballCreate(int n, int r, float pos) {
         if (!leftBall[n]) {
             if (n == 1) {
-                leftBall[n - 1].transform.Translate(0, -1.1f, 0);
+                leftBall[n - 1].transform.Translate(0, -0.6f, 0);
+            } else if (n == 2) {
+                leftBall[n - 2].transform.Translate(0, -0.4f, 0);
+                leftBall[n - 1].transform.Translate(0, -0.55f, 0);
             }
             leftRes[n] = buttonRes[Random.Range(0, r)] as GameObject;
             leftBall[n] = Instantiate(leftRes[n] as GameObject, new Vector2(-1.8f, pos), Quaternion.identity) as GameObject;
@@ -134,7 +137,10 @@ public class startScript : MonoBehaviour {
     public void rightballCreate(int n, int r, float pos) {
         if (!rightBall[n]) {
             if (n == 1) {
-                rightBall[n - 1].transform.Translate(0, -1.1f, 0);
+                rightBall[n - 1].transform.Translate(0, -0.6f, 0);
+            } else if (n == 2) {
+                rightBall[n - 2].transform.Translate(0, -0.4f, 0);
+                rightBall[n - 1].transform.Translate(0, -0.55f, 0);
             }
             rightRes[n] = buttonRes[Random.Range(0, r)] as GameObject;
             rightBall[n] = Instantiate(rightRes[n] as GameObject, new Vector2(1.8f, pos), Quaternion.identity) as GameObject;
