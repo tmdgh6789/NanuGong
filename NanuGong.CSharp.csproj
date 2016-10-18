@@ -200,7 +200,6 @@
     <Compile Include="Assets\script\bestScoreTextPlay.cs" />
     <Compile Include="Assets\script\bestScoreTextReady.cs" />
     <Compile Include="Assets\script\bgTimer.cs" />
-    <Compile Include="Assets\script\bgm.cs" />
     <Compile Include="Assets\script\bonusGage.cs" />
     <Compile Include="Assets\script\buttonScript.cs" />
     <Compile Include="Assets\script\buySkin1.cs" />
@@ -219,6 +218,7 @@
     <Compile Include="Assets\script\data.cs" />
     <Compile Include="Assets\script\deleteData.cs" />
     <Compile Include="Assets\script\displayChar.cs" />
+    <Compile Include="Assets\script\effectSound.cs" />
     <Compile Include="Assets\script\emptyFunction.cs" />
     <Compile Include="Assets\script\finish.cs" />
     <Compile Include="Assets\script\gameReady.cs" />
@@ -238,6 +238,7 @@
     <Compile Include="Assets\script\timerScript.cs" />
     <Compile Include="Assets\script\toMyRoom.cs" />
     <Compile Include="Assets\script\toShop.cs" />
+    <Compile Include="Assets\script\volumeControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />

@@ -37,10 +37,6 @@ public class TestModalWindow : MonoBehaviour {
     }
 
     void TestYesFunction() {
-        bgmObj = GameObject.Find("BGM");
-        bgmSource = bgmObj.GetComponent<AudioSource>();
-        bgmSource.Play();
-        DontDestroyOnLoad(bgmObj);
         SceneManager.LoadScene(1);
     }
 

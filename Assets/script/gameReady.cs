@@ -18,6 +18,7 @@ public class gameReady : MonoBehaviour {
     public GameObject deleteAllDataObject;
 
     public GameObject bgmObj;
+    public GameObject esObj;
 
     private static ModalPanel joinPanel;
     private static ModalPanel loginPanel;
@@ -27,8 +28,6 @@ public class gameReady : MonoBehaviour {
     private static ModalPanel deleteAllDataPanel;
 
     void Start() {
-        Screen.SetResolution(Screen.width, Screen.width * 16 / 9, true);
-
         joinPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
         loginPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
         textPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
@@ -58,9 +57,11 @@ public class gameReady : MonoBehaviour {
     public void OnMouseDown() {
         Name = inputName.text;
         bgmObj = GameObject.Find("BGM");
+        esObj = GameObject.Find("effectSound");
 
         if (joinPanelObject.activeSelf == false) {
             DontDestroyOnLoad(bgmObj);
+            DontDestroyOnLoad(esObj);
             SceneManager.LoadScene(1);
         } else {
             if (Name == "") {
@@ -72,6 +73,8 @@ public class gameReady : MonoBehaviour {
             } else {
                 PlayerPrefs.SetString("Nick", Name);
                 PlayerPrefs.SetString("CurrentSkin", "default");
+                DontDestroyOnLoad(bgmObj);
+                DontDestroyOnLoad(esObj);
                 SceneManager.LoadScene(1);
             }
         }

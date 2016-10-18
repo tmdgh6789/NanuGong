@@ -5,6 +5,7 @@ using System.Collections;
 public class nickModify : MonoBehaviour {
 
     public GameObject joinPanelObject;
+    public GameObject modifyPanelObject;
     public GameObject textPanelObject;
     public GameObject playButtonPanelObject;
     public GameObject confirmPanelObject;
@@ -16,17 +17,20 @@ public class nickModify : MonoBehaviour {
     public string userName;
 
     private static ModalPanel joinPanel;
+    private static ModalPanel modifyPanel;
     private static ModalPanel textPanel;
     private static ModalPanel playButtonPanel;
     private static ModalPanel confirmPanel;
 
     public void OnMouseDown() {
         joinPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
+        modifyPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
         textPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
         playButtonPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
         confirmPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
 
-        joinPanelObject.SetActive(true);
+        joinPanelObject.SetActive(false);
+        modifyPanelObject.SetActive(true);
         confirmPanelObject.SetActive(true);
         playButtonPanelObject.SetActive(false);
         textPanelObject.SetActive(false);
@@ -37,7 +41,7 @@ public class nickModify : MonoBehaviour {
     }
 
     public void modifyOK() {
-        joinPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
+        modifyPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
         textPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
         playButtonPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
         confirmPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
@@ -48,13 +52,13 @@ public class nickModify : MonoBehaviour {
         textPanelObject.SetActive(true);
         text = GameObject.Find("text").GetComponent<Text>();
         text.text = "닉네임을 " + Name + "로 변경하셨습니다.";
-        joinPanelObject.SetActive(false);
+        modifyPanelObject.SetActive(false);
         Invoke("hideAndShow", 1.0f);
 
     }
 
     public void modifyCancel() {
-        joinPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
+        modifyPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
         textPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
         playButtonPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
         confirmPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
@@ -62,7 +66,7 @@ public class nickModify : MonoBehaviour {
         textPanelObject.SetActive(true);
         text = GameObject.Find("text").GetComponent<Text>();
         text.text = "닉네임 변경을 취소하셨습니다.";
-        joinPanelObject.SetActive(false);
+        modifyPanelObject.SetActive(false);
         Invoke("hideAndShow", 1.0f);
     }
 
