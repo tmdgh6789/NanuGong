@@ -207,6 +207,7 @@
     <Compile Include="Assets\script\buySkin3.cs" />
     <Compile Include="Assets\script\buySkin4.cs" />
     <Compile Include="Assets\script\buySkinScript.cs" />
+    <Compile Include="Assets\script\changeDefault.cs" />
     <Compile Include="Assets\script\changeSkin1.cs" />
     <Compile Include="Assets\script\changeSkin2.cs" />
     <Compile Include="Assets\script\changeSkin3.cs" />
@@ -216,11 +217,9 @@
     <Compile Include="Assets\script\coinText.cs" />
     <Compile Include="Assets\script\combo.cs" />
     <Compile Include="Assets\script\data.cs" />
-    <Compile Include="Assets\script\deleteData.cs" />
     <Compile Include="Assets\script\displayChar.cs" />
     <Compile Include="Assets\script\effectSound.cs" />
     <Compile Include="Assets\script\emptyFunction.cs" />
-    <Compile Include="Assets\script\finish.cs" />
     <Compile Include="Assets\script\gameReady.cs" />
     <Compile Include="Assets\script\gameStart.cs" />
     <Compile Include="Assets\script\itemStart.cs" />
@@ -230,6 +229,13 @@
     <Compile Include="Assets\script\mySkin.cs" />
     <Compile Include="Assets\script\myroomNick.cs" />
     <Compile Include="Assets\script\nickModify.cs" />
+    <Compile Include="Assets\script\optionButton.cs" />
+    <Compile Include="Assets\script\optionModalPanel.cs" />
+    <Compile Include="Assets\script\optionPanelButton.cs" />
+    <Compile Include="Assets\script\pauseButton.cs" />
+    <Compile Include="Assets\script\pauseModalPanel.cs" />
+    <Compile Include="Assets\script\pausePanelButton.cs" />
+    <Compile Include="Assets\script\resetConfirm.cs" />
     <Compile Include="Assets\script\rightButtonScript.cs" />
     <Compile Include="Assets\script\score.cs" />
     <Compile Include="Assets\script\scoreText.cs" />
@@ -237,7 +243,7 @@
     <Compile Include="Assets\script\timerMove.cs" />
     <Compile Include="Assets\script\timerScript.cs" />
     <Compile Include="Assets\script\toMyRoom.cs" />
-    <Compile Include="Assets\script\toShop.cs" />
+    <Compile Include="Assets\script\toPrison.cs" />
     <Compile Include="Assets\script\volumeControl.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -15,7 +15,7 @@ public class timerScript : MonoBehaviour {
         if (itemToggle.sec > 0) {
             sec = itemToggle.sec;
         } else {
-            sec = 30.0f;
+            sec = 60.0f;
         }
         timer = sec;
     }

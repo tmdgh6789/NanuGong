@@ -15,26 +15,11 @@ public class gameReady : MonoBehaviour {
     public GameObject textPanelObject;
     public GameObject confirmPanelObject;
     public GameObject nickModifyObject;
-    public GameObject deleteAllDataObject;
 
     public GameObject bgmObj;
     public GameObject esObj;
 
-    private static ModalPanel joinPanel;
-    private static ModalPanel loginPanel;
-    private static ModalPanel textPanel;
-    private static ModalPanel confirmPanel;
-    private static ModalPanel nickModifyPanel;
-    private static ModalPanel deleteAllDataPanel;
-
     void Start() {
-        joinPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
-        loginPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
-        textPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
-        confirmPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
-        nickModifyPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
-        deleteAllDataPanel = FindObjectOfType(typeof(ModalPanel)) as ModalPanel;
-
         userName = PlayerPrefs.GetString("Nick");
 
         if (userName == "") {
@@ -42,7 +27,6 @@ public class gameReady : MonoBehaviour {
             loginPanelObject.SetActive(false);
             textPanelObject.SetActive(false);
             nickModifyObject.SetActive(false);
-            deleteAllDataObject.SetActive(false);
         } else {
             joinPanelObject.SetActive(false);
             textPanelObject.SetActive(true);
@@ -50,7 +34,6 @@ public class gameReady : MonoBehaviour {
             text.text = userName + "님 반갑습니다.\nREADY 버튼을 눌러주세요!";
             loginPanelObject.SetActive(true);
             nickModifyObject.SetActive(true);
-            deleteAllDataObject.SetActive(true);
         }
     }
 
@@ -60,6 +43,7 @@ public class gameReady : MonoBehaviour {
         esObj = GameObject.Find("effectSound");
 
         if (joinPanelObject.activeSelf == false) {
+            bgmObj.GetComponent<AudioSource>().Pause();
             DontDestroyOnLoad(bgmObj);
             DontDestroyOnLoad(esObj);
             SceneManager.LoadScene(1);
@@ -68,11 +52,15 @@ public class gameReady : MonoBehaviour {
                 joinPanelObject.SetActive(false);
                 textPanelObject.SetActive(true);
                 text = GameObject.Find("text").GetComponent<Text>();
-                text.text = userName + "닉네임을 입력해주세요!";
-                Invoke("HideText", 0.5f);
+                text.text = "닉네임을 입력해주세요!";
+                Invoke("noNick", 0.5f);
             } else {
                 PlayerPrefs.SetString("Nick", Name);
                 PlayerPrefs.SetString("CurrentSkin", "default");
+                PlayerPrefs.SetInt("Coin", 0);
+                PlayerPrefs.SetInt("BestScore", 0);
+
+                bgmObj.GetComponent<AudioSource>().Pause();
                 DontDestroyOnLoad(bgmObj);
                 DontDestroyOnLoad(esObj);
                 SceneManager.LoadScene(1);
@@ -82,5 +70,10 @@ public class gameReady : MonoBehaviour {
 
     void HideText() {
         textPanelObject.SetActive(false);
+    }
+
+    void noNick() {
+        textPanelObject.SetActive(false);
+        joinPanelObject.SetActive(true);
     }
 }

@@ -14,6 +14,9 @@ public class buttonScript : MonoBehaviour {
 
     GameObject[] newBall = new GameObject[6];
     GameObject[] ball = new GameObject[8];
+    
+    AudioSource buttonTrue;
+    AudioSource buttonFalse;
 
     public Canvas comboCanvas;
     public GameObject leftButton;
@@ -58,7 +61,11 @@ public class buttonScript : MonoBehaviour {
         GameObject bonusBall = Resources.Load("bonus") as GameObject;
         Sprite bonusBallSpr = bonusBall.GetComponent<SpriteRenderer>().sprite;
         Sprite ball7Spr = ball[7].GetComponent<SpriteRenderer>().sprite;
-        
+
+        AudioSource[] esSources = GameObject.FindGameObjectWithTag("EffectSound").GetComponents<AudioSource>();
+        buttonTrue = esSources[1];
+        buttonTrue.Play();
+
         bool level1 = (_score.value < 500) || (_combo.value < 3);
         bool level2 = (_score.value > 499 && _score.value < 1000) || (_combo.value > 2 && _combo.value < 6);
         bool level3 = (_score.value > 999 && _score.value < 1500) || (_combo.value > 5 && _combo.value < 9);
@@ -195,6 +202,10 @@ public class buttonScript : MonoBehaviour {
     }
 
     void ButtonNo() {
+        AudioSource[] esSources = GameObject.FindGameObjectWithTag("EffectSound").GetComponents<AudioSource>();
+        buttonFalse = esSources[2];
+        buttonFalse.Play();
+
         if (_bonus.gageValue > 0) {
             _bonus.bonus(-10);
         }

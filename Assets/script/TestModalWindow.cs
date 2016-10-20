@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 using System.Collections;
@@ -8,7 +9,7 @@ public class TestModalWindow : MonoBehaviour {
     private ModalPanel modalPanel;
     private timerScript timer;
 
-    private UnityAction myTenSecondsFunction;
+    private UnityAction myTenSecondsAction;
     private UnityAction myYesAction;
     private UnityAction myReAction;
     
@@ -18,8 +19,8 @@ public class TestModalWindow : MonoBehaviour {
     void Awake() {
         modalPanel = ModalPanel.Instance();
         timer = FindObjectOfType<timerScript>();
-        
-        myTenSecondsFunction = new UnityAction(TestTenSecondsFunction);
+
+        myTenSecondsAction = new UnityAction(TestTenSecondsFunction);
         myYesAction = new UnityAction(TestYesFunction);
         myReAction = new UnityAction(TestReFunction);
     }
@@ -31,12 +32,17 @@ public class TestModalWindow : MonoBehaviour {
 
     //  These are wrapped into UnityActions
     void TestTenSecondsFunction() {
+        GameObject.Find("leftButton").GetComponent<Button>().enabled = true;
+        GameObject.Find("rightButton").GetComponent<Button>().enabled = true;
+
         GameObject timeBar = GameObject.Find("timeBar");
         timer.timer = 10.0f;
-        timeBar.transform.Translate(125.0f, 0.0f, 0.0f);
+        timeBar.transform.Translate(0.5f, 0.0f, 0.0f);
+        PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin") - 5));
     }
 
     void TestYesFunction() {
+        PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin")));
         SceneManager.LoadScene(1);
     }
 

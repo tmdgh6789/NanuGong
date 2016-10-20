@@ -7,7 +7,15 @@ public class gameStart : MonoBehaviour {
     public GameObject bgmObj;
     public AudioSource bgmSource;
 
-	public void OnMouseDown() {
+    void Awake() {
+        bgmObj = GameObject.Find("BGM");
+        if (bgmObj) {
+            bgmSource = bgmObj.GetComponent<AudioSource>();
+            bgmSource.Play();
+        }
+    }
+
+    public void OnMouseDown() {
         int readyCoin = PlayerPrefs.GetInt("ReadyCoin");
         PlayerPrefs.SetInt("Coin", readyCoin);
 

@@ -10,12 +10,34 @@ public class changeSkinScript : MonoBehaviour {
     changeSkin4 changeSkin4;
 
     public Text skinNameText;
+    public string skin;
 
     public Text text;
 
     int count = 0;
 
     public void Awake() {
+        skin = PlayerPrefs.GetString("CurrentSkin");
+        switch (skin) {
+            case "default":
+                skinNameText.text = "주먹밥";
+                break;
+            case "skin1":
+                skinNameText.text = "엄마 주먹밥";
+                break;
+            case "skin2":
+                skinNameText.text = "아빠 주먹밥";
+                break;
+            case "skin3":
+                skinNameText.text = "오빠 주먹밥";
+                break;
+            case "skin4":
+                skinNameText.text = "동생 주먹밥";
+                break;
+        }
+        GameObject.Find("mySkinPanel").transform.FindChild("defaultButton").gameObject.SetActive(true);
+        count += 1;
+
         if (PlayerPrefs.GetString("skin1") == "Y") {
             GameObject.Find("mySkinPanel").transform.FindChild("skin1Button").gameObject.SetActive(true);
             count += 1;
@@ -43,10 +65,15 @@ public class changeSkinScript : MonoBehaviour {
             GameObject.Find("mySkinPanel").transform.FindChild("emptySpace1").gameObject.SetActive(true);
             GameObject.Find("mySkinPanel").transform.FindChild("emptySpace2").gameObject.SetActive(true);
             GameObject.Find("mySkinPanel").transform.FindChild("emptySpace3").gameObject.SetActive(true);
+            GameObject.Find("mySkinPanel").transform.FindChild("emptySpace4").gameObject.SetActive(true);
         } else if (count == 2) {
             GameObject.Find("mySkinPanel").transform.FindChild("emptySpace1").gameObject.SetActive(true);
             GameObject.Find("mySkinPanel").transform.FindChild("emptySpace2").gameObject.SetActive(true);
+            GameObject.Find("mySkinPanel").transform.FindChild("emptySpace3").gameObject.SetActive(true);
         } else if (count == 3) {
+            GameObject.Find("mySkinPanel").transform.FindChild("emptySpace1").gameObject.SetActive(true);
+            GameObject.Find("mySkinPanel").transform.FindChild("emptySpace2").gameObject.SetActive(true);
+        } else if (count == 4) {
             GameObject.Find("mySkinPanel").transform.FindChild("emptySpace1").gameObject.SetActive(true);
         }
     }
@@ -54,6 +81,17 @@ public class changeSkinScript : MonoBehaviour {
     public void changeSkin(string skinName) {
 
         switch (skinName) {
+            case "default":
+                skinNameText.text = "주먹밥";
+
+                GameObject.Find("charPanel").transform.FindChild("char1").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char2").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char3").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
+                GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(true);
+
+                PlayerPrefs.SetString("CurrentSkin", "skin1");
+                break;
             case "skin1":
                 skinNameText.text = "엄마 주먹밥";
 
