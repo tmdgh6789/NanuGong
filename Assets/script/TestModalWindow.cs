@@ -32,6 +32,7 @@ public class TestModalWindow : MonoBehaviour {
 
     //  These are wrapped into UnityActions
     void TestTenSecondsFunction() {
+        GameObject.Find("pauseButton").GetComponent<Button>().enabled = true;
         GameObject.Find("leftButton").GetComponent<Button>().enabled = true;
         GameObject.Find("rightButton").GetComponent<Button>().enabled = true;
 
@@ -42,7 +43,11 @@ public class TestModalWindow : MonoBehaviour {
     }
 
     void TestYesFunction() {
-        PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin")));
+        if (PlayerPrefs.GetString("CurrentSkin") == "skin2") {
+            PlayerPrefs.SetInt("Coin", (int)(PlayerPrefs.GetInt("Coin") * 1.5f));
+        } else {
+            PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin")));
+        }
         SceneManager.LoadScene(1);
     }
 

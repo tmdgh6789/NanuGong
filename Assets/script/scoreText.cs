@@ -12,7 +12,7 @@ public class scoreText : MonoBehaviour {
 	void Awake () {
         _score = FindObjectOfType<score>();
         score = GetComponent<Text>();
-
+        
         score.text = "" + (int)_score.value;
 	}
 }

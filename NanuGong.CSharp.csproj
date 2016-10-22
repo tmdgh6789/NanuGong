@@ -217,6 +217,7 @@
     <Compile Include="Assets\script\coinText.cs" />
     <Compile Include="Assets\script\combo.cs" />
     <Compile Include="Assets\script\data.cs" />
+    <Compile Include="Assets\script\dataDelete.cs" />
     <Compile Include="Assets\script\displayChar.cs" />
     <Compile Include="Assets\script\effectSound.cs" />
     <Compile Include="Assets\script\emptyFunction.cs" />

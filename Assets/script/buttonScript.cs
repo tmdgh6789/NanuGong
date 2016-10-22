@@ -66,19 +66,22 @@ public class buttonScript : MonoBehaviour {
         buttonTrue = esSources[1];
         buttonTrue.Play();
 
-        bool level1 = (_score.value < 500) || (_combo.value < 3);
-        bool level2 = (_score.value > 499 && _score.value < 1000) || (_combo.value > 2 && _combo.value < 6);
-        bool level3 = (_score.value > 999 && _score.value < 1500) || (_combo.value > 5 && _combo.value < 9);
-        bool level4 = (_score.value > 1499 && _score.value < 2000) || (_combo.value > 8 && _combo.value < 15);
-        bool level5 = (_score.value > 1999) || (_combo.value > 14);
-
+        bool level1 = (_score.value < 700) || (_combo.value < 7);
+        bool level2 = (_score.value > 699 && _score.value < 1400) || (_combo.value > 6 && _combo.value < 14);
+        bool level3 = (_score.value > 1399 && _score.value < 2100) || (_combo.value > 13 && _combo.value < 21);
+        bool level4 = (_score.value > 2099 && _score.value < 2800) || (_combo.value > 20 && _combo.value < 28);
+        bool level5 = (_score.value > 2799) || (_combo.value > 27);
 
         if (_bonus.gageValue < 105) {
-            _bonus.bonus(5);
+            if (PlayerPrefs.GetString("CurrentSkin") == "skin1") {
+                _bonus.bonus(8);
+            } else {
+                _bonus.bonus(5);
+            }
         }
         
         if (level1) {
-            if (_bonus.gageValue == 105.0f) {
+            if (_bonus.gageValue >= 105.0f) {
                 randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
                 _bonus.gageValue = 0;
                 _bonus.baguetteGage.size = 0;
@@ -92,9 +95,8 @@ public class buttonScript : MonoBehaviour {
             newBall[0] = _start.leftRes[0];
             newBall[1] = _start.rightRes[0];
             newBall[2] = _start.leftRes[1];
-            newBall[3] = _start.rightRes[1];
 
-            if (_bonus.gageValue == 105.0f) {
+            if (_bonus.gageValue >= 105.0f) {
                 randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
                 _bonus.gageValue = 0;
                 _bonus.baguetteGage.size = 0;
@@ -109,10 +111,8 @@ public class buttonScript : MonoBehaviour {
             newBall[1] = _start.rightRes[0];
             newBall[2] = _start.leftRes[1];
             newBall[3] = _start.rightRes[1];
-            newBall[4] = _start.leftRes[2];
-            newBall[5] = _start.rightRes[2];
 
-            if (_bonus.gageValue == 105.0f) {
+            if (_bonus.gageValue >= 105.0f) {
                 randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
                 _bonus.gageValue = 0;
                 _bonus.baguetteGage.size = 0;
@@ -121,40 +121,71 @@ public class buttonScript : MonoBehaviour {
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
             }
         } else if (level4) {
-            _start.leftballCreate(2, 4, 0.7f);
+            if (PlayerPrefs.GetString("CurrentSkin") == "skin4") {
+                newBall[0] = _start.leftRes[0];
+                newBall[1] = _start.rightRes[0];
+                newBall[2] = _start.leftRes[1];
+                newBall[3] = _start.rightRes[1];
 
-            newBall[0] = _start.leftRes[0];
-            newBall[1] = _start.rightRes[0];
-            newBall[2] = _start.leftRes[1];
-            newBall[3] = _start.rightRes[1];
-            newBall[4] = _start.leftRes[2];
-            newBall[5] = _start.rightRes[2];
-
-            if (_bonus.gageValue == 105.0f) {
-                randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
-                _bonus.gageValue = 0;
-                _bonus.baguetteGage.size = 0;
+                if (_bonus.gageValue >= 105.0f) {
+                    randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    _bonus.gageValue = 0;
+                    _bonus.baguetteGage.size = 0;
+                } else {
+                    randomRes = newBall[Random.Range(0, 4)];
+                    randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                }
             } else {
-                randomRes = newBall[Random.Range(0, 5)];
-                randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                _start.leftballCreate(2, 4, 0.7f);
+
+                newBall[0] = _start.leftRes[0];
+                newBall[1] = _start.rightRes[0];
+                newBall[2] = _start.leftRes[1];
+                newBall[3] = _start.rightRes[1];
+                newBall[4] = _start.leftRes[2];
+
+                if (_bonus.gageValue >= 105.0f) {
+                    randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    _bonus.gageValue = 0;
+                    _bonus.baguetteGage.size = 0;
+                } else {
+                    randomRes = newBall[Random.Range(0, 5)];
+                    randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                }
             }
         } else if (level5) {
-            _start.rightballCreate(2, 3, 0.7f);
+            if (PlayerPrefs.GetString("CurrentSkin") == "skin4") {
+                newBall[0] = _start.leftRes[0];
+                newBall[1] = _start.rightRes[0];
+                newBall[2] = _start.leftRes[1];
+                newBall[3] = _start.rightRes[1];
 
-            newBall[0] = _start.leftRes[0];
-            newBall[1] = _start.rightRes[0];
-            newBall[2] = _start.leftRes[1];
-            newBall[3] = _start.rightRes[1];
-            newBall[4] = _start.leftRes[2];
-            newBall[5] = _start.rightRes[2];
-
-            if (_bonus.gageValue == 105.0f) {
-                randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
-                _bonus.gageValue = 0;
-                _bonus.baguetteGage.size = 0;
+                if (_bonus.gageValue >= 105.0f) {
+                    randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    _bonus.gageValue = 0;
+                    _bonus.baguetteGage.size = 0;
+                } else {
+                    randomRes = newBall[Random.Range(0, 4)];
+                    randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                }
             } else {
-                randomRes = newBall[Random.Range(0, 6)];
-                randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                _start.rightballCreate(2, 3, 0.7f);
+
+                newBall[0] = _start.leftRes[0];
+                newBall[1] = _start.rightRes[0];
+                newBall[2] = _start.leftRes[1];
+                newBall[3] = _start.rightRes[1];
+                newBall[4] = _start.leftRes[2];
+                newBall[5] = _start.rightRes[2];
+
+                if (_bonus.gageValue >= 105.0f) {
+                    randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    _bonus.gageValue = 0;
+                    _bonus.baguetteGage.size = 0;
+                } else {
+                    randomRes = newBall[Random.Range(0, 6)];
+                    randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                }
             }
         }
 
@@ -188,14 +219,6 @@ public class buttonScript : MonoBehaviour {
 
         Destroy(ball[7], runningTime * 6);
         comboCanvas.GetComponent<Canvas>().enabled = true;
-        /*
-        float comboTime = 0.0f;
-        for (int i = 0; i < 7; i++) {
-            comboTime += Time.deltaTime;
-            InvokeRepeating("comboEnable", 0, comboTime);
-            Invoke("comboCancel", comboTime * 5);
-        }
-        */
         _combo.value += 1;
         _score.value += 100f + (_combo.value * 0.5f);
 

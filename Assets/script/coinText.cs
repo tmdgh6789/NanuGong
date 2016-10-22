@@ -17,8 +17,14 @@ public class coinText : MonoBehaviour {
     }
 
     void Start () {
+
         coinValue = (int)(_score.value * 0.001);
-        coin.text = "" + coinValue;
+        if (PlayerPrefs.GetString("CurrentSkin") == "skin2") {
+            float skin2Coin = coinValue * 1.5f;
+            coin.text = coinValue + "+" + ((int)skin2Coin - coinValue) + " = " + (int)skin2Coin;
+        } else {
+            coin.text = "" + coinValue;
+        }
 
         int myCoin = PlayerPrefs.GetInt("Coin");
         myCoin += coinValue;

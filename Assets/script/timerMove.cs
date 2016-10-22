@@ -17,7 +17,7 @@ public class timerMove : MonoBehaviour {
         float time = _timer.timer;
         
         if (time > 0 && move) {
-            transform.Translate(-0.00175f, 0.0f, 0.0f);
+            transform.Translate(-0.002f, 0.0f, 0.0f);
         }
         
     }

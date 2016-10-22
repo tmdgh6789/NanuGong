@@ -90,7 +90,7 @@ public class changeSkinScript : MonoBehaviour {
                 GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(true);
 
-                PlayerPrefs.SetString("CurrentSkin", "skin1");
+                PlayerPrefs.SetString("CurrentSkin", "default");
                 break;
             case "skin1":
                 skinNameText.text = "엄마 주먹밥";

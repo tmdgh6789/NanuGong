@@ -30,7 +30,7 @@ public class itemToggle : MonoBehaviour {
                 PlayerPrefs.SetInt("ReadyCoin", readyCoin);
                 coinText.text = "" + readyCoin;
                 desText.text = "게임 시간을 10초 늘려줍니다.";
-                sec = 70.0f;
+                sec = 50.0f;
             } else {
                 readyCoin += 5;
                 PlayerPrefs.SetInt("ReadyCoin", readyCoin);
@@ -38,10 +38,10 @@ public class itemToggle : MonoBehaviour {
                 desText.text = "아이템 구매를 취소하셨습니다.";
                 item = "timer";
                 Invoke("buyCancel", 0.8f);
-                sec = 60.0f;
+                sec = 40.0f;
             }
         } else {
-            sec = 60.0f;
+            sec = 40.0f;
         }
     }
 
