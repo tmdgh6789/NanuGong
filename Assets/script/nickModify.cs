@@ -26,9 +26,6 @@ public class nickModify : MonoBehaviour {
 
         text.text = "닉네임을 수정하면 도넛 10개가 소모됩니다.";
 
-        int coin = PlayerPrefs.GetInt("Coin") - 10;
-        PlayerPrefs.SetInt("Coin", coin);
-
         Invoke("textHide", 1.0f);
     }
 
@@ -46,6 +43,10 @@ public class nickModify : MonoBehaviour {
             text = GameObject.Find("text").GetComponent<Text>();
             text.text = "닉네임을 " + Name + "(으)로 변경하셨습니다.";
             modifyPanelObject.SetActive(false);
+
+            int coin = PlayerPrefs.GetInt("Coin") - 10;
+            PlayerPrefs.SetInt("Coin", coin);
+            
             Invoke("hideAndShow", 1.0f);
         }
 

@@ -5,11 +5,15 @@ using System.Collections;
 public class itemToggle : MonoBehaviour {
     public Toggle itemTimer;
     public Toggle itemSuper;
+    public Toggle itemResur;
     public Text coinText;
     public Text desText;
 
     public static float sec;
     public static bool super;
+    public static bool resur;
+    public static int resurValue = 19;
+
     public int coin;
     public int readyCoin;
     public string item = "";
@@ -17,6 +21,11 @@ public class itemToggle : MonoBehaviour {
     void Start() {
         coin = PlayerPrefs.GetInt("Coin");
         PlayerPrefs.SetInt("ReadyCoin", coin);
+
+        if (PlayerPrefs.GetString("CurrentSkin") == "skin3") {
+            GameObject.Find("itemPanel").transform.FindChild("itemResurBox").gameObject.SetActive(true);
+            GameObject.Find("itemPanel").transform.FindChild("yetItem1Box").gameObject.SetActive(false);
+        }
     }
 
     void Update() {
@@ -66,14 +75,41 @@ public class itemToggle : MonoBehaviour {
             super = false;
         }
     }
-    
-    public void yetItem() {
+
+    public void resurToggle() {
+        if (PlayerPrefs.GetInt("Coin") >= 5) {
+            if (itemResur.isOn) {
+                readyCoin -= 5;
+                PlayerPrefs.SetInt("ReadyCoin", readyCoin);
+                coinText.text = "" + readyCoin;
+                desText.text = "게임이 끝난 후 19% 확률로 부활합니다.";
+                resur = true;
+            } else {
+                readyCoin += 5;
+                PlayerPrefs.SetInt("ReadyCoin", readyCoin);
+                coinText.text = "" + readyCoin;
+                desText.text = "아이템 구매를 취소하셨습니다.";
+                item = "resur";
+                Invoke("buyCancel", 0.8f);
+                resur = false;
+            }
+        } else {
+            resur = false;
+        }
+    }
+
+    public void yetItem1() {
+        desText.text = "숨겨진 아이템 입니다.";
+    }
+
+    public void yetItem2() {
         desText.text = "아이템을 준비 중입니다.";
     }
 
     public void lackCoin() {
-        if (itemTimer.GetComponent<Toggle>().enabled == false) {
-            Debug.Log("코인 부족2");
+        if (itemTimer.GetComponent<Toggle>().enabled == false || itemSuper.GetComponent<Toggle>().enabled == false) {
+            desText.text = "코인이 부족합니다.";
+            Invoke("buyCancel", 0.8f);
         }
     }
     
@@ -85,7 +121,8 @@ public class itemToggle : MonoBehaviour {
             case "super":
                 desText.text = "처음 8개 공을 같은 공으로만 나오게합니다.";
                 break;
-            default:
+            case "resur":
+                desText.text = "게임이 끝난 후 19% 확률로 부활합니다.";
                 break;
         }
     }

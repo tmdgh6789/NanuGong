@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
+using System.Collections;
 
 public class buttonScript : MonoBehaviour {
     startScript _start;
@@ -19,6 +19,10 @@ public class buttonScript : MonoBehaviour {
     AudioSource buttonFalse;
 
     public Canvas comboCanvas;
+    public Animator comboAnim;
+    GameObject[] starAnimObj = new GameObject[3];
+    int starAnimNum;
+
     public GameObject leftButton;
     public GameObject rightButton;
 
@@ -58,6 +62,8 @@ public class buttonScript : MonoBehaviour {
     }
 
     void ButtonOk(string course) {
+        StartCoroutine("starAnim");
+
         GameObject bonusBall = Resources.Load("bonus") as GameObject;
         Sprite bonusBallSpr = bonusBall.GetComponent<SpriteRenderer>().sprite;
         Sprite ball7Spr = ball[7].GetComponent<SpriteRenderer>().sprite;
@@ -219,6 +225,8 @@ public class buttonScript : MonoBehaviour {
 
         Destroy(ball[7], runningTime * 6);
         comboCanvas.GetComponent<Canvas>().enabled = true;
+        comboAnim = GameObject.Find("comboPanel").GetComponent<Animator>();
+        comboAnim.Play("comboAnim", -1, 0);
         _combo.value += 1;
         _score.value += 100f + (_combo.value * 0.5f);
 
@@ -234,7 +242,7 @@ public class buttonScript : MonoBehaviour {
         }
         leftButton.GetComponent<Button>().enabled = false;
         rightButton.GetComponent<Button>().enabled = false;
-        Invoke("buttonActivate", 0.5f);
+        Invoke("buttonActivate", 0.3f);
         comboCanvas.GetComponent<Canvas>().enabled = false;
         _combo.value = 0;
         GameObject bomb = Instantiate(Resources.Load("bomb") as GameObject, ball[7].transform.position, Quaternion.identity) as GameObject;
@@ -285,5 +293,28 @@ public class buttonScript : MonoBehaviour {
     void buttonActivate() {
         leftButton.GetComponent<Button>().enabled = true;
         rightButton.GetComponent<Button>().enabled = true;
+    }
+    
+    IEnumerator starAnim() {
+        for (int i = 0; i < 3; i++) {
+            starAnimObj[i] = GameObject.Find("animCanvas").transform.FindChild("starAnim" + (i + 1)).gameObject;
+        }
+        starAnimNum = Random.Range(0, 3);
+        for (int i = 0; i < 3; i++) {
+            if (starAnimObj[i].activeSelf == true) {
+                StartCoroutine("deActive", i);
+                break;
+            }
+        }
+        starAnimObj[starAnimNum].SetActive(true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        starAnimObj[starAnimNum].SetActive(false);
+    }
+
+    IEnumerator deActive(int i) {
+        yield return new WaitForSeconds(0.5f);
+        starAnimObj[i].SetActive(false);
     }
 }

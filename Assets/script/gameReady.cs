@@ -55,15 +55,7 @@ public class gameReady : MonoBehaviour {
                 text.text = "닉네임을 입력해주세요!";
                 Invoke("noNick", 0.5f);
             } else {
-                PlayerPrefs.SetString("Nick", Name);
-                PlayerPrefs.SetString("CurrentSkin", "default");
-                PlayerPrefs.SetInt("Coin", 0);
-                PlayerPrefs.SetInt("BestScore", 0);
-
-                bgmObj.GetComponent<AudioSource>().Pause();
-                DontDestroyOnLoad(bgmObj);
-                DontDestroyOnLoad(esObj);
-                SceneManager.LoadScene(1);
+                StartCoroutine("loadReady");
             }
         }
     }
@@ -75,5 +67,25 @@ public class gameReady : MonoBehaviour {
     void noNick() {
         textPanelObject.SetActive(false);
         joinPanelObject.SetActive(true);
+    }
+
+    IEnumerator loadReady() {
+        PlayerPrefs.SetString("Nick", Name);
+        PlayerPrefs.SetString("CurrentSkin", "default");
+        PlayerPrefs.SetInt("Coin", 100);
+        PlayerPrefs.SetInt("BestScore", 0);
+
+        joinPanelObject.SetActive(false);
+        textPanelObject.SetActive(true);
+        text = GameObject.Find("text").GetComponent<Text>();
+        text.text = Name + "님 반갑습니다.\n곧 게임이 시작됩니다.\n잠시만 기다려주세요!";
+
+        yield return new WaitForSeconds(1.5f);
+
+        bgmObj.GetComponent<AudioSource>().Pause();
+        DontDestroyOnLoad(bgmObj);
+        DontDestroyOnLoad(esObj);
+        SceneManager.LoadScene(1);
+
     }
 }

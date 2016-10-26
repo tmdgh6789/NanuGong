@@ -8,7 +8,6 @@ using System.Collections;
 public class pausePanelButton : MonoBehaviour {
     private pauseModalPanel optionModalPanel;
     timerMove timer;
-    itemToggle item;
 
     private UnityAction replayAction;
     private UnityAction quitAction;
@@ -38,6 +37,8 @@ public class pausePanelButton : MonoBehaviour {
 
     void quitFunction() {
         if (Time.timeScale == 0) {
+            itemToggle.sec = 40.0f;
+            itemToggle.super = false;
             Time.timeScale = 1;
         }
         SceneManager.LoadScene(1);

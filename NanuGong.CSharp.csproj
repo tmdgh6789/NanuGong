@@ -196,6 +196,7 @@
     <Compile Include="Assets\script\backButton0.cs" />
     <Compile Include="Assets\script\backButton1.cs" />
     <Compile Include="Assets\script\backButton2.cs" />
+    <Compile Include="Assets\script\backButtonPlay.cs" />
     <Compile Include="Assets\script\bestRecordText.cs" />
     <Compile Include="Assets\script\bestScoreTextPlay.cs" />
     <Compile Include="Assets\script\bestScoreTextReady.cs" />

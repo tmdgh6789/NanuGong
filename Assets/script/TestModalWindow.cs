@@ -38,7 +38,7 @@ public class TestModalWindow : MonoBehaviour {
 
         GameObject timeBar = GameObject.Find("timeBar");
         timer.timer = 10.0f;
-        timeBar.transform.Translate(0.5f, 0.0f, 0.0f);
+        timeBar.transform.Translate(1.1f, 0.0f, 0.0f);
         PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin") - 5));
     }
 
