@@ -10,6 +10,7 @@ public class ModalPanel : MonoBehaviour {
     public Button yesButton;
     public Button reButton;
     public GameObject modalPanelObject;
+    private static coinText coinText;
 
     private static ModalPanel modalPanel;
 
@@ -26,6 +27,8 @@ public class ModalPanel : MonoBehaviour {
     // Yes/No/Cancel: A string, a Yes event, a No event and Cancel event
     public void Choice(UnityAction tenSecondsEvent, UnityAction yesEvent, UnityAction reEvent) {
         modalPanelObject.SetActive(true);
+        coinText = FindObjectOfType<coinText>();
+        coinText.setText();
 
         tenSecondsButton = GameObject.Find("tenSecondsButton").GetComponent<Button>();
         yesButton = GameObject.Find("yesButton").GetComponent<Button>();

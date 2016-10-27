@@ -5,14 +5,14 @@ using System.Collections;
 public class itemToggle : MonoBehaviour {
     public Toggle itemTimer;
     public Toggle itemSuper;
-    public Toggle itemResur;
+    public Toggle itemRevival;
     public Text coinText;
     public Text desText;
 
     public static float sec;
     public static bool super;
-    public static bool resur;
-    public static int resurValue = 19;
+    public static bool revival;
+    public static int revivalValue = 100;
 
     public int coin;
     public int readyCoin;
@@ -23,7 +23,7 @@ public class itemToggle : MonoBehaviour {
         PlayerPrefs.SetInt("ReadyCoin", coin);
 
         if (PlayerPrefs.GetString("CurrentSkin") == "skin3") {
-            GameObject.Find("itemPanel").transform.FindChild("itemResurBox").gameObject.SetActive(true);
+            GameObject.Find("itemPanel").transform.FindChild("itemRevivalBox").gameObject.SetActive(true);
             GameObject.Find("itemPanel").transform.FindChild("yetItem1Box").gameObject.SetActive(false);
         }
     }
@@ -76,25 +76,25 @@ public class itemToggle : MonoBehaviour {
         }
     }
 
-    public void resurToggle() {
+    public void revivalToggle() {
         if (PlayerPrefs.GetInt("Coin") >= 5) {
-            if (itemResur.isOn) {
+            if (itemRevival.isOn) {
                 readyCoin -= 5;
                 PlayerPrefs.SetInt("ReadyCoin", readyCoin);
                 coinText.text = "" + readyCoin;
                 desText.text = "게임이 끝난 후 19% 확률로 부활합니다.";
-                resur = true;
+                revival = true;
             } else {
                 readyCoin += 5;
                 PlayerPrefs.SetInt("ReadyCoin", readyCoin);
                 coinText.text = "" + readyCoin;
                 desText.text = "아이템 구매를 취소하셨습니다.";
-                item = "resur";
+                item = "revival";
                 Invoke("buyCancel", 0.8f);
-                resur = false;
+                revival = false;
             }
         } else {
-            resur = false;
+            revival = false;
         }
     }
 
@@ -121,7 +121,7 @@ public class itemToggle : MonoBehaviour {
             case "super":
                 desText.text = "처음 8개 공을 같은 공으로만 나오게합니다.";
                 break;
-            case "resur":
+            case "revival":
                 desText.text = "게임이 끝난 후 19% 확률로 부활합니다.";
                 break;
         }

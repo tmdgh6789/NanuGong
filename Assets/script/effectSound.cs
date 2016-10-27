@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class effectSound : MonoBehaviour {
-
-    AudioSource esSource;
-    AudioSource sideButton;
+    
+    AudioSource commonClick;
 
     public void esPlay() {
-        esSource = GameObject.FindGameObjectWithTag("EffectSound").GetComponent<AudioSource>();
-        esSource.Play();
+        AudioSource[] esSources = GameObject.FindGameObjectWithTag("EffectSound").GetComponents<AudioSource>();
+        commonClick = esSources[0];
+        commonClick .Play();
     }
 }

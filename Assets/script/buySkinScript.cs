@@ -43,6 +43,8 @@ public class buySkinScript : MonoBehaviour {
     }
 
     public void buySkinFunction(int price) {
+        AudioSource[] esSources = GameObject.FindGameObjectWithTag("EffectSound").GetComponents<AudioSource>();
+
         if (price == 3) {
             skinNum = "skin1";
             skinName = "엄마 주먹밥";
@@ -70,6 +72,8 @@ public class buySkinScript : MonoBehaviour {
 
         if (myCoin >= price) {
             if (YorN == "" || YorN == "N") {
+                esSources[3].Play();
+
                 myCoin -= price;
                 prisonImg.SetActive(false);
                 textPanel.SetActive(true);
@@ -80,11 +84,14 @@ public class buySkinScript : MonoBehaviour {
                 PlayerPrefs.SetInt("Coin", myCoin);
                 PlayerPrefs.SetString("CurrentSkin", skinNum);
             } else {
+                esSources[4].Play();
+
                 lackCoinObj.SetActive(true);
                 lackCoinText.text = "이미 구출하신 " + skinName + "입니다.";
                 Invoke("hideCoinPanel", 1.0f);
             }
         } else {
+            esSources[4].Play();
             if (YorN == "" || YorN == "N") {
                 lackCoinObj.SetActive(true);
                 lackCoinText.text = "도넛이 부족합니다.";

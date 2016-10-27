@@ -20,7 +20,8 @@ public class buttonScript : MonoBehaviour {
 
     public Canvas comboCanvas;
     public Animator comboAnim;
-    GameObject[] starAnimObj = new GameObject[3];
+    GameObject starAnimObj;
+    // GameObject[] starAnimObj = new GameObject[3];
     int starAnimNum;
 
     public GameObject leftButton;
@@ -296,6 +297,12 @@ public class buttonScript : MonoBehaviour {
     }
     
     IEnumerator starAnim() {
+        starAnimObj = Instantiate(Resources.Load("star1") as GameObject);
+
+        yield return new WaitForSeconds(2.0f);
+
+        Destroy(starAnimObj);
+        /*
         for (int i = 0; i < 3; i++) {
             starAnimObj[i] = GameObject.Find("animCanvas").transform.FindChild("starAnim" + (i + 1)).gameObject;
         }
@@ -311,10 +318,11 @@ public class buttonScript : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
 
         starAnimObj[starAnimNum].SetActive(false);
+        */
     }
 
     IEnumerator deActive(int i) {
         yield return new WaitForSeconds(0.5f);
-        starAnimObj[i].SetActive(false);
+        starAnimObj.SetActive(false);
     }
 }

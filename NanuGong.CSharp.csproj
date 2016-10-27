@@ -241,11 +241,13 @@
     <Compile Include="Assets\script\rightButtonScript.cs" />
     <Compile Include="Assets\script\score.cs" />
     <Compile Include="Assets\script\scoreText.cs" />
+    <Compile Include="Assets\script\starAnimation.cs" />
     <Compile Include="Assets\script\startScript.cs" />
     <Compile Include="Assets\script\timerMove.cs" />
     <Compile Include="Assets\script\timerScript.cs" />
     <Compile Include="Assets\script\toMyRoom.cs" />
     <Compile Include="Assets\script\toPrison.cs" />
+    <Compile Include="Assets\script\toReady.cs" />
     <Compile Include="Assets\script\volumeControl.cs" />
   </ItemGroup>
   <ItemGroup>

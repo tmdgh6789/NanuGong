@@ -8,6 +8,11 @@ using System.Collections;
 public class TestModalWindow : MonoBehaviour {
     private ModalPanel modalPanel;
     private timerScript timer;
+    public score score;
+    public int coinValue;
+    public float skin2Coin;
+    public int myCoin;
+
 
     private UnityAction myTenSecondsAction;
     private UnityAction myYesAction;
@@ -32,6 +37,7 @@ public class TestModalWindow : MonoBehaviour {
 
     //  These are wrapped into UnityActions
     void TestTenSecondsFunction() {
+        GameObject.Find("playBGM").GetComponent<AudioSource>().Play();
         GameObject.Find("pauseButton").GetComponent<Button>().enabled = true;
         GameObject.Find("leftButton").GetComponent<Button>().enabled = true;
         GameObject.Find("rightButton").GetComponent<Button>().enabled = true;
@@ -43,10 +49,16 @@ public class TestModalWindow : MonoBehaviour {
     }
 
     void TestYesFunction() {
+        score = FindObjectOfType<score>();
+
+        coinValue = (int)(score.value * 0.001);
         if (PlayerPrefs.GetString("CurrentSkin") == "skin2") {
-            PlayerPrefs.SetInt("Coin", (int)(PlayerPrefs.GetInt("Coin") * 1.5f));
+            skin2Coin = coinValue * 1.5f;
+            PlayerPrefs.SetInt("Coin", (int)skin2Coin);
         } else {
-            PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin")));
+            myCoin = PlayerPrefs.GetInt("Coin");
+            myCoin += coinValue;
+            PlayerPrefs.SetInt("Coin", myCoin);
         }
         SceneManager.LoadScene(1);
     }

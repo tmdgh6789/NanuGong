@@ -3,7 +3,9 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class changeSkinScript : MonoBehaviour {
-    
+
+    AudioSource commonClick;
+
     changeSkin1 changeSkin1;
     changeSkin2 changeSkin2;
     changeSkin3 changeSkin3;
@@ -79,6 +81,9 @@ public class changeSkinScript : MonoBehaviour {
     }
     
     public void changeSkin(string skinName) {
+        AudioSource[] esSources = GameObject.FindGameObjectWithTag("EffectSound").GetComponents<AudioSource>();
+        commonClick = esSources[0];
+        commonClick.Play();
 
         switch (skinName) {
             case "default":

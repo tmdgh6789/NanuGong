@@ -5,9 +5,8 @@ using System.Collections;
 public class itemStart : MonoBehaviour {
     public Toggle itemTimer;
     public Toggle itemSuper;
-
-    public static float sec;
-    public static bool super;
+    public Toggle itemRevival;
+    
     public int coin;
     
     void Update() {
@@ -19,6 +18,10 @@ public class itemStart : MonoBehaviour {
 
         if (coin < 3) {
             itemSuper.GetComponent<Toggle>().enabled = false;
+        }
+
+        if (coin < 5 && PlayerPrefs.GetString("CurrentSkin") == "skin3") {
+            itemRevival.GetComponent<Toggle>().enabled = false;
         }
     }
     
