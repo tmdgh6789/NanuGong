@@ -38,17 +38,27 @@ public class nickModify : MonoBehaviour {
             text.text = "닉네임을 입력해주세요.";
             Invoke("textHide", 0.8f);
         } else {
-            PlayerPrefs.SetString("Nick", Name);
-            textPanelObject.SetActive(true);
-            text = GameObject.Find("text").GetComponent<Text>();
-            text.text = "닉네임을 " + Name + "(으)로 변경하셨습니다.";
-            modifyPanelObject.SetActive(false);
-            confirmPanelObject.SetActive(false);
+            if (PlayerPrefs.GetInt("Coin") < 10) {
+                textPanelObject.SetActive(true);
+                text = GameObject.Find("text").GetComponent<Text>();
+                text.text = "코인이 부족합니다.\n전 화면으로 돌아갑니다.";
+                modifyPanelObject.SetActive(false);
+                confirmPanelObject.SetActive(false);
 
-            int coin = PlayerPrefs.GetInt("Coin") - 10;
-            PlayerPrefs.SetInt("Coin", coin);
-            
-            Invoke("hideAndShow", 1.0f);
+                Invoke("hideAndShow", 1.0f);
+            } else {
+                PlayerPrefs.SetString("Nick", Name);
+                textPanelObject.SetActive(true);
+                text = GameObject.Find("text").GetComponent<Text>();
+                text.text = "닉네임을 " + Name + "(으)로 변경하셨습니다.";
+                modifyPanelObject.SetActive(false);
+                confirmPanelObject.SetActive(false);
+
+                int coin = PlayerPrefs.GetInt("Coin") - 10;
+                PlayerPrefs.SetInt("Coin", coin);
+
+                Invoke("hideAndShow", 1.0f);
+            }
         }
 
     }
