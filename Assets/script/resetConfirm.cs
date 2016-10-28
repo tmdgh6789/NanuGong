@@ -28,6 +28,7 @@ public class resetConfirm : MonoBehaviour {
 
             case "coin":
                 PlayerPrefs.DeleteKey("Coin");
+                PlayerPrefs.DeleteKey("ReadyCoin");
                 PlayerPrefs.SetInt("Coin", 0);
                 coin.text = "" + PlayerPrefs.GetInt("Coin");
                 confirmObj.SetActive(false);

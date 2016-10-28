@@ -43,6 +43,7 @@ public class nickModify : MonoBehaviour {
             text = GameObject.Find("text").GetComponent<Text>();
             text.text = "닉네임을 " + Name + "(으)로 변경하셨습니다.";
             modifyPanelObject.SetActive(false);
+            confirmPanelObject.SetActive(false);
 
             int coin = PlayerPrefs.GetInt("Coin") - 10;
             PlayerPrefs.SetInt("Coin", coin);
@@ -57,13 +58,13 @@ public class nickModify : MonoBehaviour {
         text = GameObject.Find("text").GetComponent<Text>();
         text.text = "닉네임 변경을 취소하셨습니다.";
         modifyPanelObject.SetActive(false);
+        confirmPanelObject.SetActive(false);
         Invoke("hideAndShow", 1.0f);
     }
 
     public void hideAndShow() {
         userName = PlayerPrefs.GetString("Nick");
         text.text = userName + "님 반갑습니다.\nPLAY 버튼을 눌러주세요!";
-        confirmPanelObject.SetActive(false);
         playButtonPanelObject.SetActive(true);
     }
 

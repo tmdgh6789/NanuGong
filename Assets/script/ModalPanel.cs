@@ -29,6 +29,8 @@ public class ModalPanel : MonoBehaviour {
         modalPanelObject.SetActive(true);
         coinText = FindObjectOfType<coinText>();
         coinText.setText();
+        AudioSource[] esSources = GameObject.FindGameObjectWithTag("EffectSound").GetComponents<AudioSource>();
+        esSources[5].Stop();
 
         tenSecondsButton = GameObject.Find("tenSecondsButton").GetComponent<Button>();
         yesButton = GameObject.Find("yesButton").GetComponent<Button>();
@@ -52,6 +54,8 @@ public class ModalPanel : MonoBehaviour {
     }
 
     void ClosePanel() {
+        AudioSource[] esSources = GameObject.FindGameObjectWithTag("EffectSound").GetComponents<AudioSource>();
+        esSources[5].Stop();
         modalPanelObject.SetActive(false);
     }
 }

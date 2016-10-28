@@ -8,16 +8,19 @@ public class backButton1 : MonoBehaviour {
 
     void Update() {
         if (Input.GetKey(KeyCode.Escape)) {
-            bgmObj = GameObject.Find("BGM");
-            Destroy(bgmObj);
+            if (GameObject.Find("Canvas").transform.FindChild("optionModalPanel").gameObject.activeSelf == false) {
+                bgmObj = GameObject.Find("BGM");
+                Destroy(bgmObj);
 
-            bgmObj = GameObject.Find("BGM");
-            bgmSource = bgmObj.GetComponent<AudioSource>();
-            bgmSource.Play();
-            DontDestroyOnLoad(bgmObj);
+                bgmObj = GameObject.Find("BGM");
+                bgmSource = bgmObj.GetComponent<AudioSource>();
+                bgmSource.Play();
+                DontDestroyOnLoad(bgmObj);
 
-            SceneManager.LoadScene(0);
-        }
+                SceneManager.LoadScene(0);
+            } else {
+                GameObject.Find("Canvas").transform.FindChild("optionModalPanel").gameObject.SetActive(false);
+            }
+        } 
     }
-
 }

@@ -18,7 +18,7 @@ public class bestScoreTextPlay : MonoBehaviour {
         bestRecord = GetComponent<Text>();
     }
 
-    void Start() {
+    void Update() {
         PlayerPrefs.SetInt("currentScore", (int)_score.value);
         currentScore = PlayerPrefs.GetInt("currentScore");
         bestScore = PlayerPrefs.GetInt("BestScore");

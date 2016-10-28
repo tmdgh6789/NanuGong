@@ -37,26 +37,28 @@ public class TestModalWindow : MonoBehaviour {
 
     //  These are wrapped into UnityActions
     void TestTenSecondsFunction() {
-        GameObject.Find("playBGM").GetComponent<AudioSource>().Play();
-        GameObject.Find("pauseButton").GetComponent<Button>().enabled = true;
-        GameObject.Find("leftButton").GetComponent<Button>().enabled = true;
-        GameObject.Find("rightButton").GetComponent<Button>().enabled = true;
+        if (PlayerPrefs.GetInt("Coin") >= 5) {
+            GameObject.Find("playBGM").GetComponent<AudioSource>().Play();
+            GameObject.Find("pauseButton").GetComponent<Button>().enabled = true;
+            GameObject.Find("leftButton").GetComponent<Button>().enabled = true;
+            GameObject.Find("rightButton").GetComponent<Button>().enabled = true;
 
-        GameObject timeBar = GameObject.Find("timeBar");
-        timer.timer = 10.0f;
-        timeBar.transform.Translate(1.1f, 0.0f, 0.0f);
-        PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin") - 5));
+            GameObject timeBar = GameObject.Find("timeBar");
+            timer.timer = 10.0f;
+            timeBar.transform.Translate(1.1f, 0.0f, 0.0f);
+            PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin") - 5));
+        }
     }
 
     void TestYesFunction() {
         score = FindObjectOfType<score>();
+        myCoin = PlayerPrefs.GetInt("Coin");
 
         coinValue = (int)(score.value * 0.001);
         if (PlayerPrefs.GetString("CurrentSkin") == "skin2") {
             skin2Coin = coinValue * 1.5f;
-            PlayerPrefs.SetInt("Coin", (int)skin2Coin);
+            PlayerPrefs.SetInt("Coin", (myCoin + (int)skin2Coin));
         } else {
-            myCoin = PlayerPrefs.GetInt("Coin");
             myCoin += coinValue;
             PlayerPrefs.SetInt("Coin", myCoin);
         }

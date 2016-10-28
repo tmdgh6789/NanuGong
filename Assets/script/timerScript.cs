@@ -11,6 +11,11 @@ public class timerScript : MonoBehaviour {
     public Canvas canvas;
     public Canvas comboCanvas;
 
+    public GameObject leftButton;
+    public GameObject rightButton;
+
+    public GameObject[] starAnimObj = new GameObject[3];
+
     void Awake() {
         timerText = GetComponent<Text>();
         if (itemToggle.sec > 0) {
@@ -30,8 +35,25 @@ public class timerScript : MonoBehaviour {
         }
 
         if (timer > 0) {
+            
             timer -= Time.deltaTime;
             timerText.text = "" + (int)timer;
+
+            leftButton = GameObject.Find("leftButton");
+            rightButton = GameObject.Find("rightButton");
+
+            if (leftButton.GetComponent<Button>().enabled == false || rightButton.GetComponent<Button>().enabled == false) {
+                StartCoroutine("buttonActive");
+            }
+
+            for (int i = 0; i < 3; i++) {
+                if (GameObject.Find("starAnim" + i + "(Clone)")) {
+                    starAnimObj[i] = GameObject.Find("starAnim" + i + "(Clone)");
+                }
+
+                Destroy(starAnimObj[i], 0.3f);
+            }
+
         } else if (timer < 0) {
             if (itemToggle.revival) {
                 if (Random.Range(1, 100) <= itemToggle.revivalValue) {
@@ -68,4 +90,11 @@ public class timerScript : MonoBehaviour {
         itemToggle.revival = false;
         GameObject.Find("timeBar").transform.position = new Vector2(0, transform.position.y);
     }
+
+    IEnumerator buttonActive() {
+        yield return new WaitForSeconds(0.5f);
+        leftButton.GetComponent<Button>().enabled = true;
+        rightButton.GetComponent<Button>().enabled = true;
+    }
+    
 }

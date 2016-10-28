@@ -20,13 +20,14 @@ public class buttonScript : MonoBehaviour {
 
     public Canvas comboCanvas;
     public Animator comboAnim;
-    GameObject starAnimObj;
-    // GameObject[] starAnimObj = new GameObject[3];
-    int starAnimNum;
+
+    public GameObject[] starAnim = new GameObject[3];
+    public GameObject starAnimObj;
+    public static int animNumber;
 
     public GameObject leftButton;
     public GameObject rightButton;
-
+    
     public void button(string value) {
         _start = FindObjectOfType<startScript>();
         _score = FindObjectOfType<score>();
@@ -63,7 +64,14 @@ public class buttonScript : MonoBehaviour {
     }
 
     void ButtonOk(string course) {
-        StartCoroutine("starAnim");
+
+        for (int i = 0; i < 3; i++) {
+            starAnim[i] = Resources.Load("starAnim" + i) as GameObject;
+        }
+        animNumber = Random.Range(0, 3);
+        starAnimObj = Instantiate(starAnim[animNumber]);
+        Canvas animCanvas = GameObject.Find("animCanvas").GetComponent<Canvas>();
+        starAnimObj.transform.SetParent(animCanvas.transform, false);
 
         GameObject bonusBall = Resources.Load("bonus") as GameObject;
         Sprite bonusBallSpr = bonusBall.GetComponent<SpriteRenderer>().sprite;
@@ -243,7 +251,6 @@ public class buttonScript : MonoBehaviour {
         }
         leftButton.GetComponent<Button>().enabled = false;
         rightButton.GetComponent<Button>().enabled = false;
-        Invoke("buttonActivate", 0.3f);
         comboCanvas.GetComponent<Canvas>().enabled = false;
         _combo.value = 0;
         GameObject bomb = Instantiate(Resources.Load("bomb") as GameObject, ball[7].transform.position, Quaternion.identity) as GameObject;
@@ -295,13 +302,12 @@ public class buttonScript : MonoBehaviour {
         leftButton.GetComponent<Button>().enabled = true;
         rightButton.GetComponent<Button>().enabled = true;
     }
-    
-    IEnumerator starAnim() {
-        starAnimObj = Instantiate(Resources.Load("star1") as GameObject);
+    /*
+    IEnumerator starAnimation() {
+        yield return new WaitForSeconds(0.5f);
 
-        yield return new WaitForSeconds(2.0f);
+        starAnim[animNumber].SetActive(false);
 
-        Destroy(starAnimObj);
         /*
         for (int i = 0; i < 3; i++) {
             starAnimObj[i] = GameObject.Find("animCanvas").transform.FindChild("starAnim" + (i + 1)).gameObject;
@@ -318,11 +324,7 @@ public class buttonScript : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
 
         starAnimObj[starAnimNum].SetActive(false);
-        */
+        
     }
-
-    IEnumerator deActive(int i) {
-        yield return new WaitForSeconds(0.5f);
-        starAnimObj.SetActive(false);
-    }
+    */
 }

@@ -31,7 +31,7 @@ public class optionModalPanel : MonoBehaviour {
 
         closeB.onClick.RemoveAllListeners();
         closeB.onClick.AddListener(ClosePanel);
-        
+
         recordB.gameObject.SetActive(true);
         coinB.gameObject.SetActive(true);
         charactorB.gameObject.SetActive(true);

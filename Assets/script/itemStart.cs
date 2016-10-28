@@ -8,19 +8,21 @@ public class itemStart : MonoBehaviour {
     public Toggle itemRevival;
     
     public int coin;
+    public int readyCoin;
     
     void Update() {
         coin = PlayerPrefs.GetInt("Coin");
+        readyCoin = PlayerPrefs.GetInt("ReadyCoin");
 
-        if (coin < 5) {
+        if (coin < 5 || readyCoin < 5) {
             itemTimer.GetComponent<Toggle>().enabled = false;
         }
 
-        if (coin < 3) {
+        if (coin < 3 || readyCoin < 3) {
             itemSuper.GetComponent<Toggle>().enabled = false;
         }
 
-        if (coin < 5 && PlayerPrefs.GetString("CurrentSkin") == "skin3") {
+        if ((coin < 5 || readyCoin < 5 ) && PlayerPrefs.GetString("CurrentSkin") == "skin3") {
             itemRevival.GetComponent<Toggle>().enabled = false;
         }
     }
