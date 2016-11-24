@@ -70,6 +70,9 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Json">
+      <HintPath>Assets\Plugins\System.Net.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
@@ -201,7 +204,6 @@
     <Compile Include="Assets\script\bestScoreTextPlay.cs" />
     <Compile Include="Assets\script\bestScoreTextReady.cs" />
     <Compile Include="Assets\script\bgTimer.cs" />
-    <Compile Include="Assets\script\bonusGage.cs" />
     <Compile Include="Assets\script\buttonScript.cs" />
     <Compile Include="Assets\script\buySkin1.cs" />
     <Compile Include="Assets\script\buySkin2.cs" />
@@ -222,6 +224,8 @@
     <Compile Include="Assets\script\displayChar.cs" />
     <Compile Include="Assets\script\effectSound.cs" />
     <Compile Include="Assets\script\emptyFunction.cs" />
+    <Compile Include="Assets\script\feverMode.cs" />
+    <Compile Include="Assets\script\gage.cs" />
     <Compile Include="Assets\script\gameReady.cs" />
     <Compile Include="Assets\script\gameStart.cs" />
     <Compile Include="Assets\script\itemStart.cs" />
@@ -230,6 +234,7 @@
     <Compile Include="Assets\script\myCoinText.cs" />
     <Compile Include="Assets\script\mySkin.cs" />
     <Compile Include="Assets\script\myroomNick.cs" />
+    <Compile Include="Assets\script\network\userInsert.cs" />
     <Compile Include="Assets\script\nickModify.cs" />
     <Compile Include="Assets\script\optionButton.cs" />
     <Compile Include="Assets\script\optionModalPanel.cs" />

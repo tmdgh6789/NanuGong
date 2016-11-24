@@ -6,9 +6,7 @@ public class combo : MonoBehaviour {
 	public int value = 0;
     public Canvas comboCanvas;
 	private Text comboValue;
-
-    // Use this for initialization
-
+    
     void Awake(){
 		comboValue = GetComponent<Text>();
 	}
@@ -16,8 +14,10 @@ public class combo : MonoBehaviour {
         comboCanvas.GetComponent<Canvas>().enabled = false;
     }
 	
-	// Update is called once per frame
 	void Update () {
 		comboValue.text = "" + value;
+        if (value >= 50) {
+            feverMode.feverStart();
+        }
 	}
 }

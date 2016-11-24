@@ -7,14 +7,14 @@ public class buttonScript : MonoBehaviour {
     score _score;
     combo _combo;
     timerScript _timer;
-    bonusGage _bonus;
+    gage _gage;
 
     GameObject randomRes;
     GameObject randomBall;
 
     GameObject[] newBall = new GameObject[6];
     GameObject[] ball = new GameObject[8];
-    
+
     AudioSource buttonTrue;
     AudioSource buttonFalse;
 
@@ -27,13 +27,13 @@ public class buttonScript : MonoBehaviour {
 
     public GameObject leftButton;
     public GameObject rightButton;
-    
+
     public void button(string value) {
         _start = FindObjectOfType<startScript>();
         _score = FindObjectOfType<score>();
         _combo = FindObjectOfType<combo>();
         _timer = FindObjectOfType<timerScript>();
-        _bonus = FindObjectOfType<bonusGage>();
+        _gage = FindObjectOfType<gage>();
 
         Sprite[] leftSpr = _start.leftSpr;
         Sprite[] rightSpr = _start.rightSpr;
@@ -46,7 +46,7 @@ public class buttonScript : MonoBehaviour {
                 ball[i] = GameObject.Find("ball" + i + "(Clone)");
             }
             Sprite ball7Spr = ball[7].GetComponent<SpriteRenderer>().sprite;
-            
+
             if (value == "left") {
                 if (ball7Spr == leftSpr[0] || ball7Spr == leftSpr[1] || ball7Spr == leftSpr[2] || ball7Spr == bonusBallSpr) {
                     ButtonOk("left");
@@ -87,19 +87,19 @@ public class buttonScript : MonoBehaviour {
         bool level4 = (_score.value > 2099 && _score.value < 2800) || (_combo.value > 20 && _combo.value < 28);
         bool level5 = (_score.value > 2799) || (_combo.value > 27);
 
-        if (_bonus.gageValue < 105) {
+        if (_gage.bGageValue < 105) {
             if (PlayerPrefs.GetString("CurrentSkin") == "skin1") {
-                _bonus.bonus(8);
+                _gage.bonus(8);
             } else {
-                _bonus.bonus(5);
+                _gage.bonus(5);
             }
         }
-        
+
         if (level1) {
-            if (_bonus.gageValue >= 105.0f) {
+            if (_gage.bGageValue >= 105.0f) {
                 randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
-                _bonus.gageValue = 0;
-                _bonus.baguetteGage.size = 0;
+                _gage.bGageValue = 0;
+                _gage.baguetteGage.size = 0;
             } else {
                 randomRes = _start.startRes[Random.Range(0, 2)] as GameObject;
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
@@ -111,10 +111,10 @@ public class buttonScript : MonoBehaviour {
             newBall[1] = _start.rightRes[0];
             newBall[2] = _start.leftRes[1];
 
-            if (_bonus.gageValue >= 105.0f) {
+            if (_gage.bGageValue >= 105.0f) {
                 randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
-                _bonus.gageValue = 0;
-                _bonus.baguetteGage.size = 0;
+                _gage.bGageValue = 0;
+                _gage.baguetteGage.size = 0;
             } else {
                 randomRes = newBall[Random.Range(0, 3)];
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
@@ -127,10 +127,10 @@ public class buttonScript : MonoBehaviour {
             newBall[2] = _start.leftRes[1];
             newBall[3] = _start.rightRes[1];
 
-            if (_bonus.gageValue >= 105.0f) {
+            if (_gage.bGageValue >= 105.0f) {
                 randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
-                _bonus.gageValue = 0;
-                _bonus.baguetteGage.size = 0;
+                _gage.bGageValue = 0;
+                _gage.baguetteGage.size = 0;
             } else {
                 randomRes = newBall[Random.Range(0, 4)];
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
@@ -142,10 +142,10 @@ public class buttonScript : MonoBehaviour {
                 newBall[2] = _start.leftRes[1];
                 newBall[3] = _start.rightRes[1];
 
-                if (_bonus.gageValue >= 105.0f) {
+                if (_gage.bGageValue >= 105.0f) {
                     randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
-                    _bonus.gageValue = 0;
-                    _bonus.baguetteGage.size = 0;
+                    _gage.bGageValue = 0;
+                    _gage.baguetteGage.size = 0;
                 } else {
                     randomRes = newBall[Random.Range(0, 4)];
                     randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
@@ -159,10 +159,10 @@ public class buttonScript : MonoBehaviour {
                 newBall[3] = _start.rightRes[1];
                 newBall[4] = _start.leftRes[2];
 
-                if (_bonus.gageValue >= 105.0f) {
+                if (_gage.bGageValue >= 105.0f) {
                     randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
-                    _bonus.gageValue = 0;
-                    _bonus.baguetteGage.size = 0;
+                    _gage.bGageValue = 0;
+                    _gage.baguetteGage.size = 0;
                 } else {
                     randomRes = newBall[Random.Range(0, 5)];
                     randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
@@ -175,10 +175,10 @@ public class buttonScript : MonoBehaviour {
                 newBall[2] = _start.leftRes[1];
                 newBall[3] = _start.rightRes[1];
 
-                if (_bonus.gageValue >= 105.0f) {
+                if (_gage.bGageValue >= 105.0f) {
                     randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
-                    _bonus.gageValue = 0;
-                    _bonus.baguetteGage.size = 0;
+                    _gage.bGageValue = 0;
+                    _gage.baguetteGage.size = 0;
                 } else {
                     randomRes = newBall[Random.Range(0, 4)];
                     randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
@@ -193,10 +193,10 @@ public class buttonScript : MonoBehaviour {
                 newBall[4] = _start.leftRes[2];
                 newBall[5] = _start.rightRes[2];
 
-                if (_bonus.gageValue >= 105.0f) {
+                if (_gage.bGageValue >= 105.0f) {
                     randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
-                    _bonus.gageValue = 0;
-                    _bonus.baguetteGage.size = 0;
+                    _gage.bGageValue = 0;
+                    _gage.baguetteGage.size = 0;
                 } else {
                     randomRes = newBall[Random.Range(0, 6)];
                     randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
@@ -246,9 +246,17 @@ public class buttonScript : MonoBehaviour {
         buttonFalse = esSources[2];
         buttonFalse.Play();
 
-        if (_bonus.gageValue > 0) {
-            _bonus.bonus(-10);
+        if (_gage.bGageValue > 0) {
+            _gage.bonus(-10);
         }
+        if (_gage.cGageValue < 105) {
+            _gage.Smoke(5);
+        }
+        if (_gage.cGageValue == 105) {
+            StartCoroutine("cloudAnim");
+        }
+
+
         leftButton.GetComponent<Button>().enabled = false;
         rightButton.GetComponent<Button>().enabled = false;
         comboCanvas.GetComponent<Canvas>().enabled = false;
@@ -301,6 +309,13 @@ public class buttonScript : MonoBehaviour {
     void buttonActivate() {
         leftButton.GetComponent<Button>().enabled = true;
         rightButton.GetComponent<Button>().enabled = true;
+    }
+    IEnumerator cloudAnim() {
+        GameObject.Find("animCanvas").transform.FindChild("cloudPanel").gameObject.SetActive(true);
+        _gage.cGageValue = 0;
+
+        yield return new WaitForSeconds(10.0f);
+        GameObject.Find("cloudPanel").SetActive(false);
     }
     /*
     IEnumerator starAnimation() {
