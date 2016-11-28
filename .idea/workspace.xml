@@ -2,130 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13afccbf-e034-4b51-befa-6443f62404dd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star1.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star10.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star2.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star3.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star4.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star5.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star6.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star7.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star8.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/anim/star9.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/play/KakaoTalk_20161024_205547308.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/play/KakaoTalk_20161024_205547308.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/play/KakaoTalk_20161027_174044108.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/play/KakaoTalk_20161027_174044108.png.meta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/script/bonusGage.cs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/script/bonusGage.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/script/network/userInsert.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/script/network/userInsert.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/1e/1e8a489f49f848a4288724824397dc4c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/1e/1e8a489f49f848a4288724824397dc4c.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/c9/c9a3218deb65e8c46aec7525c0ee1e53" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/c9/c9a3218deb65e8c46aec7525c0ee1e53.info" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vs/NanuGong/v14/.suo" afterPath="$PROJECT_DIR$/.vs/NanuGong/v14/.suo" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scene/main.unity" afterPath="$PROJECT_DIR$/Assets/Scene/main.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scene/play.unity" afterPath="$PROJECT_DIR$/Assets/Scene/play.unity" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/main/login.png" afterPath="$PROJECT_DIR$/Assets/Sprites/main/login.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" afterPath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/assetDatabase3" afterPath="$PROJECT_DIR$/Library/assetDatabase3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/expandedItems" afterPath="$PROJECT_DIR$/Library/expandedItems" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000002000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000002000000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000003000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000003000000000000000" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000004000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000004000000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000004100000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000004100000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000005000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000005000000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000005100000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000005100000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000006000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000006000000000000000" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000006100000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000006100000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000007000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000007000000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000007100000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000007100000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000008000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000008000000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000008100000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000008100000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000009000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000009000000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/0000000000000000a000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/0000000000000000a000000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/0000000000000000a100000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/0000000000000000a100000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/0000000000000000b000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/0000000000000000b000000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/0000000000000000c000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/0000000000000000c000000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/0b/0b80148377d78bd4aa8b60f4f373ddfa" afterPath="$PROJECT_DIR$/Library/metadata/0b/0b80148377d78bd4aa8b60f4f373ddfa" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/0b/0b80148377d78bd4aa8b60f4f373ddfa.info" afterPath="$PROJECT_DIR$/Library/metadata/0b/0b80148377d78bd4aa8b60f4f373ddfa.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/15/1599fecfcc84e9443b6c639d59a0b9ca" afterPath="$PROJECT_DIR$/Library/metadata/15/1599fecfcc84e9443b6c639d59a0b9ca" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/17/17e32f1ef9bed7a42ba06da28f74e75c" afterPath="$PROJECT_DIR$/Library/metadata/17/17e32f1ef9bed7a42ba06da28f74e75c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/17/17e32f1ef9bed7a42ba06da28f74e75c.info" afterPath="$PROJECT_DIR$/Library/metadata/17/17e32f1ef9bed7a42ba06da28f74e75c.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/20/20cbcadfb18c4594fb357105105ecd66" afterPath="$PROJECT_DIR$/Library/metadata/20/20cbcadfb18c4594fb357105105ecd66" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/20/20cbcadfb18c4594fb357105105ecd66.info" afterPath="$PROJECT_DIR$/Library/metadata/20/20cbcadfb18c4594fb357105105ecd66.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/28/289fcd16cb23c1a4788661a9d0f0e511" afterPath="$PROJECT_DIR$/Library/metadata/28/289fcd16cb23c1a4788661a9d0f0e511" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/2a/2a752b4a489acbf48b1ce232be2d4ba8" afterPath="$PROJECT_DIR$/Library/metadata/2a/2a752b4a489acbf48b1ce232be2d4ba8" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/2a/2a752b4a489acbf48b1ce232be2d4ba8.info" afterPath="$PROJECT_DIR$/Library/metadata/2a/2a752b4a489acbf48b1ce232be2d4ba8.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/2d/2d3a129a96de04d49aa00ee38387fa9a.info" afterPath="$PROJECT_DIR$/Library/metadata/2d/2d3a129a96de04d49aa00ee38387fa9a.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/47/47f8ca0f72621144287f3e8f71ca33c0" afterPath="$PROJECT_DIR$/Library/metadata/47/47f8ca0f72621144287f3e8f71ca33c0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/47/47f8ca0f72621144287f3e8f71ca33c0.info" afterPath="$PROJECT_DIR$/Library/metadata/47/47f8ca0f72621144287f3e8f71ca33c0.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/4a/4afb453cc1f390e42a36bf006502ca17" afterPath="$PROJECT_DIR$/Library/metadata/4a/4afb453cc1f390e42a36bf006502ca17" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/4a/4afb453cc1f390e42a36bf006502ca17.info" afterPath="$PROJECT_DIR$/Library/metadata/4a/4afb453cc1f390e42a36bf006502ca17.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/50/5025b85670a5d454b851311b15c251ea" afterPath="$PROJECT_DIR$/Library/metadata/50/5025b85670a5d454b851311b15c251ea" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/50/5025b85670a5d454b851311b15c251ea.info" afterPath="$PROJECT_DIR$/Library/metadata/50/5025b85670a5d454b851311b15c251ea.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/56/56125ea649b1ed246ba4195011870c39.info" afterPath="$PROJECT_DIR$/Library/metadata/56/56125ea649b1ed246ba4195011870c39.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/56/568172dd044e08a46a5839f4f55f772b.info" afterPath="$PROJECT_DIR$/Library/metadata/56/568172dd044e08a46a5839f4f55f772b.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/5c/5c634c2319700994c835fb3c12b4038e" afterPath="$PROJECT_DIR$/Library/metadata/5c/5c634c2319700994c835fb3c12b4038e" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/5d/5d9c7eb3684af7d4d9149159c5029059" afterPath="$PROJECT_DIR$/Library/metadata/5d/5d9c7eb3684af7d4d9149159c5029059" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/5d/5d9c7eb3684af7d4d9149159c5029059.info" afterPath="$PROJECT_DIR$/Library/metadata/5d/5d9c7eb3684af7d4d9149159c5029059.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/67/67174b1fef4ec4053b00e5423f09a3af.info" afterPath="$PROJECT_DIR$/Library/metadata/67/67174b1fef4ec4053b00e5423f09a3af.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/69/695ea25c20f32b942be7207aace3ec1e.info" afterPath="$PROJECT_DIR$/Library/metadata/69/695ea25c20f32b942be7207aace3ec1e.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/2c/2c3d8c01a8e9b424db12ad8bf51cbaf0" afterPath="$PROJECT_DIR$/Library/metadata/2c/2c3d8c01a8e9b424db12ad8bf51cbaf0" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/6a/6a1ddf488c95a7043b15cf3770de4cc8" afterPath="$PROJECT_DIR$/Library/metadata/6a/6a1ddf488c95a7043b15cf3770de4cc8" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/6e/6e134bd7c8288604a9558744e15fcf4b.info" afterPath="$PROJECT_DIR$/Library/metadata/6e/6e134bd7c8288604a9558744e15fcf4b.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/6f/6fb06fb2c3c91624aad8ac4d1281efa1" afterPath="$PROJECT_DIR$/Library/metadata/6f/6fb06fb2c3c91624aad8ac4d1281efa1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/72/72ccad3dc3203ff4abb0df862f01677f" afterPath="$PROJECT_DIR$/Library/metadata/72/72ccad3dc3203ff4abb0df862f01677f" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/74/74afb692067952a498af8e27a0c6c3cc.info" afterPath="$PROJECT_DIR$/Library/metadata/74/74afb692067952a498af8e27a0c6c3cc.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/75/7576de81d1e6e2745aad7328c61d18ce" afterPath="$PROJECT_DIR$/Library/metadata/75/7576de81d1e6e2745aad7328c61d18ce" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/7b/7b5b0598287ebe94bb85da280737eae8" afterPath="$PROJECT_DIR$/Library/metadata/7b/7b5b0598287ebe94bb85da280737eae8" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/80/803538cb4138bef418809728e8d00d1e" afterPath="$PROJECT_DIR$/Library/metadata/80/803538cb4138bef418809728e8d00d1e" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/8b/8b7ab3fed4c17cd43a6c8c451d86f71d" afterPath="$PROJECT_DIR$/Library/metadata/8b/8b7ab3fed4c17cd43a6c8c451d86f71d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/8b/8b7ab3fed4c17cd43a6c8c451d86f71d.info" afterPath="$PROJECT_DIR$/Library/metadata/8b/8b7ab3fed4c17cd43a6c8c451d86f71d.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/8c/8c83c35590e2d96419422651cbc78cf6.info" afterPath="$PROJECT_DIR$/Library/metadata/8c/8c83c35590e2d96419422651cbc78cf6.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/94/9448abf7ac16e614fbd8f920983a936a" afterPath="$PROJECT_DIR$/Library/metadata/94/9448abf7ac16e614fbd8f920983a936a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/95/9594a474a4c33bd48a2d3ea219f99e5a" afterPath="$PROJECT_DIR$/Library/metadata/95/9594a474a4c33bd48a2d3ea219f99e5a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/95/9594a474a4c33bd48a2d3ea219f99e5a.info" afterPath="$PROJECT_DIR$/Library/metadata/95/9594a474a4c33bd48a2d3ea219f99e5a.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/a0/a0da9a5dbe89d084590632146857c316" afterPath="$PROJECT_DIR$/Library/metadata/a0/a0da9a5dbe89d084590632146857c316" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/a0/a0da9a5dbe89d084590632146857c316.info" afterPath="$PROJECT_DIR$/Library/metadata/a0/a0da9a5dbe89d084590632146857c316.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/a6/a64ab9e8d09aff64aa6136776294af91.info" afterPath="$PROJECT_DIR$/Library/metadata/a6/a64ab9e8d09aff64aa6136776294af91.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/a7/a773fb44d7f8a8c4780d554c9df7e8b7.info" afterPath="$PROJECT_DIR$/Library/metadata/a7/a773fb44d7f8a8c4780d554c9df7e8b7.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/af/afe494b08a4f6304c9c12f53f8e51d22" afterPath="$PROJECT_DIR$/Library/metadata/af/afe494b08a4f6304c9c12f53f8e51d22" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/af/afe494b08a4f6304c9c12f53f8e51d22.info" afterPath="$PROJECT_DIR$/Library/metadata/af/afe494b08a4f6304c9c12f53f8e51d22.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/b1/b1bf90ad423dd0942b1c3bcf96aefd6d" afterPath="$PROJECT_DIR$/Library/metadata/b1/b1bf90ad423dd0942b1c3bcf96aefd6d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/b1/b1bf90ad423dd0942b1c3bcf96aefd6d.info" afterPath="$PROJECT_DIR$/Library/metadata/b1/b1bf90ad423dd0942b1c3bcf96aefd6d.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/b5/b5298a714c6328741946e47e44f1fa2d" afterPath="$PROJECT_DIR$/Library/metadata/b5/b5298a714c6328741946e47e44f1fa2d" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/b5/b5298a714c6328741946e47e44f1fa2d.info" afterPath="$PROJECT_DIR$/Library/metadata/b5/b5298a714c6328741946e47e44f1fa2d.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/b7/b7306fbf921ad9248b107d4d6089364a" afterPath="$PROJECT_DIR$/Library/metadata/b7/b7306fbf921ad9248b107d4d6089364a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/c7/c78acac4ba03a4b34b7e97df2ace338c.info" afterPath="$PROJECT_DIR$/Library/metadata/c7/c78acac4ba03a4b34b7e97df2ace338c.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/cb/cb7e4fb07b6115f46bac279948e11661" afterPath="$PROJECT_DIR$/Library/metadata/cb/cb7e4fb07b6115f46bac279948e11661" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/cf/cfaaa547a25024f889d36d88394ee8c8.info" afterPath="$PROJECT_DIR$/Library/metadata/cf/cfaaa547a25024f889d36d88394ee8c8.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/d0/d0105d987712c4848a310adb69cd8d1e.info" afterPath="$PROJECT_DIR$/Library/metadata/d0/d0105d987712c4848a310adb69cd8d1e.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/d3/d3c316a568723be4ebc9751a90632998" afterPath="$PROJECT_DIR$/Library/metadata/d3/d3c316a568723be4ebc9751a90632998" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/d8/d86e4ff7a6fb9664196ed5b76f8e337c" afterPath="$PROJECT_DIR$/Library/metadata/d8/d86e4ff7a6fb9664196ed5b76f8e337c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/d9/d9da5ebffe2a8e74b8c492adac1db803" afterPath="$PROJECT_DIR$/Library/metadata/d9/d9da5ebffe2a8e74b8c492adac1db803" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/e0/e03e443f74dcef249a5f4cb94509c2d2" afterPath="$PROJECT_DIR$/Library/metadata/e0/e03e443f74dcef249a5f4cb94509c2d2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/e0/e03e443f74dcef249a5f4cb94509c2d2.info" afterPath="$PROJECT_DIR$/Library/metadata/e0/e03e443f74dcef249a5f4cb94509c2d2.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/e6/e68a41f3f1bb30b48bff32407512eb45" afterPath="$PROJECT_DIR$/Library/metadata/e6/e68a41f3f1bb30b48bff32407512eb45" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/e6/e68a41f3f1bb30b48bff32407512eb45.info" afterPath="$PROJECT_DIR$/Library/metadata/e6/e68a41f3f1bb30b48bff32407512eb45.info" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/f2/f2fcbeacb1fc2b94fab2a32c38f1bc00" afterPath="$PROJECT_DIR$/Library/metadata/f2/f2fcbeacb1fc2b94fab2a32c38f1bc00" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/script/buttonScript.cs" afterPath="$PROJECT_DIR$/Assets/script/buttonScript.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/script/combo.cs" afterPath="$PROJECT_DIR$/Assets/script/combo.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/main/login.png.meta" afterPath="$PROJECT_DIR$/Assets/Sprites/main/login.png.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/script/feverMode.cs" afterPath="$PROJECT_DIR$/Assets/script/feverMode.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/script/gameReady.cs" afterPath="$PROJECT_DIR$/Assets/script/gameReady.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" afterPath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/BuiltinAssemblies.stamp" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/BuiltinAssemblies.stamp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NanuGong.CSharp.Editor.csproj" afterPath="$PROJECT_DIR$/NanuGong.CSharp.Editor.csproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NanuGong.CSharp.csproj" afterPath="$PROJECT_DIR$/NanuGong.CSharp.csproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
     </list>
     <ignored path="NanuGong.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -147,22 +50,12 @@
     <favorites_list name="NanuGong" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="106" column="39" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="model.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/sequelize/lib/model.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="1812" column="0" selection-start-line="1812" selection-start-column="0" selection-end-line="1812" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -203,7 +96,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="width" value="1932" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -249,14 +143,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NanuGong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NanuGong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -282,33 +190,36 @@
       <option name="presentableId" value="Default" />
       <updated>1479966380802</updated>
       <workItem from="1479966383792" duration="8687000" />
+      <workItem from="1480050427344" duration="6413000" />
+      <workItem from="1480134766355" duration="959000" />
+      <workItem from="1480329157372" duration="1352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8687000" />
+    <option name="totallyTimeSpent" value="17411000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1932" height="1056" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2761905" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -327,6 +238,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -335,18 +254,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/sequelize/lib/sequelize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="332" column="27" selection-start-line="332" selection-start-column="27" selection-end-line="332" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/express.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/body-parser/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="58" column="2" selection-start-line="58" selection-start-column="2" selection-end-line="58" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="58" column="33" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/sequelize/lib/model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
+        <state relative-caret-position="22">
           <caret line="1812" column="0" selection-start-line="1812" selection-start-column="0" selection-end-line="1812" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="106" column="39" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
+        <state relative-caret-position="204">
+          <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="37" />
           <folding />
         </state>
       </provider>

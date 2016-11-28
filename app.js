@@ -115,22 +115,6 @@ app.get('/join/:id/:password/:nickname', function(req, res) {
         })
 });
 
-app.get('/user/:currentPage/:rowsPerPage', function(req, res) {
-    var rowsPerPage = Number(req.params.rowsPerPage);
-    var currentPage = Number(req.params.currentPage);
-    User.findAll({
-        where: {
-        },
-        limit: rowsPerPage,
-        offset: (currentPage <= 1) ? 0 : rowsPerPage*(currentPage-1)
-    })
-        .then(function(results){
-            res.json(results);
-        })
-        .catch(function(err){
-            res.json(err);
-        })
-});
 
 app.delete("/user", function(req, res){
     User.destroy({

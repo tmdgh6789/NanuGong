@@ -1,21 +1,22 @@
 ﻿using UnityEngine;
-using System.Net;
+using UnityEngine.UI;
+using System.Collections;
 using System.Text;
 using System.IO;
+using System.Net;
+using System.Net.Json;
 
-public class userInsert : MonoBehaviour {
+public class NetworkManager : MonoBehaviour {
+    public string strUrl;
+    public string strResult;
 
-	// Use this for initialization
-	public void insert () {
-        // 요청을 보내는 URl
-        string strUri = "http://localhost:5000/insert/test3/test3/test3";
-
-        /* POST */
+    public void network(string strUrl) {
+        /* GET */
         // HttpWebRequest 객체 생성, 설정
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(strUri);
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(strUrl);
         request.Method = "GET";    // 기본값 "GET"
         request.ContentType = "application/x-www-form-urlencoded";
-        
+
         // 요청, 응답 받기
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
@@ -24,8 +25,12 @@ public class userInsert : MonoBehaviour {
         StreamReader srReadData = new StreamReader(stReadData, Encoding.Default);
 
         // 응답 Stream -> 응답 String 변환
-        string strResult = srReadData.ReadToEnd();
+        strResult = srReadData.ReadToEnd();
 
-        Debug.Log(strResult);
+        /*
+        JsonTextParser parser = new JsonTextParser();
+        JsonObject obj = parser.Parse(strResult);
+        JsonObjectCollection col = (JsonObjectCollection)obj;
+        */
     }
 }
