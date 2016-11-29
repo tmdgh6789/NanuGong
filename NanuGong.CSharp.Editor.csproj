@@ -108,6 +108,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="NanuGong.CSharp.Plugins.csproj">
+      <Project>{8D6B06F3-187B-DC6F-B077-629DDEE3CB18}</Project>
+      <Name>NanuGong.CSharp.Plugins</Name>
+    </ProjectReference>
     <ProjectReference Include="NanuGong.CSharp.csproj">
       <Project>{C72A6242-D433-3AB3-8F70-8210C063BECB}</Project>
       <Name>NanuGong.CSharp</Name>

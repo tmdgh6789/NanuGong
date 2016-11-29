@@ -16,8 +16,5 @@ public class combo : MonoBehaviour {
 	
 	void Update () {
 		comboValue.text = "" + value;
-        if (value >= 50) {
-            feverMode.feverStart();
-        }
 	}
 }

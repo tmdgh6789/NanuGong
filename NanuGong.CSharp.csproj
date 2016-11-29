@@ -75,6 +75,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="NanuGong.CSharp.Plugins.csproj">
+      <Project>{8D6B06F3-187B-DC6F-B077-629DDEE3CB18}</Project>
+      <Name>NanuGong.CSharp.Plugins</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
     <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -235,6 +241,7 @@
     <Compile Include="Assets\script\mySkin.cs" />
     <Compile Include="Assets\script\myroomNick.cs" />
     <Compile Include="Assets\script\network\NetworkManager.cs" />
+    <Compile Include="Assets\script\network\network.cs" />
     <Compile Include="Assets\script\nickModify.cs" />
     <Compile Include="Assets\script\optionButton.cs" />
     <Compile Include="Assets\script\optionModalPanel.cs" />

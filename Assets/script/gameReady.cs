@@ -3,17 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 using System.Collections;
-
-[Serializable]
-public class userData {
-    public int num;
-    public string id;
-    public string password;
-    public string nickname;
-    public string bestScore;
-    public string coin;
-    public string myChar;
-}
+using SimpleJSON;
 
 public class gameReady : MonoBehaviour {
 
@@ -34,6 +24,7 @@ public class gameReady : MonoBehaviour {
     public string strResult;
 
     public GameObject joinPanelObject;
+    public GameObject joinButtonPanelObject;
     public GameObject loginPanelObject;
     public GameObject coinPanelObject;
     public GameObject textPanelObject;
@@ -88,30 +79,26 @@ public class gameReady : MonoBehaviour {
     }
 
     IEnumerator loadReady() {
-        loginPanelObject.SetActive(false);
-        textPanelObject.SetActive(true);
-        
         login();
-
-        text = GameObject.Find("text").GetComponent<Text>();
-        text.text = userNick + "님 반갑습니다.\n곧 게임이 시작됩니다.\n잠시만 기다려주세요!";
-
-        yield return new WaitForSeconds(1.5f);
-
+        
         if (id == userId) {     //id 맞았을 때
             if (pw == userPw) {     //pw도 맞았을 때
+                textPanelObject.SetActive(true);
+                text = GameObject.Find("text").GetComponent<Text>();
+                text.text = userNick + "님 반갑습니다.\n곧 게임이 시작됩니다.\n잠시만 기다려주세요!";
+
+                yield return new WaitForSeconds(1.5f);
+
                 bgmObj.GetComponent<AudioSource>().Pause();
                 DontDestroyOnLoad(bgmObj);
                 DontDestroyOnLoad(esObj);
                 SceneManager.LoadScene(1);
             } else {        //pw는 틀렸을 때
-                loginPanelObject.SetActive(false);
                 textPanelObject.SetActive(true);
                 text = GameObject.Find("text").GetComponent<Text>();
                 text.text = "아이디 또는 비밀번호를 확인해주세요!";
             }
         } else {        //id 틀렸을 때
-            loginPanelObject.SetActive(false);
             textPanelObject.SetActive(true);
             text = GameObject.Find("text").GetComponent<Text>();
             text.text = "아이디 또는 비밀번호를 확인해주세요!";
@@ -123,13 +110,16 @@ public class gameReady : MonoBehaviour {
         strUrl = "http://localhost:5000/user/" + id;
         
         networkManager.network(strUrl);
-        Debug.Log(networkManager.strResult);
         
-        /*
-        userId = networkManager.obj["id"].GetVaule();
-        userPw = (string)col[2].GetValue();
-        userNick = (string)col[3].GetValue();
-        */
+        var obj = JSON.Parse(networkManager.strResult);
+
+        userId = obj[0]["id"].ToString();
+        userPw = obj[0]["password"].ToString();
+        userNick = obj[0]["nickname"].ToString();
+
+        userId = userId.Replace("\"", "");
+        userPw = userPw.Replace("\"", "");
+        userNick = userNick.Replace("\"", "");
     }
 
 }

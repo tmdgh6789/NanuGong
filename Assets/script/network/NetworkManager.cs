@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 using System.Text;
 using System.IO;
 using System.Net;
-using System.Net.Json;
 
 public class NetworkManager : MonoBehaviour {
     public string strUrl;
     public string strResult;
+
+    public string userId;
+    public string userPw;
+    public string userNick;
 
     public void network(string strUrl) {
         /* GET */
@@ -26,11 +28,5 @@ public class NetworkManager : MonoBehaviour {
 
         // 응답 Stream -> 응답 String 변환
         strResult = srReadData.ReadToEnd();
-
-        /*
-        JsonTextParser parser = new JsonTextParser();
-        JsonObject obj = parser.Parse(strResult);
-        JsonObjectCollection col = (JsonObjectCollection)obj;
-        */
     }
 }

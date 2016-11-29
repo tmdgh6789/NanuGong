@@ -8,6 +8,7 @@ public class buttonScript : MonoBehaviour {
     combo _combo;
     timerScript _timer;
     gage _gage;
+    feverMode _fever;
 
     GameObject randomRes;
     GameObject randomBall;
@@ -17,9 +18,12 @@ public class buttonScript : MonoBehaviour {
 
     AudioSource buttonTrue;
     AudioSource buttonFalse;
+    AudioSource feverSound;
 
     public Canvas comboCanvas;
     public Animator comboAnim;
+    public Animator fevertext;
+    public bool fevermode;
 
     public GameObject[] starAnim = new GameObject[3];
     public GameObject starAnimObj;
@@ -34,6 +38,7 @@ public class buttonScript : MonoBehaviour {
         _combo = FindObjectOfType<combo>();
         _timer = FindObjectOfType<timerScript>();
         _gage = FindObjectOfType<gage>();
+        _fever = FindObjectOfType<feverMode>();
 
         Sprite[] leftSpr = _start.leftSpr;
         Sprite[] rightSpr = _start.rightSpr;
@@ -203,7 +208,6 @@ public class buttonScript : MonoBehaviour {
                 }
             }
         }
-
         float runningTime = 0.0f;
         for (int i = 0; i < 7; i++) {
             runningTime += Time.deltaTime;
@@ -238,7 +242,25 @@ public class buttonScript : MonoBehaviour {
         comboAnim.Play("comboAnim", -1, 0);
         _combo.value += 1;
         _score.value += 100f + (_combo.value * 0.5f);
+        
+        if ((_combo.value != 0 && _combo.value % 10 == 0) && !fevermode)
+        {
+            GameObject.Find("bgPanel").transform.FindChild("feverBg").gameObject.SetActive(true);
+            for (int i = 0; i < 8; i++)
+            {
+                ball[i].GetComponent<SpriteRenderer>().sprite = _start.leftSpr[0];
 
+            }
+            feverSound = esSources[8];
+            feverSound.Play();
+            fevermode = true;
+        }
+        if (fevermode)
+        {
+            fevertext = GameObject.Find("feverText").GetComponent<Animator>();
+            fevertext.Play("feverText", -1, 0);
+        }
+        
     }
 
     void ButtonNo() {
@@ -264,6 +286,12 @@ public class buttonScript : MonoBehaviour {
         GameObject bomb = Instantiate(Resources.Load("bomb") as GameObject, ball[7].transform.position, Quaternion.identity) as GameObject;
         bomb.transform.localScale = new Vector2(1.9f, 1.9f);
         Destroy(bomb, 0.3f);
+        if (fevermode)
+        {
+            GameObject.Find("feverBg").SetActive(false);
+        }
+        fevermode = false;
+
     }
 
     void moveDown() {
@@ -292,7 +320,6 @@ public class buttonScript : MonoBehaviour {
     void moveRight() {
         ball[7].transform.Translate(0.3f, -0.2f, 0);
     }
-
     void moveStop() {
         CancelInvoke();
     }
@@ -304,6 +331,10 @@ public class buttonScript : MonoBehaviour {
     void comboCancel() {
         comboCanvas.GetComponent<Canvas>().enabled = false;
         _combo.value = 0;
+    }
+    void feverAnim()
+    {
+        fevertext = GameObject.Find("fevertext").GetComponent<Animator>();
     }
 
     void buttonActivate() {

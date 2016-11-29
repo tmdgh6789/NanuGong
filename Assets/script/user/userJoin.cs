@@ -6,6 +6,7 @@ public class userJoin : MonoBehaviour {
     private NetworkManager networkManager;
 
     public GameObject joinPanelObject;
+    public GameObject joinButtonPanelObject;
     public GameObject loginPanelObject;
     public GameObject modifyPanelObject;
     public GameObject textPanelObject;
@@ -18,6 +19,9 @@ public class userJoin : MonoBehaviour {
     public string id;
     public string pw;
     public string nick;
+
+    public bool inputCk = false;
+    public bool idCk = false;
 
     public Text text;
 
@@ -33,6 +37,11 @@ public class userJoin : MonoBehaviour {
         loginPanelObject.SetActive(false);
         confirmPanelObject.SetActive(true);
         readyButtonPanelObject.SetActive(false);
+        joinButtonPanelObject.SetActive(false);
+        
+        if (confirmPanelObject.GetComponent<RectTransform>().position.y > -4) {
+            confirmPanelObject.transform.Translate(new Vector2(0.0f, -0.6f));
+        }
     }
 
     public void joinOK() {
@@ -44,45 +53,37 @@ public class userJoin : MonoBehaviour {
         pw = inputPw.text;
         nick = inputNick.text;
 
-        Debug.Log("1. id : " + id);
-        Debug.Log("1. pw : " + pw);
-        Debug.Log("1. nick : " + nick);
         StartCoroutine("inputCheck");
 
-        Debug.Log("2. id : " + id);
-        Debug.Log("2. pw : " + pw);
-        Debug.Log("2. nick : " + nick);
-        StartCoroutine("idCheck");
+        if (inputCk) {
+            StartCoroutine("idCheck");
+        }
 
-        Debug.Log("3. id : " + id);
-        Debug.Log("3. pw : " + pw);
-        Debug.Log("3. nick : " + nick);
-        StartCoroutine("joinSuccess");
-
-        Debug.Log("4. id : " + id);
-        Debug.Log("4. pw : " + pw);
-        Debug.Log("4. nick : " + nick);
+        if (idCk) {
+            StartCoroutine("joinSuccess");
+        }
     }
 
     public void joinCancel() {
-        textPanelObject.SetActive(true);
-        text = GameObject.Find("text").GetComponent<Text>();
-        text.text = "닉네임 변경을 취소하셨습니다.";
-        modifyPanelObject.SetActive(false);
-        confirmPanelObject.SetActive(false);
-        Invoke("hideAndShow", 1.0f);
+        StartCoroutine("cancel");
     }
 
     IEnumerator inputCheck() {
+
         textPanelObject.SetActive(true);
         text = GameObject.Find("text").GetComponent<Text>();
 
+        if (nick == "") {
+            text.text = "닉네임을 입력해주세요!";
+        }
+        if (pw == "") {
+            text.text = "비밀번호를 입력해주세요!";
+        }
         if (id == "") {
             text.text = "아이디를 입력해주세요!";
-        } else if (pw == "") {
-            text.text = "비밀번호를 입력해주세요!";
-        } else if (nick == "") {
-            text.text = "닉네임을 입력해주세요!";
+        }
+        if (id != "" && pw != "" && nick != "") {
+            inputCk = true;
         }
 
         yield return new WaitForSeconds(0.8f);
@@ -95,8 +96,10 @@ public class userJoin : MonoBehaviour {
         
         textPanelObject.SetActive(true);
         text = GameObject.Find("text").GetComponent<Text>();
-
-        if (networkManager.strResult != "") {
+         
+        if (networkManager.strResult == "[]") {
+            idCk = true;
+        } else if (networkManager.strResult != "") {
             text.text = "아이디가 이미 존재합니다!";
         }
         yield return new WaitForSeconds(0.8f);
@@ -106,18 +109,35 @@ public class userJoin : MonoBehaviour {
 
     IEnumerator joinSuccess() {
         join();
-
-        joinPanelObject.SetActive(false);
-        confirmPanelObject.SetActive(false);
+        
         textPanelObject.SetActive(true);
         text = GameObject.Find("text").GetComponent<Text>();
         text.text = "회원가입을 완료했습니다!";
-
+        
         yield return new WaitForSeconds(0.8f);
-
+        
         textPanelObject.SetActive(false);
+        joinPanelObject.SetActive(false);
+        confirmPanelObject.SetActive(false);
         loginPanelObject.SetActive(true);
         readyButtonPanelObject.SetActive(true);
+        joinButtonPanelObject.SetActive(true);
+    }
+
+    IEnumerator cancel() {
+        textPanelObject.SetActive(true);
+        text = GameObject.Find("text").GetComponent<Text>();
+        text.text = "회원가입을 취소하셨습니다.";
+
+        yield return new WaitForSeconds(1.0f);
+
+        loginPanelObject.SetActive(true);
+        joinPanelObject.SetActive(false);
+        textPanelObject.SetActive(false);
+        joinButtonPanelObject.SetActive(true);
+        confirmPanelObject.SetActive(false);
+        readyButtonPanelObject.SetActive(true);
+
     }
 
     public void join() {
