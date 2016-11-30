@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class bestScoreTextReady : MonoBehaviour {
-
     public Text bestScore;
 
 	// Use this for initialization

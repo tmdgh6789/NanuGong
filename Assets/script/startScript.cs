@@ -51,7 +51,7 @@ public class startScript : MonoBehaviour {
                     startBall[i].transform.Translate(0, -3.2f, -i);
                 }
 
-                startBall[i].transform.localScale = new Vector2(1.1f + ((float)i / 10), 1.1f + ((float)i / 10));
+                startBall[i].transform.localScale = new Vector2(0.1f + ((float)i / 10), 0.1f + ((float)i / 10));
                 startBall[i].name = "ball" + i + "(Clone)";
             }
         } else {
@@ -76,7 +76,7 @@ public class startScript : MonoBehaviour {
                     startBall[i].transform.Translate(0, -3.2f, -i);
                 }
 
-                startBall[i].transform.localScale = new Vector2(1.1f + ((float)i / 10), 1.1f + ((float)i / 10));
+                startBall[i].transform.localScale = new Vector2(0.35f + ((float)i / 15), 0.35f + ((float)i / 15));
                 startBall[i].name = "ball" + i + "(Clone)";
             }
             // 위에 부분 규칙 찾아서 반복문 안으로
@@ -89,7 +89,7 @@ public class startScript : MonoBehaviour {
             leftRes[n] = buttonRes[Random.Range(0, r)] as GameObject;
             leftBall[n] = Instantiate(leftRes[n] as GameObject, new Vector2(-1.8f, pos), Quaternion.identity) as GameObject;
             leftSpr[n] = leftBall[n].GetComponent<SpriteRenderer>().sprite;
-            leftBall[n].transform.localScale = new Vector2(1.6f, 1.6f);
+            leftBall[n].transform.localScale = new Vector2(0.55f, 0.55f);
             leftBall[n].name = "left" + n + "(Clone)";
 
             for (int i = 0; i < r; i++) {
@@ -99,7 +99,7 @@ public class startScript : MonoBehaviour {
                     rightBall[n] = Instantiate(rightRes[n] as GameObject, new Vector2(1.8f, pos), Quaternion.identity) as GameObject;
                     rightSpr[n] = rightBall[n].GetComponent<SpriteRenderer>().sprite;
                     rightBall[n].name = "right" + n + "(Clone)";
-                    rightBall[n].transform.localScale = new Vector2(1.6f, 1.6f);
+                    rightBall[n].transform.localScale = new Vector2(0.55f, 0.55f);
                     for (int j = 0; j < (r - 1); j++) {
                         if (rightRes[n] == buttonRes[j] as GameObject) {
                             buttonRes.RemoveAt(j);
@@ -123,7 +123,7 @@ public class startScript : MonoBehaviour {
             leftRes[n] = buttonRes[Random.Range(0, r)] as GameObject;
             leftBall[n] = Instantiate(leftRes[n] as GameObject, new Vector2(-1.8f, pos), Quaternion.identity) as GameObject;
             leftSpr[n] = leftBall[n].GetComponent<SpriteRenderer>().sprite;
-            leftBall[n].transform.localScale = new Vector2(1.6f, 1.6f);
+            leftBall[n].transform.localScale = new Vector2(0.55f, 0.55f);
             leftBall[n].name = "left" + n + "(Clone)";
             for (int i = 0; i < r; i++) {
                 if (leftRes[n] == buttonRes[i] as GameObject) {
@@ -145,7 +145,7 @@ public class startScript : MonoBehaviour {
             rightRes[n] = buttonRes[Random.Range(0, r)] as GameObject;
             rightBall[n] = Instantiate(rightRes[n] as GameObject, new Vector2(1.8f, pos), Quaternion.identity) as GameObject;
             rightSpr[n] = rightBall[n].GetComponent<SpriteRenderer>().sprite;
-            rightBall[n].transform.localScale = new Vector2(1.6f, 1.6f);
+            rightBall[n].transform.localScale = new Vector2(0.55f, 0.55f);
             rightBall[n].name = "left" + n + "(Clone)";
             for (int i = 0; i < r; i++) {
                 if (rightRes[n] == buttonRes[i] as GameObject) {

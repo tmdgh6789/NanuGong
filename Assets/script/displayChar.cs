@@ -3,41 +3,41 @@ using System.Collections;
 
 public class displayChar : MonoBehaviour {
 
-    string currentSkin;
+    int currentSkin;
 
 	public void Update() {
-        currentSkin = PlayerPrefs.GetString("CurrentSkin");
+        currentSkin = PlayerPrefs.GetInt("CurrentSkin");
 
         switch (currentSkin) {
-            case "skin1":
+            case 1:
                 GameObject.Find("charPanel").transform.FindChild("char1").gameObject.SetActive(true);
                 GameObject.Find("charPanel").transform.FindChild("char2").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char3").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
                 break;
-            case "skin2":
+            case 2:
                 GameObject.Find("charPanel").transform.FindChild("char2").gameObject.SetActive(true);
                 GameObject.Find("charPanel").transform.FindChild("char1").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char3").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
                 break;
-            case "skin3":
+            case 3:
                 GameObject.Find("charPanel").transform.FindChild("char3").gameObject.SetActive(true);
                 GameObject.Find("charPanel").transform.FindChild("char1").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char2").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
                 break;
-            case "skin4":
+            case 4:
                 GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(true);
                 GameObject.Find("charPanel").transform.FindChild("char1").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char2").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char3").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
                 break;
-            case "default":
+            case 0:
                 GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(true);
                 GameObject.Find("charPanel").transform.FindChild("char1").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char2").gameObject.SetActive(false);

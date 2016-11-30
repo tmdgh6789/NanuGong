@@ -253,7 +253,6 @@
     <Compile Include="Assets\script\rightButtonScript.cs" />
     <Compile Include="Assets\script\score.cs" />
     <Compile Include="Assets\script\scoreText.cs" />
-    <Compile Include="Assets\script\starAnimation.cs" />
     <Compile Include="Assets\script\startScript.cs" />
     <Compile Include="Assets\script\timerMove.cs" />
     <Compile Include="Assets\script\timerScript.cs" />

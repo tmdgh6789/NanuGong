@@ -22,8 +22,8 @@ public class buttonScript : MonoBehaviour {
 
     public Canvas comboCanvas;
     public Animator comboAnim;
-    public Animator fevertext;
-    public bool fevermode;
+    public Animator feverText;
+    public bool feverMode;
 
     public GameObject[] starAnim = new GameObject[3];
     public GameObject starAnimObj;
@@ -93,7 +93,7 @@ public class buttonScript : MonoBehaviour {
         bool level5 = (_score.value > 2799) || (_combo.value > 27);
 
         if (_gage.bGageValue < 105) {
-            if (PlayerPrefs.GetString("CurrentSkin") == "skin1") {
+            if (PlayerPrefs.GetInt("CurrentSkin") == 1) {
                 _gage.bonus(8);
             } else {
                 _gage.bonus(5);
@@ -103,11 +103,13 @@ public class buttonScript : MonoBehaviour {
         if (level1) {
             if (_gage.bGageValue >= 105.0f) {
                 randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
                 _gage.bGageValue = 0;
                 _gage.baguetteGage.size = 0;
             } else {
                 randomRes = _start.startRes[Random.Range(0, 2)] as GameObject;
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
             }
         } else if (level2) {
             _start.leftballCreate(1, 6, -0.1f);
@@ -118,11 +120,13 @@ public class buttonScript : MonoBehaviour {
 
             if (_gage.bGageValue >= 105.0f) {
                 randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
                 _gage.bGageValue = 0;
                 _gage.baguetteGage.size = 0;
             } else {
                 randomRes = newBall[Random.Range(0, 3)];
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
             }
         } else if (level3) {
             _start.rightballCreate(1, 5, -0.1f);
@@ -134,14 +138,16 @@ public class buttonScript : MonoBehaviour {
 
             if (_gage.bGageValue >= 105.0f) {
                 randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
                 _gage.bGageValue = 0;
                 _gage.baguetteGage.size = 0;
             } else {
                 randomRes = newBall[Random.Range(0, 4)];
                 randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
             }
         } else if (level4) {
-            if (PlayerPrefs.GetString("CurrentSkin") == "skin4") {
+            if (PlayerPrefs.GetInt("CurrentSkin") == 4) {
                 newBall[0] = _start.leftRes[0];
                 newBall[1] = _start.rightRes[0];
                 newBall[2] = _start.leftRes[1];
@@ -149,11 +155,13 @@ public class buttonScript : MonoBehaviour {
 
                 if (_gage.bGageValue >= 105.0f) {
                     randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
                     _gage.bGageValue = 0;
                     _gage.baguetteGage.size = 0;
                 } else {
                     randomRes = newBall[Random.Range(0, 4)];
                     randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
                 }
             } else {
                 _start.leftballCreate(2, 4, 0.7f);
@@ -166,15 +174,17 @@ public class buttonScript : MonoBehaviour {
 
                 if (_gage.bGageValue >= 105.0f) {
                     randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
                     _gage.bGageValue = 0;
                     _gage.baguetteGage.size = 0;
                 } else {
                     randomRes = newBall[Random.Range(0, 5)];
                     randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
                 }
             }
         } else if (level5) {
-            if (PlayerPrefs.GetString("CurrentSkin") == "skin4") {
+            if (PlayerPrefs.GetInt("CurrentSkin") == 4) {
                 newBall[0] = _start.leftRes[0];
                 newBall[1] = _start.rightRes[0];
                 newBall[2] = _start.leftRes[1];
@@ -182,11 +192,13 @@ public class buttonScript : MonoBehaviour {
 
                 if (_gage.bGageValue >= 105.0f) {
                     randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
                     _gage.bGageValue = 0;
                     _gage.baguetteGage.size = 0;
                 } else {
                     randomRes = newBall[Random.Range(0, 4)];
                     randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
                 }
             } else {
                 _start.rightballCreate(2, 3, 0.7f);
@@ -200,11 +212,13 @@ public class buttonScript : MonoBehaviour {
 
                 if (_gage.bGageValue >= 105.0f) {
                     randomBall = Instantiate(bonusBall, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
                     _gage.bGageValue = 0;
                     _gage.baguetteGage.size = 0;
                 } else {
                     randomRes = newBall[Random.Range(0, 6)];
                     randomBall = Instantiate(randomRes, new Vector3(0, 0.7f, 0), Quaternion.identity) as GameObject;
+                    randomBall.transform.localScale = new Vector2(0.35f, 0.35f);
                 }
             }
         }
@@ -225,7 +239,7 @@ public class buttonScript : MonoBehaviour {
         }
 
         for (int i = 0; i < 8; i++) {
-            ball[i].transform.localScale = new Vector2(1.1f + ((float)i / 10), 1.1f + ((float)i / 10));
+            ball[i].transform.localScale = new Vector2(0.35f + ((float)i / 15), 0.35f + ((float)i / 15));
             ball[i].name = "ball" + (i + 1) + "(Clone)";
             randomBall.name = "ball0(Clone)";
         }
@@ -243,7 +257,7 @@ public class buttonScript : MonoBehaviour {
         _combo.value += 1;
         _score.value += 100f + (_combo.value * 0.5f);
         
-        if ((_combo.value != 0 && _combo.value % 10 == 0) && !fevermode)
+        if ((_combo.value != 0 && _combo.value % 10 == 0) && !feverMode)
         {
             GameObject.Find("bgPanel").transform.FindChild("feverBg").gameObject.SetActive(true);
             for (int i = 0; i < 8; i++)
@@ -253,12 +267,12 @@ public class buttonScript : MonoBehaviour {
             }
             feverSound = esSources[8];
             feverSound.Play();
-            fevermode = true;
+            feverMode = true;
         }
-        if (fevermode)
+        if (feverMode)
         {
-            fevertext = GameObject.Find("feverText").GetComponent<Animator>();
-            fevertext.Play("feverText", -1, 0);
+            feverText = GameObject.Find("feverText").GetComponent<Animator>();
+            feverText.Play("feverText", -1, 0);
         }
         
     }
@@ -286,11 +300,11 @@ public class buttonScript : MonoBehaviour {
         GameObject bomb = Instantiate(Resources.Load("bomb") as GameObject, ball[7].transform.position, Quaternion.identity) as GameObject;
         bomb.transform.localScale = new Vector2(1.9f, 1.9f);
         Destroy(bomb, 0.3f);
-        if (fevermode)
+        if (feverMode)
         {
             GameObject.Find("feverBg").SetActive(false);
         }
-        fevermode = false;
+        feverMode = false;
 
     }
 
@@ -334,7 +348,7 @@ public class buttonScript : MonoBehaviour {
     }
     void feverAnim()
     {
-        fevertext = GameObject.Find("fevertext").GetComponent<Animator>();
+        feverText = GameObject.Find("feverText").GetComponent<Animator>();
     }
 
     void buttonActivate() {

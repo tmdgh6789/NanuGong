@@ -41,6 +41,8 @@ public class gameReady : MonoBehaviour {
         bgmObj = GameObject.Find("BGM");
         esObj = GameObject.Find("effectSound");
 
+        PlayerPrefs.DeleteAll();
+
     }
 
     public void OnMouseDown() {
@@ -116,6 +118,18 @@ public class gameReady : MonoBehaviour {
         userId = obj[0]["id"].ToString();
         userPw = obj[0]["password"].ToString();
         userNick = obj[0]["nickname"].ToString();
+        int userScore;
+        int.TryParse(obj[0]["bestScore"].ToString(), out userScore);
+        int userCoin;
+        int.TryParse(obj[0]["coin"].ToString(), out userCoin);
+        int userMyChar;
+        int.TryParse(obj[0]["myChar"].ToString(), out userMyChar);
+
+        PlayerPrefs.SetString("id", userId);
+        PlayerPrefs.SetString("Nick", userNick);
+        PlayerPrefs.SetInt("BestScore", userScore);
+        PlayerPrefs.SetInt("Coin", userCoin);
+        PlayerPrefs.SetInt("CurrentSkin", userMyChar);
 
         userId = userId.Replace("\"", "");
         userPw = userPw.Replace("\"", "");

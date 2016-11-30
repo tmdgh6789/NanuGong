@@ -2,19 +2,93 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13afccbf-e034-4b51-befa-6443f62404dd" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/bombBall.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/bombBall.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/bonusBall.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/bonusBall.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/poketBall.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/poketBall.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/poketBall2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/poketBall2.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/volleyBall.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/volleyBall.png.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/script/starAnimation.cs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Assets/script/starAnimation.cs.meta" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/0c/0c0317c66dbb98c488af41830897cd93" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/0c/0c0317c66dbb98c488af41830897cd93.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/24/24adc5a718e8d0949bc6021e43ecfa2d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/24/24adc5a718e8d0949bc6021e43ecfa2d.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/30/30e114735df042f4592e3a162c5bd7e1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/30/30e114735df042f4592e3a162c5bd7e1.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/40/40720c16ac541c14c8ac9ec1f10efc50" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/40/40720c16ac541c14c8ac9ec1f10efc50.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/51/5153f329a92121d408ed37f76c64609f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/51/5153f329a92121d408ed37f76c64609f.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/5b/5b36f2b8b44e6c14a8afa3fc508ce147" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/5b/5b36f2b8b44e6c14a8afa3fc508ce147.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/6a/6affc69fa04ccb24cad16058d1069412" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/6a/6affc69fa04ccb24cad16058d1069412.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/8a/8a0c399af44847246b032d4b5879da0c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/8a/8a0c399af44847246b032d4b5879da0c.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/9d/9d30b065a0a12f54e86a9242954e0a71" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/9d/9d30b065a0a12f54e86a9242954e0a71.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/b2/b2953db0e897ace4581be47521f44ca6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/b2/b2953db0e897ace4581be47521f44ca6.info" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/ff/ff869b2f8cf09c84c98c2c568f203333" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Library/metadata/ff/ff869b2f8cf09c84c98c2c568f203333.info" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vs/NanuGong/v14/.suo" afterPath="$PROJECT_DIR$/.vs/NanuGong/v14/.suo" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Resources/bonus.prefab" afterPath="$PROJECT_DIR$/Assets/Resources/bonus.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Resources/random0.prefab" afterPath="$PROJECT_DIR$/Assets/Resources/random0.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Resources/random1.prefab" afterPath="$PROJECT_DIR$/Assets/Resources/random1.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Resources/random2.prefab" afterPath="$PROJECT_DIR$/Assets/Resources/random2.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Resources/random3.prefab" afterPath="$PROJECT_DIR$/Assets/Resources/random3.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Resources/random4.prefab" afterPath="$PROJECT_DIR$/Assets/Resources/random4.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Resources/random5.prefab" afterPath="$PROJECT_DIR$/Assets/Resources/random5.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Resources/random6.prefab" afterPath="$PROJECT_DIR$/Assets/Resources/random6.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Resources/random7.prefab" afterPath="$PROJECT_DIR$/Assets/Resources/random7.prefab" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scene/main.unity" afterPath="$PROJECT_DIR$/Assets/Scene/main.unity" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scene/play.unity" afterPath="$PROJECT_DIR$/Assets/Scene/play.unity" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/baseBall.png" afterPath="$PROJECT_DIR$/Assets/Sprites/ball/baseBall.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/basketBall.png" afterPath="$PROJECT_DIR$/Assets/Sprites/ball/basketBall.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/golfBall.png" afterPath="$PROJECT_DIR$/Assets/Sprites/ball/golfBall.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/soccerBall.png" afterPath="$PROJECT_DIR$/Assets/Sprites/ball/soccerBall.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/tennisBall.png" afterPath="$PROJECT_DIR$/Assets/Sprites/ball/tennisBall.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" afterPath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll.mdb" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/assetDatabase3" afterPath="$PROJECT_DIR$/Library/assetDatabase3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/expandedItems" afterPath="$PROJECT_DIR$/Library/expandedItems" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000004000000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000004000000000000000" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/00/00000000000000006100000000000000" afterPath="$PROJECT_DIR$/Library/metadata/00/00000000000000006100000000000000" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/13/137e64ebb58cfd148bde6e02ad741481" afterPath="$PROJECT_DIR$/Library/metadata/13/137e64ebb58cfd148bde6e02ad741481" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/2c/2c11f7f5ac0457f43bd46696059f17d1" afterPath="$PROJECT_DIR$/Library/metadata/2c/2c11f7f5ac0457f43bd46696059f17d1" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/37/3752eb1f3407eae4d8f3a1d178c55874.info" afterPath="$PROJECT_DIR$/Library/metadata/37/3752eb1f3407eae4d8f3a1d178c55874.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/4c/4c64d7c51abdef5458f53176949bc3f4.info" afterPath="$PROJECT_DIR$/Library/metadata/4c/4c64d7c51abdef5458f53176949bc3f4.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/54/54fdeb6a9de7662438fa93815626ecae.info" afterPath="$PROJECT_DIR$/Library/metadata/54/54fdeb6a9de7662438fa93815626ecae.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/57/57a6e03d674f2c849b8be2d8f161412e" afterPath="$PROJECT_DIR$/Library/metadata/57/57a6e03d674f2c849b8be2d8f161412e" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/6a/6a1ddf488c95a7043b15cf3770de4cc8" afterPath="$PROJECT_DIR$/Library/metadata/6a/6a1ddf488c95a7043b15cf3770de4cc8" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/82/82bb7ad784d56f04babcdbc29bd1bba8.info" afterPath="$PROJECT_DIR$/Library/metadata/82/82bb7ad784d56f04babcdbc29bd1bba8.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/93/933c3f0759ce79a4a93b24437b337a8d.info" afterPath="$PROJECT_DIR$/Library/metadata/93/933c3f0759ce79a4a93b24437b337a8d.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/aa/aaca752a51b80734bb29f95ce6b67f10.info" afterPath="$PROJECT_DIR$/Library/metadata/aa/aaca752a51b80734bb29f95ce6b67f10.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/c8/c8ff1ec483aea0a4ea8ad6dcfb79f95a.info" afterPath="$PROJECT_DIR$/Library/metadata/c8/c8ff1ec483aea0a4ea8ad6dcfb79f95a.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/ca/caaa957ebd91d6341a0a81ac95118c88.info" afterPath="$PROJECT_DIR$/Library/metadata/ca/caaa957ebd91d6341a0a81ac95118c88.info" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/e4/e4f3928f53f398c4981a4448a64cded5" afterPath="$PROJECT_DIR$/Library/metadata/e4/e4f3928f53f398c4981a4448a64cded5" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Library/metadata/f2/f2fcbeacb1fc2b94fab2a32c38f1bc00" afterPath="$PROJECT_DIR$/Library/metadata/f2/f2fcbeacb1fc2b94fab2a32c38f1bc00" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/script/user/userJoin.cs" afterPath="$PROJECT_DIR$/Assets/script/user/userJoin.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/baseBall.png.meta" afterPath="$PROJECT_DIR$/Assets/Sprites/ball/baseBall.png.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/basketBall.png.meta" afterPath="$PROJECT_DIR$/Assets/Sprites/ball/basketBall.png.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/golfBall.png.meta" afterPath="$PROJECT_DIR$/Assets/Sprites/ball/golfBall.png.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/soccerBall.png.meta" afterPath="$PROJECT_DIR$/Assets/Sprites/ball/soccerBall.png.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Sprites/ball/tennisBall.png.meta" afterPath="$PROJECT_DIR$/Assets/Sprites/ball/tennisBall.png.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/script/bestScoreTextReady.cs" afterPath="$PROJECT_DIR$/Assets/script/bestScoreTextReady.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/script/buttonScript.cs" afterPath="$PROJECT_DIR$/Assets/script/buttonScript.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/script/displayChar.cs" afterPath="$PROJECT_DIR$/Assets/script/displayChar.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/script/gameReady.cs" afterPath="$PROJECT_DIR$/Assets/script/gameReady.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/script/startScript.cs" afterPath="$PROJECT_DIR$/Assets/script/startScript.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NanuGong.CSharp.csproj" afterPath="$PROJECT_DIR$/NanuGong.CSharp.csproj" />
     </list>
     <ignored path="NanuGong.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,8 +114,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="118" column="39" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="39" />
+            <state relative-caret-position="400">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -111,6 +185,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -119,10 +195,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NanuGong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NanuGong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -157,33 +241,34 @@
       <workItem from="1480329157372" duration="1352000" />
       <workItem from="1480334628480" duration="1102000" />
       <workItem from="1480389825519" duration="6000" />
+      <workItem from="1480482422926" duration="2349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18519000" />
+    <option name="totallyTimeSpent" value="20868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2761905" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -202,6 +287,22 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -311,8 +412,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="118" column="39" selection-start-line="118" selection-start-column="39" selection-end-line="118" selection-end-column="39" />
+        <state relative-caret-position="400">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
