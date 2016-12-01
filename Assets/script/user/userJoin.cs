@@ -4,11 +4,11 @@ using System.Collections;
 
 public class userJoin : MonoBehaviour {
     private NetworkManager networkManager;
+    private GameManager gameManager;
 
     public GameObject joinPanelObject;
     public GameObject joinButtonPanelObject;
     public GameObject loginPanelObject;
-    public GameObject modifyPanelObject;
     public GameObject textPanelObject;
     public GameObject readyButtonPanelObject;
     public GameObject confirmPanelObject;
@@ -30,6 +30,7 @@ public class userJoin : MonoBehaviour {
 
     public void Awake() {
         networkManager = FindObjectOfType<NetworkManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void OnMouseDown() {
@@ -52,13 +53,12 @@ public class userJoin : MonoBehaviour {
         id = inputId.text;
         pw = inputPw.text;
         nick = inputNick.text;
-
         StartCoroutine("inputCheck");
-
+        
         if (inputCk) {
             StartCoroutine("idCheck");
         }
-
+        
         if (idCk) {
             StartCoroutine("joinSuccess");
         }
@@ -69,7 +69,6 @@ public class userJoin : MonoBehaviour {
     }
 
     IEnumerator inputCheck() {
-
         textPanelObject.SetActive(true);
         text = GameObject.Find("text").GetComponent<Text>();
 
@@ -92,14 +91,18 @@ public class userJoin : MonoBehaviour {
     }
 
     IEnumerator idCheck() {
-        login();
-        
+        //login();
+        string preId = PlayerPrefs.GetString("id/" + id);
+        if (preId != "") {
+            preId.Substring(3, preId.Length - 3);
+            Debug.Log(preId);
+        }
         textPanelObject.SetActive(true);
         text = GameObject.Find("text").GetComponent<Text>();
          
-        if (networkManager.strResult == "[]") {
+        if (id != preId) {
             idCk = true;
-        } else if (networkManager.strResult != "") {
+        } else {
             text.text = "아이디가 이미 존재합니다!";
         }
         yield return new WaitForSeconds(0.8f);
@@ -108,12 +111,24 @@ public class userJoin : MonoBehaviour {
     }
 
     IEnumerator joinSuccess() {
-        join();
-        
+        //join();
+
         textPanelObject.SetActive(true);
         text = GameObject.Find("text").GetComponent<Text>();
         text.text = "회원가입을 완료했습니다!";
-        
+
+        gameManager.nick = nick;
+        PlayerPrefs.SetString("id/" + id, "id/" + id);
+        PlayerPrefs.SetString(id + "/password/" + pw, id + "/password/" + pw);
+        PlayerPrefs.SetString(id + "/Nick/" + nick, id + "/Nick/" + nick);
+        PlayerPrefs.SetString("Nick", nick);
+        PlayerPrefs.SetInt(id + "/Coin", 0);
+        PlayerPrefs.SetInt(id + "/CurrentSkin", 0);
+        PlayerPrefs.SetString(id + "/skin1", "N");
+        PlayerPrefs.SetString(id + "/skin2", "N");
+        PlayerPrefs.SetString(id + "/skin3", "N");
+        PlayerPrefs.SetString(id + "/skin4", "N");
+
         yield return new WaitForSeconds(0.8f);
         
         textPanelObject.SetActive(false);
@@ -142,14 +157,14 @@ public class userJoin : MonoBehaviour {
 
     public void join() {
         // 요청을 보내는 URl
-        strUrl = "http://192.168.0.5:5000/join/" + id + "/" + pw + "/" + nick;
+        strUrl = "http://nanugong.dothome.co.kr/nanugong:5000/join/" + id + "/" + pw + "/" + nick;
 
         networkManager.network(strUrl);
     }
 
     public void login() {
         // 요청을 보내는 URl
-        strUrl = "http://192.168.0.5:5000/user/" + id;
+        strUrl = "http://nanugong.dothome.co.kr/nanugong:5000/user/" + id;
 
         networkManager.network(strUrl);
     }

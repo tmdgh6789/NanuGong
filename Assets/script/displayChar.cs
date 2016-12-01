@@ -2,12 +2,15 @@
 using System.Collections;
 
 public class displayChar : MonoBehaviour {
+    private GameManager gameManager;
 
+    public string id;
     int currentSkin;
 
-	public void Update() {
-        currentSkin = PlayerPrefs.GetInt("CurrentSkin");
-
+    public void Update() {
+        gameManager = FindObjectOfType<GameManager>();
+        id = gameManager.id;
+        currentSkin = PlayerPrefs.GetInt(id + "/CurrentSkin");
         switch (currentSkin) {
             case 1:
                 GameObject.Find("charPanel").transform.FindChild("char1").gameObject.SetActive(true);

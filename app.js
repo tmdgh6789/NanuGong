@@ -3,7 +3,7 @@ var mysql = require('mysql');
 var bodyParser = require('body-parser');
 var Sequelize = require("sequelize");
 var sequelize = new Sequelize('nanugong', 'n_admin', '1234', {
-    host: '192.168.0.5',
+    host: 'localhost',
     dialect: 'mysql',
     pool: {
         max: 5,

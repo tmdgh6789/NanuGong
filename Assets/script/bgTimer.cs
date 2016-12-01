@@ -12,6 +12,6 @@ public class bgTimer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        _timer = GameObject.FindObjectOfType<timerScript>();
+        _timer = FindObjectOfType<timerScript>();
 	}
 }

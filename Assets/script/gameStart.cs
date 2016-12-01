@@ -5,14 +5,18 @@ using System.Collections;
 
 public class gameStart : MonoBehaviour {
     private NetworkManager networkManager;
+    private GameManager gameManager;
 
     public GameObject bgmObj;
     public AudioSource bgmSource;
 
+    public string id;
     public int userCoin;
 
     void Awake() {
         networkManager = FindObjectOfType<NetworkManager>();
+        gameManager = FindObjectOfType<GameManager>();
+        id = gameManager.id;
         bgmObj = GameObject.Find("BGM");
         if (bgmObj) {
             bgmSource = bgmObj.GetComponent<AudioSource>();
@@ -21,9 +25,9 @@ public class gameStart : MonoBehaviour {
     }
 
     public void OnMouseDown() {
-        int readyCoin = PlayerPrefs.GetInt("ReadyCoin");
-        PlayerPrefs.SetInt("Coin", readyCoin);
-        setCoin();
+        int readyCoin = PlayerPrefs.GetInt(id + "/ReadyCoin");
+        PlayerPrefs.SetInt(id + "/Coin", readyCoin);
+        //setCoin();
 
         bgmObj = GameObject.Find("BGM");
         bgmSource = bgmObj.GetComponent<AudioSource>();

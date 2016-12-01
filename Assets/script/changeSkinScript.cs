@@ -5,6 +5,7 @@ using System.Collections;
 public class changeSkinScript : MonoBehaviour {
 
     private NetworkManager networkManager;
+    private GameManager gameManager;
 
     AudioSource commonClick;
 
@@ -18,11 +19,15 @@ public class changeSkinScript : MonoBehaviour {
 
     public Text text;
 
+    public string id;
+
     int count = 0;
 
     public void Awake() {
         networkManager = FindObjectOfType<NetworkManager>();
-        skin = PlayerPrefs.GetInt("CurrentSkin");
+        gameManager = FindObjectOfType<GameManager>();
+        id = gameManager.id;
+        skin = PlayerPrefs.GetInt(id + "/CurrentSkin");
         switch (skin) {
             case 0:
                 skinNameText.text = "주먹밥";
@@ -43,22 +48,22 @@ public class changeSkinScript : MonoBehaviour {
         GameObject.Find("mySkinPanel").transform.FindChild("defaultButton").gameObject.SetActive(true);
         count += 1;
 
-        if (PlayerPrefs.GetString("skin1") == "Y") {
+        if (PlayerPrefs.GetString(id + "/skin1") == "Y") {
             GameObject.Find("mySkinPanel").transform.FindChild("skin1Button").gameObject.SetActive(true);
             count += 1;
         }
 
-        if (PlayerPrefs.GetString("skin2") == "Y") {
+        if (PlayerPrefs.GetString(id + "/skin2") == "Y") {
             GameObject.Find("mySkinPanel").transform.FindChild("skin2Button").gameObject.SetActive(true);
             count += 1;
         }
 
-        if (PlayerPrefs.GetString("skin3") == "Y") {
+        if (PlayerPrefs.GetString(id + "/skin3") == "Y") {
             GameObject.Find("mySkinPanel").transform.FindChild("skin3Button").gameObject.SetActive(true);
             count += 1;
         }
 
-        if (PlayerPrefs.GetString("skin4") == "Y") {
+        if (PlayerPrefs.GetString(id + "/skin4") == "Y") {
             GameObject.Find("mySkinPanel").transform.FindChild("skin4Button").gameObject.SetActive(true);
             count += 1;
         }
@@ -102,7 +107,8 @@ public class changeSkinScript : MonoBehaviour {
                 GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(true);
 
-                PlayerPrefs.SetInt("CurrentSkin", 0);
+                PlayerPrefs.SetInt(id + "/CurrentSkin", 0);
+                //setMyChar();
                 break;
             case "skin1":
                 skinNameText.text = "엄마 주먹밥";
@@ -113,8 +119,8 @@ public class changeSkinScript : MonoBehaviour {
                 GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
 
-                PlayerPrefs.SetInt("CurrentSkin", 1);
-                setMyChar();
+                PlayerPrefs.SetInt(id + "/CurrentSkin", 1);
+                //setMyChar();
                 break;
 
             case "skin2":
@@ -126,8 +132,8 @@ public class changeSkinScript : MonoBehaviour {
                 GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
 
-                PlayerPrefs.SetInt("CurrentSkin", 2);
-                setMyChar();
+                PlayerPrefs.SetInt(id + "/CurrentSkin", 2);
+                //setMyChar();
                 break;
 
             case "skin3":
@@ -139,8 +145,8 @@ public class changeSkinScript : MonoBehaviour {
                 GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(false);
                 GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
 
-                PlayerPrefs.SetInt("CurrentSkin", 3);
-                setMyChar();
+                PlayerPrefs.SetInt(id + "/CurrentSkin", 3);
+                //setMyChar();
                 break;
 
             case "skin4":
@@ -152,8 +158,8 @@ public class changeSkinScript : MonoBehaviour {
                 GameObject.Find("charPanel").transform.FindChild("char4").gameObject.SetActive(true);
                 GameObject.Find("charPanel").transform.FindChild("char(default)").gameObject.SetActive(false);
                 
-                PlayerPrefs.SetInt("CurrentSkin", 4);
-                setMyChar();
+                PlayerPrefs.SetInt(id + "/CurrentSkin", 4);
+                //setMyChar();
                 break;
 
             default:
@@ -166,7 +172,7 @@ public class changeSkinScript : MonoBehaviour {
     void setMyChar() {
         string id = PlayerPrefs.GetString("id");
         int myChar = PlayerPrefs.GetInt("CurrentSkin");
-        string strUrl = "http://192.168.0.5:5000/myChar/" + id + "/" + myChar;
+        string strUrl = "http://nanugong.dothome.co.kr/nanugong:5000/myChar/" + id + "/" + myChar;
         networkManager.network(strUrl);
     }
 }

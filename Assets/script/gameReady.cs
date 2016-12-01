@@ -8,13 +8,12 @@ using SimpleJSON;
 public class gameReady : MonoBehaviour {
 
     private NetworkManager networkManager;
+    private GameManager gameManager;
 
     public InputField inputId;
     public InputField inputPw;
-    public InputField inputNick;
     public string id;
     public string pw;
-    public string nick;
 
     public string userId;
     public string userPw;
@@ -26,23 +25,20 @@ public class gameReady : MonoBehaviour {
     public GameObject joinPanelObject;
     public GameObject joinButtonPanelObject;
     public GameObject loginPanelObject;
-    public GameObject coinPanelObject;
     public GameObject textPanelObject;
-    public GameObject confirmPanelObject;
-    public GameObject nickModifyObject;
     public Text text;
 
     public GameObject bgmObj;
     public GameObject esObj;
-    
+    public GameObject gManagerObj;
+
     public void Awake() {
         networkManager = FindObjectOfType<NetworkManager>();
+        gameManager = FindObjectOfType<GameManager>();
 
         bgmObj = GameObject.Find("BGM");
         esObj = GameObject.Find("effectSound");
-
-        PlayerPrefs.DeleteAll();
-
+        gManagerObj = GameObject.Find("gameManager");
     }
 
     public void OnMouseDown() {
@@ -81,39 +77,57 @@ public class gameReady : MonoBehaviour {
     }
 
     IEnumerator loadReady() {
-        login();
-        
+        //login();
+        getUser();
+        pw = id + "/password/" + pw;
+        id = "id/" + id;
         if (id == userId) {     //id 맞았을 때
             if (pw == userPw) {     //pw도 맞았을 때
                 textPanelObject.SetActive(true);
                 text = GameObject.Find("text").GetComponent<Text>();
                 text.text = userNick + "님 반갑습니다.\n곧 게임이 시작됩니다.\n잠시만 기다려주세요!";
-
                 yield return new WaitForSeconds(1.5f);
 
                 bgmObj.GetComponent<AudioSource>().Pause();
                 DontDestroyOnLoad(bgmObj);
                 DontDestroyOnLoad(esObj);
+                DontDestroyOnLoad(gManagerObj);
                 SceneManager.LoadScene(1);
             } else {        //pw는 틀렸을 때
                 textPanelObject.SetActive(true);
                 text = GameObject.Find("text").GetComponent<Text>();
                 text.text = "아이디 또는 비밀번호를 확인해주세요!";
+
+                yield return new WaitForSeconds(0.8f);
+
+                textPanelObject.SetActive(false);
             }
         } else {        //id 틀렸을 때
             textPanelObject.SetActive(true);
             text = GameObject.Find("text").GetComponent<Text>();
             text.text = "아이디 또는 비밀번호를 확인해주세요!";
+
+            yield return new WaitForSeconds(0.8f);
+
+            textPanelObject.SetActive(false);
         }
+    }
+
+    void getUser() {
+        gameManager.id = id;
+        gameManager.pw = pw;
+        userId = PlayerPrefs.GetString("id/" + id);
+        userPw = PlayerPrefs.GetString(id + "/password/" + pw);
+        userNick = PlayerPrefs.GetString("Nick");
     }
 
     public void login() {
         // 요청을 보내는 URl
-        strUrl = "http://192.168.0.5:5000/user/" + id;
+        strUrl = "http://nanugong.dothome.co.kr/nanugong:5000/user/" + id;
         networkManager.network(strUrl);
         var user = JSON.Parse(networkManager.strResult);
 
-        strUrl = "http://192.168.0.5:5000/inventory/" + id;
+        strUrl = "http://nanugong.dothome.co.kr/nanugong:5000/inventory/" + id;
         networkManager.network(strUrl);
         var inven = JSON.Parse(networkManager.strResult);
 

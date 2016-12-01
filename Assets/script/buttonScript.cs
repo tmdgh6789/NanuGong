@@ -36,10 +36,12 @@ public class buttonScript : MonoBehaviour {
 
     void Update() {
         comboTime += Time.deltaTime;
-        if (comboTime > 3.5f) {
-            comboCanvas.GetComponent<Canvas>().enabled = false;
-            _combo.value = 0;
-            comboTime = 0;
+        if (comboTime > 3.0f) {
+            if (comboCanvas.GetComponent<Canvas>().enabled == true) {
+                comboCanvas.GetComponent<Canvas>().enabled = false;
+                _combo.value = 0;
+                comboTime = 0;
+            }
         }
     }
 
@@ -97,11 +99,11 @@ public class buttonScript : MonoBehaviour {
         buttonTrue = esSources[1];
         buttonTrue.Play();
 
-        bool level1 = (_score.value < 700) || (_combo.value < 7);
-        bool level2 = (_score.value > 699 && _score.value < 1400) || (_combo.value > 6 && _combo.value < 14);
-        bool level3 = (_score.value > 1399 && _score.value < 2100) || (_combo.value > 13 && _combo.value < 21);
-        bool level4 = (_score.value > 2099 && _score.value < 2800) || (_combo.value > 20 && _combo.value < 28);
-        bool level5 = (_score.value > 2799) || (_combo.value > 27);
+        bool level1 = (_score.value < 1000) || (_combo.value < 15);
+        bool level2 = (_score.value > 999 && _score.value < 2000) || (_combo.value > 14 && _combo.value < 23);
+        bool level3 = (_score.value > 1999 && _score.value < 3000) || (_combo.value > 22 && _combo.value < 30);
+        bool level4 = (_score.value > 2999 && _score.value < 4000) || (_combo.value > 29 && _combo.value < 35);
+        bool level5 = (_score.value > 3999) || (_combo.value > 34);
 
         if (_gage.bGageValue < 105) {
             if (PlayerPrefs.GetInt("CurrentSkin") == 1) {

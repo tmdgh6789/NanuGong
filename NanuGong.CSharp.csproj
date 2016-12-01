@@ -200,6 +200,7 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
     <Compile Include="Assets\script\BringToFront.cs" />
+    <Compile Include="Assets\script\GameManager.cs" />
     <Compile Include="Assets\script\ModalPanel.cs" />
     <Compile Include="Assets\script\TestModalWindow.cs" />
     <Compile Include="Assets\script\backButton0.cs" />

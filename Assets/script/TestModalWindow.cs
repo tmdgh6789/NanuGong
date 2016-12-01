@@ -9,6 +9,7 @@ public class TestModalWindow : MonoBehaviour {
     private ModalPanel modalPanel;
     private timerScript timer;
     private NetworkManager networkManager;
+    private GameManager gameManager;
     public score score;
 
     public int coinValue;
@@ -16,6 +17,7 @@ public class TestModalWindow : MonoBehaviour {
     public int myCoin;
     public int myScore;
 
+    public string id;
     public int userCoin;
     public int userScore;
 
@@ -30,6 +32,8 @@ public class TestModalWindow : MonoBehaviour {
         modalPanel = ModalPanel.Instance();
         timer = FindObjectOfType<timerScript>();
         networkManager = FindObjectOfType<NetworkManager>();
+        gameManager = FindObjectOfType<GameManager>();
+        id = gameManager.id;
 
         myTenSecondsAction = new UnityAction(TestTenSecondsFunction);
         myYesAction = new UnityAction(TestYesFunction);
@@ -43,7 +47,7 @@ public class TestModalWindow : MonoBehaviour {
 
     //  These are wrapped into UnityActions
     void TestTenSecondsFunction() {
-        if (PlayerPrefs.GetInt("Coin") >= 5) {
+        if (PlayerPrefs.GetInt(id + "/Coin") >= 5) {
             GameObject.Find("playBGM").GetComponent<AudioSource>().Play();
             GameObject.Find("pauseButton").GetComponent<Button>().enabled = true;
             GameObject.Find("leftButton").GetComponent<Button>().enabled = true;
@@ -52,50 +56,50 @@ public class TestModalWindow : MonoBehaviour {
             GameObject timeBar = GameObject.Find("timeBar");
             timer.timer = 10.0f;
             timeBar.transform.Translate(1.1f, 0.0f, 0.0f);
-            PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin") - 5));
-            setCoin();
+            PlayerPrefs.SetInt(id + "/Coin", (PlayerPrefs.GetInt(id + "/Coin") - 5));
+            //setCoin();
         }
     }
 
     void TestYesFunction() {
         score = FindObjectOfType<score>();
-        myCoin = PlayerPrefs.GetInt("Coin");
-        myScore = PlayerPrefs.GetInt("BestScore");
+        myCoin = PlayerPrefs.GetInt(id + "/Coin");
+        myScore = PlayerPrefs.GetInt(id + "/BestScore");
 
         if (score.value > myCoin) {
-            PlayerPrefs.SetInt("BestScore", myScore);
+            PlayerPrefs.SetInt(id + "/BestScore", myScore);
         }
 
         coinValue = (int)(score.value * 0.001);
-        if (PlayerPrefs.GetString("CurrentSkin") == "skin2") {
+        if (PlayerPrefs.GetInt(id + "/CurrentSkin") == 2) {
             skin2Coin = coinValue * 1.5f;
-            PlayerPrefs.SetInt("Coin", (myCoin + (int)skin2Coin));
+            PlayerPrefs.SetInt(id + "/Coin", (myCoin + (int)skin2Coin));
         } else {
             myCoin += coinValue;
-            PlayerPrefs.SetInt("Coin", myCoin);
+            PlayerPrefs.SetInt(id + "/Coin", myCoin);
         }
-        setFinish();
+        //setFinish();
         SceneManager.LoadScene(1);
     }
 
     void TestReFunction() {
         score = FindObjectOfType<score>();
-        myCoin = PlayerPrefs.GetInt("Coin");
-        myScore = PlayerPrefs.GetInt("BestScore");
+        myCoin = PlayerPrefs.GetInt(id + "/Coin");
+        myScore = PlayerPrefs.GetInt(id + "/BestScore");
 
         if (score.value > myCoin) {
-            PlayerPrefs.SetInt("BestScore", myScore);
+            PlayerPrefs.SetInt(id + "/BestScore", myScore);
         }
 
         coinValue = (int)(score.value * 0.001);
-        if (PlayerPrefs.GetString("CurrentSkin") == "skin2") {
+        if (PlayerPrefs.GetInt(id + "/CurrentSkin") == 2) {
             skin2Coin = coinValue * 1.5f;
-            PlayerPrefs.SetInt("Coin", (myCoin + (int)skin2Coin));
+            PlayerPrefs.SetInt(id + "/Coin", (myCoin + (int)skin2Coin));
         } else {
             myCoin += coinValue;
-            PlayerPrefs.SetInt("Coin", myCoin);
+            PlayerPrefs.SetInt(id + "/Coin", myCoin);
         }
-        setFinish();
+        //setFinish();
         SceneManager.LoadScene(2);
     }
 
@@ -103,14 +107,14 @@ public class TestModalWindow : MonoBehaviour {
         string id = PlayerPrefs.GetString("id");
         userCoin = PlayerPrefs.GetInt("Coin");
         userScore = PlayerPrefs.GetInt("BestScore");
-        string strUrl = "http://192.168.0.5:5000/finish/" + id + "/" + userCoin + "/" + userScore;
+        string strUrl = "http://nanugong.dothome.co.kr/nanugong:5000/finish/" + id + "/" + userCoin + "/" + userScore;
         networkManager.network(strUrl);
     }
 
     void setCoin() {
         string id = PlayerPrefs.GetString("id");
         userCoin = PlayerPrefs.GetInt("Coin");
-        string strUrl = "http://192.168.0.5:5000/coin/" + id + "/" + userCoin;
+        string strUrl = "http://nanugong.dothome.co.kr/nanugong:5000/coin/" + id + "/" + userCoin;
         networkManager.network(strUrl);
     }
 }

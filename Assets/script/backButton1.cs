@@ -16,7 +16,6 @@ public class backButton1 : MonoBehaviour {
                 bgmSource = bgmObj.GetComponent<AudioSource>();
                 bgmSource.Play();
                 DontDestroyOnLoad(bgmObj);
-
                 SceneManager.LoadScene(0);
             } else {
                 GameObject.Find("Canvas").transform.FindChild("optionModalPanel").gameObject.SetActive(false);

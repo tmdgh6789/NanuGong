@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class itemToggle : MonoBehaviour {
+    private GameManager gameManager;
     public Toggle itemTimer;
     public Toggle itemSuper;
     public Toggle itemRevival;
@@ -12,37 +13,43 @@ public class itemToggle : MonoBehaviour {
     public static float sec;
     public static bool super;
     public static bool revival;
-    public static int revivalValue = 100;
+    public static int revivalValue = 19;
 
+    public string id;
     public int coin;
     public int readyCoin;
     public string item = "";
 
-    void Start() {
-        coin = PlayerPrefs.GetInt("Coin");
-        PlayerPrefs.SetInt("ReadyCoin", coin);
+    void Awake() {
+        gameManager = FindObjectOfType<GameManager>();
+        id = gameManager.id;
+    }
 
-        if (PlayerPrefs.GetInt("CurrentSkin") == 3) {
+    void Start() {
+        coin = PlayerPrefs.GetInt(id + "/Coin");
+        PlayerPrefs.SetInt(id + "/ReadyCoin", coin);
+
+        if (PlayerPrefs.GetInt(id + "/CurrentSkin") == 3) {
             GameObject.Find("itemPanel").transform.FindChild("itemRevivalBox").gameObject.SetActive(true);
             GameObject.Find("itemPanel").transform.FindChild("yetItem1Box").gameObject.SetActive(false);
         }
     }
 
     void Update() {
-        readyCoin = PlayerPrefs.GetInt("ReadyCoin");
+        readyCoin = PlayerPrefs.GetInt(id + "/ReadyCoin");
     }
     
     public void timerToggle() {
-        if (PlayerPrefs.GetInt("Coin") >= 5) {
+        if (PlayerPrefs.GetInt(id + "/Coin") >= 5) {
             if (itemTimer.isOn) {
                 readyCoin -= 5;
-                PlayerPrefs.SetInt("ReadyCoin", readyCoin);
+                PlayerPrefs.SetInt(id + "/ReadyCoin", readyCoin);
                 coinText.text = "" + readyCoin;
                 desText.text = "게임 시간을 10초 늘려줍니다.";
                 sec = 50.0f;
             } else {
                 readyCoin += 5;
-                PlayerPrefs.SetInt("ReadyCoin", readyCoin);
+                PlayerPrefs.SetInt(id + "/ReadyCoin", readyCoin);
                 coinText.text = "" + readyCoin;
                 desText.text = "아이템 구매를 취소하셨습니다.";
                 item = "timer";
@@ -55,16 +62,16 @@ public class itemToggle : MonoBehaviour {
     }
 
     public void superToggle() {
-        if (PlayerPrefs.GetInt("Coin") >= 3) {
+        if (PlayerPrefs.GetInt(id + "/Coin") >= 3) {
             if (itemSuper.isOn) {
                 readyCoin -= 3;
-                PlayerPrefs.SetInt("ReadyCoin", readyCoin);
+                PlayerPrefs.SetInt(id + "/ReadyCoin", readyCoin);
                 coinText.text = "" + readyCoin;
                 desText.text = "처음 8개 공을 같은 공으로만 나오게합니다.";
                 super = true;
             } else {
                 readyCoin += 3;
-                PlayerPrefs.SetInt("ReadyCoin", readyCoin);
+                PlayerPrefs.SetInt(id + "/ReadyCoin", readyCoin);
                 coinText.text = "" + readyCoin;
                 desText.text = "아이템 구매를 취소하셨습니다.";
                 item = "super";
@@ -77,16 +84,16 @@ public class itemToggle : MonoBehaviour {
     }
 
     public void revivalToggle() {
-        if (PlayerPrefs.GetInt("Coin") >= 5) {
+        if (PlayerPrefs.GetInt(id + "/Coin") >= 5) {
             if (itemRevival.isOn) {
                 readyCoin -= 5;
-                PlayerPrefs.SetInt("ReadyCoin", readyCoin);
+                PlayerPrefs.SetInt(id + "/ReadyCoin", readyCoin);
                 coinText.text = "" + readyCoin;
                 desText.text = "게임이 끝난 후 19% 확률로 부활합니다.";
                 revival = true;
             } else {
                 readyCoin += 5;
-                PlayerPrefs.SetInt("ReadyCoin", readyCoin);
+                PlayerPrefs.SetInt(id + "/ReadyCoin", readyCoin);
                 coinText.text = "" + readyCoin;
                 desText.text = "아이템 구매를 취소하셨습니다.";
                 item = "revival";
