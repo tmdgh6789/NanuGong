@@ -3,8 +3,9 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class resetConfirm : MonoBehaviour {
-
+    private NetworkManager networkManager;
     optionPanelButton opb;
+
     public GameObject confirmObj;
     public GameObject messageObj;
     public Text record;
@@ -12,6 +13,7 @@ public class resetConfirm : MonoBehaviour {
     
     public void Ok(string rcc) {
         opb = FindObjectOfType<optionPanelButton>();
+        networkManager = FindObjectOfType<NetworkManager>();
         rcc = opb.rcc;
         switch (rcc) {
             case "record":
@@ -37,10 +39,6 @@ public class resetConfirm : MonoBehaviour {
                 break;
 
             case "char":
-                PlayerPrefs.DeleteKey("skin1");
-                PlayerPrefs.DeleteKey("skin2");
-                PlayerPrefs.DeleteKey("skin3");
-                PlayerPrefs.DeleteKey("skin4");
                 PlayerPrefs.DeleteKey("CurrentSkin");
                 PlayerPrefs.SetString("CurrentSkin", "default");
                 confirmObj.SetActive(false);
@@ -48,6 +46,7 @@ public class resetConfirm : MonoBehaviour {
                 Invoke("Hide", 0.8f);
                 break;
         }
+        reset(rcc);
     }
 
     public void No() {
@@ -56,5 +55,25 @@ public class resetConfirm : MonoBehaviour {
 
     public void Hide() {
         messageObj.SetActive(false);
+    }
+
+    void reset(string data) {
+        data = opb.rcc;
+        string strUrl;
+        string id = PlayerPrefs.GetString("id");
+        switch (data) {
+            case "record":
+                strUrl = "http://192.168.0.5:5000/resetRecord/" + id;
+                networkManager.network(strUrl);
+                break;
+            case "coin":
+                strUrl = "http://192.168.0.5:5000/resetCoin/" + id;
+                networkManager.network(strUrl);
+                break;
+            case "char":
+                strUrl = "http://192.168.0.5:5000/resetChar/" + id;
+                networkManager.network(strUrl);
+                break;
+        }
     }
 }

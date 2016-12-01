@@ -5,13 +5,14 @@ using System.IO;
 using System.Net;
 
 public class NetworkManager : MonoBehaviour {
+
     public string strUrl;
     public string strResult;
 
     public string userId;
     public string userPw;
     public string userNick;
-
+    
     public void network(string strUrl) {
         /* GET */
         // HttpWebRequest 객체 생성, 설정

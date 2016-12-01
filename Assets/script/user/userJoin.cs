@@ -142,14 +142,14 @@ public class userJoin : MonoBehaviour {
 
     public void join() {
         // 요청을 보내는 URl
-        strUrl = "http://localhost:5000/join/" + id + "/" + pw + "/" + nick;
+        strUrl = "http://192.168.0.5:5000/join/" + id + "/" + pw + "/" + nick;
 
         networkManager.network(strUrl);
     }
 
     public void login() {
         // 요청을 보내는 URl
-        strUrl = "http://localhost:5000/user/" + id;
+        strUrl = "http://192.168.0.5:5000/user/" + id;
 
         networkManager.network(strUrl);
     }

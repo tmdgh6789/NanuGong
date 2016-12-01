@@ -4,12 +4,12 @@ using System.Collections;
 
 public class myCoinText : MonoBehaviour {
 
-    public Text myCoin;
+    public Text userCoin;
 
     // Use this for initialization
     void Start () {
-        myCoin = GetComponent<Text>();
-        int haveCoin = PlayerPrefs.GetInt("Coin");
-        myCoin.text = "" + haveCoin;
+        userCoin = GetComponent<Text>();
+        int myCoin = PlayerPrefs.GetInt("Coin");
+        userCoin.text = "" + myCoin;
 	}
 }

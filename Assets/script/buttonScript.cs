@@ -10,6 +10,8 @@ public class buttonScript : MonoBehaviour {
     gage _gage;
     feverMode _fever;
 
+    public float comboTime;
+
     GameObject randomRes;
     GameObject randomBall;
 
@@ -31,6 +33,15 @@ public class buttonScript : MonoBehaviour {
 
     public GameObject leftButton;
     public GameObject rightButton;
+
+    void Update() {
+        comboTime += Time.deltaTime;
+        if (comboTime > 3.5f) {
+            comboCanvas.GetComponent<Canvas>().enabled = false;
+            _combo.value = 0;
+            comboTime = 0;
+        }
+    }
 
     public void button(string value) {
         _start = FindObjectOfType<startScript>();
@@ -251,10 +262,14 @@ public class buttonScript : MonoBehaviour {
         }
 
         Destroy(ball[7], runningTime * 6);
+
         comboCanvas.GetComponent<Canvas>().enabled = true;
         comboAnim = GameObject.Find("comboPanel").GetComponent<Animator>();
         comboAnim.Play("comboAnim", -1, 0);
+
+        comboTime = 0;
         _combo.value += 1;
+
         _score.value += 100f + (_combo.value * 0.5f);
         
         if ((_combo.value != 0 && _combo.value % 10 == 0) && !feverMode)

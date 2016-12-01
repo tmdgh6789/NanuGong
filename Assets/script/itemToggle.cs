@@ -22,7 +22,7 @@ public class itemToggle : MonoBehaviour {
         coin = PlayerPrefs.GetInt("Coin");
         PlayerPrefs.SetInt("ReadyCoin", coin);
 
-        if (PlayerPrefs.GetString("CurrentSkin") == "skin3") {
+        if (PlayerPrefs.GetInt("CurrentSkin") == 3) {
             GameObject.Find("itemPanel").transform.FindChild("itemRevivalBox").gameObject.SetActive(true);
             GameObject.Find("itemPanel").transform.FindChild("yetItem1Box").gameObject.SetActive(false);
         }

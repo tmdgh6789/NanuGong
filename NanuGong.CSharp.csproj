@@ -241,7 +241,6 @@
     <Compile Include="Assets\script\mySkin.cs" />
     <Compile Include="Assets\script\myroomNick.cs" />
     <Compile Include="Assets\script\network\NetworkManager.cs" />
-    <Compile Include="Assets\script\network\network.cs" />
     <Compile Include="Assets\script\nickModify.cs" />
     <Compile Include="Assets\script\optionButton.cs" />
     <Compile Include="Assets\script\optionModalPanel.cs" />
@@ -259,7 +258,6 @@
     <Compile Include="Assets\script\toMyRoom.cs" />
     <Compile Include="Assets\script\toPrison.cs" />
     <Compile Include="Assets\script\toReady.cs" />
-    <Compile Include="Assets\script\user\NewBehaviourScript.cs" />
     <Compile Include="Assets\script\user\userJoin.cs" />
     <Compile Include="Assets\script\volumeControl.cs" />
   </ItemGroup>

@@ -8,11 +8,16 @@ using System.Collections;
 public class TestModalWindow : MonoBehaviour {
     private ModalPanel modalPanel;
     private timerScript timer;
+    private NetworkManager networkManager;
     public score score;
+
     public int coinValue;
     public float skin2Coin;
     public int myCoin;
+    public int myScore;
 
+    public int userCoin;
+    public int userScore;
 
     private UnityAction myTenSecondsAction;
     private UnityAction myYesAction;
@@ -24,6 +29,7 @@ public class TestModalWindow : MonoBehaviour {
     void Awake() {
         modalPanel = ModalPanel.Instance();
         timer = FindObjectOfType<timerScript>();
+        networkManager = FindObjectOfType<NetworkManager>();
 
         myTenSecondsAction = new UnityAction(TestTenSecondsFunction);
         myYesAction = new UnityAction(TestYesFunction);
@@ -47,12 +53,18 @@ public class TestModalWindow : MonoBehaviour {
             timer.timer = 10.0f;
             timeBar.transform.Translate(1.1f, 0.0f, 0.0f);
             PlayerPrefs.SetInt("Coin", (PlayerPrefs.GetInt("Coin") - 5));
+            setCoin();
         }
     }
 
     void TestYesFunction() {
         score = FindObjectOfType<score>();
         myCoin = PlayerPrefs.GetInt("Coin");
+        myScore = PlayerPrefs.GetInt("BestScore");
+
+        if (score.value > myCoin) {
+            PlayerPrefs.SetInt("BestScore", myScore);
+        }
 
         coinValue = (int)(score.value * 0.001);
         if (PlayerPrefs.GetString("CurrentSkin") == "skin2") {
@@ -62,11 +74,43 @@ public class TestModalWindow : MonoBehaviour {
             myCoin += coinValue;
             PlayerPrefs.SetInt("Coin", myCoin);
         }
+        setFinish();
         SceneManager.LoadScene(1);
     }
 
     void TestReFunction() {
+        score = FindObjectOfType<score>();
+        myCoin = PlayerPrefs.GetInt("Coin");
+        myScore = PlayerPrefs.GetInt("BestScore");
+
+        if (score.value > myCoin) {
+            PlayerPrefs.SetInt("BestScore", myScore);
+        }
+
+        coinValue = (int)(score.value * 0.001);
+        if (PlayerPrefs.GetString("CurrentSkin") == "skin2") {
+            skin2Coin = coinValue * 1.5f;
+            PlayerPrefs.SetInt("Coin", (myCoin + (int)skin2Coin));
+        } else {
+            myCoin += coinValue;
+            PlayerPrefs.SetInt("Coin", myCoin);
+        }
+        setFinish();
         SceneManager.LoadScene(2);
     }
 
+    void setFinish() {
+        string id = PlayerPrefs.GetString("id");
+        userCoin = PlayerPrefs.GetInt("Coin");
+        userScore = PlayerPrefs.GetInt("BestScore");
+        string strUrl = "http://192.168.0.5:5000/finish/" + id + "/" + userCoin + "/" + userScore;
+        networkManager.network(strUrl);
+    }
+
+    void setCoin() {
+        string id = PlayerPrefs.GetString("id");
+        userCoin = PlayerPrefs.GetInt("Coin");
+        string strUrl = "http://192.168.0.5:5000/coin/" + id + "/" + userCoin;
+        networkManager.network(strUrl);
+    }
 }

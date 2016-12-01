@@ -109,31 +109,73 @@ public class gameReady : MonoBehaviour {
 
     public void login() {
         // 요청을 보내는 URl
-        strUrl = "http://localhost:5000/user/" + id;
-        
+        strUrl = "http://192.168.0.5:5000/user/" + id;
         networkManager.network(strUrl);
-        
-        var obj = JSON.Parse(networkManager.strResult);
+        var user = JSON.Parse(networkManager.strResult);
 
-        userId = obj[0]["id"].ToString();
-        userPw = obj[0]["password"].ToString();
-        userNick = obj[0]["nickname"].ToString();
-        int userScore;
-        int.TryParse(obj[0]["bestScore"].ToString(), out userScore);
-        int userCoin;
-        int.TryParse(obj[0]["coin"].ToString(), out userCoin);
-        int userMyChar;
-        int.TryParse(obj[0]["myChar"].ToString(), out userMyChar);
+        strUrl = "http://192.168.0.5:5000/inventory/" + id;
+        networkManager.network(strUrl);
+        var inven = JSON.Parse(networkManager.strResult);
 
-        PlayerPrefs.SetString("id", userId);
-        PlayerPrefs.SetString("Nick", userNick);
-        PlayerPrefs.SetInt("BestScore", userScore);
-        PlayerPrefs.SetInt("Coin", userCoin);
-        PlayerPrefs.SetInt("CurrentSkin", userMyChar);
+        userId = user[0]["id"].ToString();
+        userPw = user[0]["password"].ToString();
+        userNick = user[0]["nickname"].ToString();
+        string userScore = user[0]["bestScore"].ToString();
+        string userCoin = user[0]["coin"].ToString();
+        string userMyChar = user[0]["myChar"].ToString();
+
+        string myChar1 = inven[0]["char1"].ToString();
+        string myChar2 = inven[0]["char2"].ToString();
+        string myChar3 = inven[0]["char3"].ToString();
+        string myChar4 = inven[0]["char4"].ToString();
 
         userId = userId.Replace("\"", "");
         userPw = userPw.Replace("\"", "");
         userNick = userNick.Replace("\"", "");
+        userScore = userScore.Replace("\"", "");
+        userCoin = userCoin.Replace("\"", "");
+        userMyChar = userMyChar.Replace("\"", "");
+        myChar1 = myChar1.Replace("\"", "");
+        myChar2 = myChar2.Replace("\"", "");
+        myChar3 = myChar3.Replace("\"", "");
+        myChar4 = myChar4.Replace("\"", "");
+
+        int intScore;
+        int.TryParse(userScore, out intScore);
+        int intCoin;
+        int.TryParse(userCoin, out intCoin);
+        int intMyChar;
+        int.TryParse(userMyChar, out intMyChar);
+        int intMyChar1;
+        int.TryParse(myChar1, out intMyChar1);
+        int intMyChar2;
+        int.TryParse(myChar2, out intMyChar2);
+        int intMyChar3;
+        int.TryParse(myChar3, out intMyChar3);
+        int intMyChar4;
+        int.TryParse(myChar4, out intMyChar4);
+        
+        PlayerPrefs.SetString("id", userId);
+        PlayerPrefs.SetString("Nick", userNick);
+        PlayerPrefs.SetInt("BestScore", intScore);
+        PlayerPrefs.SetInt("Coin", intCoin);
+        PlayerPrefs.SetInt("CurrentSkin", intMyChar);
+
+        if (intMyChar1 == 1) {
+            PlayerPrefs.SetString("skin1", "Y");
+        }
+
+        if (intMyChar2 == 1) {
+            PlayerPrefs.SetString("skin2", "Y");
+        }
+
+        if (intMyChar3 == 1) {
+            PlayerPrefs.SetString("skin3", "Y");
+        }
+
+        if (intMyChar4 == 1) {
+            PlayerPrefs.SetString("skin4", "Y");
+        }
     }
 
 }

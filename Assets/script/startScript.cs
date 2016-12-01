@@ -51,7 +51,7 @@ public class startScript : MonoBehaviour {
                     startBall[i].transform.Translate(0, -3.2f, -i);
                 }
 
-                startBall[i].transform.localScale = new Vector2(0.1f + ((float)i / 10), 0.1f + ((float)i / 10));
+                startBall[i].transform.localScale = new Vector2(0.35f + ((float)i / 10), 0.35f + ((float)i / 10));
                 startBall[i].name = "ball" + i + "(Clone)";
             }
         } else {

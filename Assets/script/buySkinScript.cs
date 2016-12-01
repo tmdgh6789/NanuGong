@@ -4,6 +4,7 @@ using System.Collections;
 
 public class buySkinScript : MonoBehaviour {
 
+    private NetworkManager networkManager;
     buySkin1 buyskin1;
     buySkin2 buyskin2;
     buySkin3 buyskin3;
@@ -17,9 +18,14 @@ public class buySkinScript : MonoBehaviour {
     public static ModalPanel lackCoinPanel;
 
     public string skinNum = "";
+    public int charNum = 0;
     public string skinName = "";
+    public int myCoin;
+    public int myChar;
 
     void Awake() {
+        networkManager = FindObjectOfType<NetworkManager>();
+        
         if (PlayerPrefs.GetString("skin1") == "Y") {
             prisonImg = GameObject.Find("prison1");
             prisonImg.SetActive(false);
@@ -47,27 +53,31 @@ public class buySkinScript : MonoBehaviour {
 
         if (price == 3) {
             skinNum = "skin1";
+            charNum = 1;
             skinName = "엄마 주먹밥";
             prisonImg = GameObject.Find("prison1");
             textPanel = GameObject.Find("skin1Button").transform.FindChild("textPanel1").gameObject;
         } else if (price == 4) {
             skinNum = "skin2";
+            charNum = 2;
             skinName = "아빠 주먹밥";
             prisonImg = GameObject.Find("prison2");
             textPanel = GameObject.Find("skin2Button").transform.FindChild("textPanel2").gameObject;
         } else if (price == 5) {
             skinNum = "skin3";
+            charNum = 3;
             skinName = "오빠 주먹밥";
             prisonImg = GameObject.Find("prison3");
             textPanel = GameObject.Find("skin3Button").transform.FindChild("textPanel3").gameObject;
         } else if (price == 6) {
             skinNum = "skin4";
+            charNum = 4;
             skinName = "동생 주먹밥";
             prisonImg = GameObject.Find("prison4");
             textPanel = GameObject.Find("skin4Button").transform.FindChild("textPanel4").gameObject;
         }
 
-        int myCoin = PlayerPrefs.GetInt("Coin");
+        myCoin = PlayerPrefs.GetInt("Coin");
         string YorN = PlayerPrefs.GetString(skinNum);
 
         if (myCoin >= price) {
@@ -82,7 +92,9 @@ public class buySkinScript : MonoBehaviour {
                 Invoke("hideCoinPanel", 1.0f);
                 PlayerPrefs.SetString(skinNum, "Y");
                 PlayerPrefs.SetInt("Coin", myCoin);
-                PlayerPrefs.SetString("CurrentSkin", skinNum);
+                PlayerPrefs.SetInt("CurrentSkin", charNum);
+                myRoom();
+                inventory();
             } else {
                 esSources[4].Play();
 
@@ -106,5 +118,19 @@ public class buySkinScript : MonoBehaviour {
 
     void hideCoinPanel() {
         lackCoinObj.SetActive(false);
+    }
+
+    void myRoom() {
+        string id = PlayerPrefs.GetString("id");
+        myCoin = PlayerPrefs.GetInt("Coin");
+        myChar = PlayerPrefs.GetInt("CurrentSkin");
+        string strUrl = "http://192.168.0.5:5000/myRoom/" + id + "/" + myCoin + "/" + myChar;
+        networkManager.network(strUrl);
+    }
+
+    void inventory() {
+        string id = PlayerPrefs.GetString("id");
+        string strUrl = "http://192.168.0.5:5000/buyChar/" + id + "/" + charNum;
+        networkManager.network(strUrl);
     }
 }
